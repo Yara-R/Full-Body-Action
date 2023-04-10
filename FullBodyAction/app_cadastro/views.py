@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from .models import Usuario
 
-def cadastro(request):
-    return render(request,'fullbodyaction/cadastro.html')
+def home(request):
+    return render(request,'usuarios/cadastro.html')
 
 def usuarios(request):
     # Salvar os dados da tela para o banco de dados

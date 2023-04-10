@@ -3,6 +3,6 @@ from app_cadastro import views
 
 urlpatterns = [
     #fullbodyaction.com/cadastro/
-    path('cadastro/', views.cadastro, name='cadastro'),
+    path('', views.home, name='home')
     path('usuarios/', views.usuarios, name='listagem_usuarios')
 ]
