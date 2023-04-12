@@ -1,11 +1,12 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from .models import Usuario
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 
 def home(request):
-    return render(request,'usuarios/cadastro.html')
+    if request.method == "GET":
+        return render(request,'usuarios/cadastro.html')
 
 def usuarios(request):
     # Salvar os dados da tela para o banco de dados
@@ -17,17 +18,19 @@ def usuarios(request):
 
 def login(request):
     if request.method == "GET":
-        return render(request, 'login.html')
+        return render(request,'usuarios/login.html')
+    
+    login_usuario = Usuario()
+    login_usuario.email_login = request.POST.get('email')
+    login_usuario.senha_login = request.POST.get('senha')
 
-    else:
-        email = request.POST.get('email')
-        senha = request.POST.get('senha')
-
-    user = authenticate(email=email, senha=senha)
+    user = authenticate(email=login_usuario.email_login, senha=login_usuario.senha_login)
 
     if user:
+        login(request, user)
         return render(request, 'usuarios/exercicios.html')
-        
+    else:
+        return HttpResponse('Email ou senha errados')
 
 def treino(request):
     return render(request,'treino.html', treino)
