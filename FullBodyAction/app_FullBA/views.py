@@ -4,8 +4,8 @@ from .models import Usuario
 def home(request):
     return render(request,'usuarios/cadastro.html')
 
-def login():
-    pass
+def login(request):
+    return render(request,'usuarios/login.html')
 
 def usuarios(request):
     # Salvar os dados da tela para o banco de dados
