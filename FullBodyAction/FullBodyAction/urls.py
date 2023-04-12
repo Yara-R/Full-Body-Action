@@ -8,7 +8,7 @@ urlpatterns = [
 ]
 
 urlpatterns = [
-    path('', views.exercicios, name= 'exercicios')
+    path('exercicios/', views.exercicios, name= 'exercicios'),
     path('')
 
 ]
