@@ -17,7 +17,7 @@ def usuarios(request):
     novo_usuario.save()
 
 def login(request):
-    if request.method == "GET":
+    if request.method == "POST":
         return render(request,'usuarios/login.html')
     
     login_usuario = Usuario()
