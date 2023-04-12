@@ -6,3 +6,12 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('usuarios/', views.usuarios, name='listagem_usuarios')
 ]
+
+
+from django.urls import path 
+from app_FullBA import views
+urlpatterns = [
+    path('', views.exercicios, name= 'exercicios')
+    path('')
+
+]
