@@ -3,5 +3,6 @@ from app_cadastro import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('login/', views.login, name='login'),
     path('usuarios/', views.usuarios, name='listagem_usuarios')
 ]
