@@ -5,7 +5,7 @@ def home(request):
     return render(request,'usuarios/cadastro.html')
 
 def login():
-
+    pass
 
 def usuarios(request):
     # Salvar os dados da tela para o banco de dados
