@@ -1,6 +1,6 @@
 {% extends 'usuarios/base.html' %}
 {% block conteudo %}
-<form action="{% url 'home' %}" method ="post">
+<form action="{% url 'login' %}" method ="post">
     {% csrf_token %}
     <div style="text-align: center"class="container">
       <h1>Cadastro</h1>

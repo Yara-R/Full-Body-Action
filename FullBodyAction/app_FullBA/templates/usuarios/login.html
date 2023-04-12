@@ -1,12 +1,12 @@
 {% extends 'usuarios/base.html' %}
 {% block conteudo %}
-<form action="{% url 'login' %}" method ="post">
+<form action="{% url 'exercicios' %}" method ="post">
     {% csrf_token %}
     <div style="text-align: center"class="container">
       <h1>LogIn</h1>
       E-mail <input name="email" class="form-control-sm" type="text">
       Senha <input name="password" class="form-control-sm" type="text">
-      <input type='submit' class="form-control-sm">LogIn</input>
+      <input type='submit' class="form-control-sm"></input>
     </div> 
 </form>
 {% endblock %}
