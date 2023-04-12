@@ -36,3 +36,4 @@ def login(request):
             return render(request, 'usuarios/exercicios.html')
         else:
             return HttpResponse("Email ou senha inválidos")
+        
