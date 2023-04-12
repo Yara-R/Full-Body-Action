@@ -1,13 +1,12 @@
 {% extends 'usuarios/base.html' %}
 {% block conteudo %}
-<form action="{% url 'listagem_usuarios' %}" method ="post">
+<form action="{% url 'login' %}" method ="post">
     {% csrf_token %}
     <div style="text-align: center"class="container">
-      <h1>Cadastro</h1>
-      Nome <input name="nome" class="form-control-sm" type="text">
+      <h1>LogIn</h1>
       E-mail <input name="email" class="form-control-sm" type="text">
       Senha <input name="password" class="form-control-sm" type="text">
-      <input type='submit' class="form-control-sm">Cadastrar</input>
+      <input type='submit' class="form-control-sm">LogIn</input>
     </div> 
 </form>
 {% endblock %}

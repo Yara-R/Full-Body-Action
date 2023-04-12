@@ -1,12 +1,10 @@
+from django.http.response import HttpResponse
 from django.shortcuts import render
 from .models import Usuario
+from django.contrib.auth import authenticate
 
 def home(request):
     return render(request,'usuarios/cadastro.html')
-
-def login():
-    pass
-
 
 def usuarios(request):
     # Salvar os dados da tela para o banco de dados
@@ -30,3 +28,17 @@ def treino(request, dealer_id):
     treino = treino()
     treino.t = request('treino')
     
+
+def login(request):
+    if request.method == "GET":
+        return render(request,'usuarios/login.html')
+    else:
+        email = request.Post.get('email')
+        senha = request.POST.get('senha')
+
+        user = authenticate(email=email, senha=senha)
+
+        if user:
+            return render(request, 'usuarios/exercicios.html')
+        else:
+            return HttpResponse("Email ou senha inválidos")
