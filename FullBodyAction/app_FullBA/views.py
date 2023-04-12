@@ -23,10 +23,11 @@ def usuarios(request):
     return render(request, 'usuarios/usuarios.html', usuarios)
 
 
-def treino(request, dealer_id):
-    #usuario irá escolher o musculo no qual quer visualizar os exercicios 
-    treino = treino()
-    treino.t = request('treino')
+def treino(request):
+    return render(request,'treino.html', treino)
+
+    
+    
     
 
 def login(request):
