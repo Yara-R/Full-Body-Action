@@ -5,3 +5,4 @@ class Usuario(models.Model):
     nome = models.TextField(max_length=255)
     email = models.EmailField()
     password = models.CharField()
+
