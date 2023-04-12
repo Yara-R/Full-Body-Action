@@ -4,11 +4,5 @@ from app_FullBA import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('login/', views.login, name='login'),
-    path('usuarios/', views.usuarios, name='listagem_usuarios'),
-]
-
-urlpatterns = [
     path('exercicios/', views.exercicios, name= 'exercicios'),
-    path('')
-
 ]

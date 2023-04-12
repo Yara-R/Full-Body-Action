@@ -14,21 +14,7 @@ def usuarios(request):
     novo_usuario.senha = request.POST.get('password')
     novo_usuario.save()
 
-    # Exibir todos os usuarios já cadastrados em uma nova página
-    usuarios = {
-        'usuarios': Usuario.objects.all()
-    }
-
-    # Retornar os dados para a pagina de listagem de usuários 
-    return render(request, 'usuarios/usuarios.html', usuarios)
-
-
-def treino(request):
-    return render(request,'treino.html', treino)
-
-    
-    
-    
+    return render(request,'usuarios/login.html')
 
 def login(request):
     if request.method == "GET":
@@ -43,3 +29,11 @@ def login(request):
             return render(request, 'usuarios/exercicios.html')
         else:
             return HttpResponse("Email ou senha inválidos")
+        
+
+def treino(request):
+    return render(request,'treino.html', treino)
+
+        
+def exercicios():
+    pass
