@@ -1,0 +1,27 @@
+{% extends 'usuarios/base.html' %} 
+{% block conteudo %}
+<!-- precisa colocar o url de alguma das paginas e tirar essa url login-->
+<form action="{% url 'login' %}" method="post">
+  <div style="text-align: center" class="container">
+    <h1>Consumo de Água</h1>
+    Data<input type="date" name="Data" class="form-control-sm" />
+    <br />
+    Hora<input type="time" name="Hora" class="form-control-sm" />
+    <br />
+    Quantidade<select name="Quantidade" size="1">
+      <option>---</option>
+      <option>50ml</option>
+      <option>100ml</option>
+      <option>200ml</option>
+      <option>250ml</option>
+      <option>300ml</option>
+      <option>350ml</option>
+      <option>500ml</option>
+      <option>750ml</option>
+      <option>1000ml</option>
+    </select>
+    <br />
+    <input type="submit" value="Enviar" class="form-control-sm" />
+  </div>
+</form>
+{% endblock %}

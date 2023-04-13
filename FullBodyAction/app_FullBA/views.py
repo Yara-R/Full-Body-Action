@@ -1,10 +1,12 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from .models import Usuario
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
 def home(request):
-    return render(request,'usuarios/cadastro.html')
+    if request.method == "GET":
+        return render(request,'usuarios/cadastro.html')
 
 def usuarios(request):
     # Salvar os dados da tela para o banco de dados
@@ -14,32 +16,25 @@ def usuarios(request):
     novo_usuario.senha = request.POST.get('password')
     novo_usuario.save()
 
-    # Exibir todos os usuarios já cadastrados em uma nova página
-    usuarios = {
-        'usuarios': Usuario.objects.all()
-    }
+def login(request):
+    if request.method == "GET":
+        return render(request,'usuarios/login.html')
+    
+    login_usuario = Usuario()
+    login_usuario.email_login = request.POST.get('email')
+    login_usuario.senha_login = request.POST.get('senha')
 
-    # Retornar os dados para a pagina de listagem de usuários 
-    return render(request, 'usuarios/usuarios.html', usuarios)
+    user = authenticate(email=login_usuario.email_login, senha=login_usuario.senha_login)
 
+    if user:
+        login(request, user)
+        return render(request, 'usuarios/exercicios.html')
+    else:
+        return HttpResponse('Email ou senha errados')
 
 def treino(request):
     return render(request,'treino.html', treino)
 
-    
-    
-    
-
-def login(request):
-    if request.method == "GET":
-        return render(request,'usuarios/login.html')
-    else:
-        email = request.Post.get('email')
-        senha = request.POST.get('senha')
-
-        user = authenticate(email=email, senha=senha)
-
-        if user:
-            return render(request, 'usuarios/exercicios.html')
-        else:
-            return HttpResponse("Email ou senha inválidos")
+@login_required    
+def exercicios(request):
+    return HttpResponse('Você precisa está logado')
