@@ -9,5 +9,5 @@ class Usuario(models.Model):
 class Registro_Agua(models.Model):
     data = models.DateField()
     hora = models.DateTimeField()
-    quantidade_ml = models.CharField()
+    quantidade_ml = models.IntegerField()
 

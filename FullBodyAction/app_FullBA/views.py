@@ -43,7 +43,7 @@ def treino(request):
 def exercicios(request):
     return render(request,'treino.html', treino)
 
-def registro_agua(request):
+def registro(request):
     if request.method == "POST":
         return render(request, 'usuarios/registro_agua.html')
     else:
