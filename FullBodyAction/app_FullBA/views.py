@@ -17,7 +17,7 @@ def usuarios(request):
     novo_usuario.save()
 
 def login(request):
-    if request.method == "GET":
+    if request.method == "POST":
         return render(request,'usuarios/login.html')
     
     login_usuario = Usuario()
@@ -34,7 +34,3 @@ def login(request):
 
 def treino(request):
     return render(request,'treino.html', treino)
-
-@login_required    
-def exercicios(request):
-    return HttpResponse('Você precisa está logado')
