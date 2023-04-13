@@ -6,3 +6,8 @@ class Usuario(models.Model):
     email = models.EmailField(default='email@default.com')
     password = models.CharField(max_length=25, default='12345678')
 
+class Registro_Agua(models.Model):
+    data = models.DateField()
+    hora = models.DateTimeField()
+    quantidade_ml = models.CharField()
+
