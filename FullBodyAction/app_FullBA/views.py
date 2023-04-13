@@ -28,12 +28,16 @@ def login(request):
 
     if user:
         login(request, user)
-        return render(request, 'usuarios/exercicios.html')
+        return render(request, 'usuarios/treino.html')
     else:
         return HttpResponse('Email ou senha errados')
 
 def treino(request):
-    return render(request,'treino.html', treino)
+    if request.method =="POST":
+        return render(request,'usuarios/treino.html')
+    else:
+        return HttpResponse('Deu zica')
+    
 
 @login_required    
 def exercicios(request):
