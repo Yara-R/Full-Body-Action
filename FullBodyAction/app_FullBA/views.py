@@ -34,7 +34,3 @@ def login(request):
 
 def treino(request):
     return render(request,'treino.html', treino)
-
-@login_required    
-def treino(request):
-    return HttpResponse('Você precisa está logado')
