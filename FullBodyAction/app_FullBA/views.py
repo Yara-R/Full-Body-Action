@@ -42,3 +42,5 @@ def treino(request):
 @login_required    
 def exercicios(request):
     return HttpResponse('Você precisa está logado')
+
+    return render(request,'treino.html', treino)
