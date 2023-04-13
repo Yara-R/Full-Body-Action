@@ -1,8 +1,19 @@
 
 {% extends 'usuarios/base.html' %}
 {% block conteudo %}
-<form action="{% url 'treino' %}" method ="get">
-
-
+<form action="{% url 'exercicios' %}" method ="get">
+    <head> 
+        <title>Treinos</title>
+        <input type='submit' class="form-control-sm"></input>
+    </head>
+        <body>
+            <img src="https://as2.ftcdn.net/v2/jpg/00/31/95/23/1000_F_31952349_Th8EGE3Hn99NUkl43mzZYkBLx3GWso4C.jpg" class="img-fluid" alt="...">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+        </body>
 </form>
 {% endblock %}
