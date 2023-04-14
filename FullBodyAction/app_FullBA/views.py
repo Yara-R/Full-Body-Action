@@ -19,6 +19,8 @@ def usuarios(request):
 def login(request):
     if request.method == "POST":
         return render(request,'usuarios/login.html')
+    if request.method == "GET":
+        return render(request,'usuarios/login.html')
     
     login_usuario = Usuario()
     login_usuario.email_login = request.POST.get('email')
@@ -35,19 +37,21 @@ def login(request):
 def treino(request):
     if request.method =="POST":
         return render(request,'usuarios/treino.html')
+    if request.method =="GET":
+        return render(request,'usuarios/treino.html')
     else:
         return HttpResponse('Deu zica')
     
 
 @login_required    
 def exercicios(request):
-    return HttpResponse('Você precisa está logado')
-
     return render(request,'treino.html', treino)
 
-def registro_agua(request):
+def registro(request):
     if request.method == "POST":
         return render(request, 'usuarios/registro_agua.html')
+    if request.method =="GET":
+        return render(request,'usuarios/registro_agua.html')
     else:
         return HttpResponse('Algo deu errado :/')
 
