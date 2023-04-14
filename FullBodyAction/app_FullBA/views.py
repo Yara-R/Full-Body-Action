@@ -50,3 +50,6 @@ def registro_agua(request):
         return render(request, 'usuarios/registro_agua.html')
     else:
         return HttpResponse('Algo deu errado :/')
+
+def bieceps(request):
+    return render(request, 'bíceps.html')
