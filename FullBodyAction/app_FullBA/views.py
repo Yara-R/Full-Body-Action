@@ -16,23 +16,23 @@ def home(request):
 def smash(request):
     musculo = request.GET.get('musculo')
     if musculo == 'biceps':
-        return redirect('usuarios/biceps.html')
+        return render(request, f'usuarios/biceps.html')
     elif musculo =='costas':
-        return redirect('usuarios/costas.html')
+        return render(request, f'usuarios/costas.html')
     elif musculo == 'peito':
-        return redirect('usuarios/peito.html')
+        return render(request, f'usuarios/peito.html')
     elif musculo == 'quadriceps':
-        return redirect('usuarios/quadriceps.html')
+        return render(request, f'usuarios/quadriceps.html')
     elif musculo == 'triceps':
-        return redirect('usuarios/triceps.html')
+        return render(request, f'usuarios/triceps.html')
     elif musculo == 'panturrilhas':
-        return redirect('usuarios/panturrilhas.html')
+        return render(request, f'usuarios/panturrilhas.html')
     elif musculo == 'gluteos':
-        return redirect('usuarios/gluteos.html')
+        return render(request, f'usuarios/gluteos.html')
     elif musculo == 'posterior':
-        return redirect('usuarios/posterior.html')
+        return render(request, f'usuarios/posterior.html')
     elif musculo == 'antebraco':
-        return redirect('usuarios/antebraco.html')
+        return render(request, f'usuarios/antebraco.html')
         
 def redirect_to_muscle(request):
     muscle = request.GET.get('muscle', '')
