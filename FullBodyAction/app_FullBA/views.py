@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .models import Usuario
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect
 
 def home(request):
     if request.method =="POST":
@@ -13,27 +13,33 @@ def home(request):
     else:
         return HttpResponse('Deu zica')
 
-def treino(request):
-    if request.method == 'POST':
-        grupo_muscular = request.POST.get('grupo_muscular')
-        if grupo_muscular == 'biceps':
-            return redirect('usuarios/biceps.html')
-        elif grupo_muscular =='costas':
-            return redirect('usuarios/costas.html')
-        elif grupo_muscular == 'peito':
-            return redirect('usuarios/peito.html')
-        elif grupo_muscular == 'quadriceps':
-            return redirect('usuarios/quadriceps.html')
-        elif grupo_muscular== 'tríceps':
-            return redirect('usuarios/triceps.html')
-        elif grupo_muscular == 'panturrilhas':
-            return redirect('usuarios/panturrilhas.html')
-        elif grupo_muscular == 'gluteos':
-            return redirect('usuarios/gluteos.html')
-        elif grupo_muscular == 'posterior':
-            return redirect('usuarios/posterior.html')
-        elif grupo_muscular == 'antebraço':
-            return redirect('usuarios/antebraco.html')
+def smash(request):
+    musculo = request.GET.get('musculo')
+    if musculo == 'biceps':
+        return redirect('usuarios/biceps.html')
+    elif musculo =='costas':
+        return redirect('usuarios/costas.html')
+    elif musculo == 'peito':
+        return redirect('usuarios/peito.html')
+    elif musculo == 'quadriceps':
+        return redirect('usuarios/quadriceps.html')
+    elif musculo == 'triceps':
+        return redirect('usuarios/triceps.html')
+    elif musculo == 'panturrilhas':
+        return redirect('usuarios/panturrilhas.html')
+    elif musculo == 'gluteos':
+        return redirect('usuarios/gluteos.html')
+    elif musculo == 'posterior':
+        return redirect('usuarios/posterior.html')
+    elif musculo == 'antebraco':
+        return redirect('usuarios/antebraco.html')
+        
+def redirect_to_muscle(request):
+    muscle = request.GET.get('muscle', '')
+    if muscle:
+        return redirect(f'/muscle/{muscle}/')
+    else:
+        return redirect('index')
 
 def cadastro(request):
     # Salvar os dados da tela para o banco de dados
