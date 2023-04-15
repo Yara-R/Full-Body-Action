@@ -13,27 +13,27 @@ def home(request):
     else:
         return HttpResponse('Deu zica')
 
-def home(request):
+def musculo(request):
     if request.method == 'POST':
         grupo_muscular = request.POST.get('grupo_muscular')
-        if grupo_muscular == 'Bíceps':
-            return redirect('biceps.html')
-        elif grupo_muscular =='Costas':
-            return redirect('costas.html')
-        elif grupo_muscular == 'Peito':
-            return redirect('peito.html')
-        elif grupo_muscular == 'Quadriceps':
-            return redirect('quadriceps.html')
-        elif grupo_muscular== 'Tríceps':
-            return redirect('triceps.html')
-        elif grupo_muscular == 'Panturrilhas':
-            return redirect('panturrilhas.html')
-        elif grupo_muscular == 'Glutéos':
-            return redirect('gluteos.html')
-        elif grupo_muscular == 'Posterior':
-            return redirect('posterior.html')
-        elif grupo_muscular == 'Antebraço':
-            return redirect('antebraco.html')
+        if grupo_muscular == 'biceps':
+            return redirect('usuarios/biceps.html')
+        elif grupo_muscular =='costas':
+            return redirect('usuarios/costas.html')
+        elif grupo_muscular == 'peito':
+            return redirect('usuarios/peito.html')
+        elif grupo_muscular == 'quadriceps':
+            return redirect('usuarios/quadriceps.html')
+        elif grupo_muscular== 'tríceps':
+            return redirect('usuarios/triceps.html')
+        elif grupo_muscular == 'panturrilhas':
+            return redirect('usuarios/panturrilhas.html')
+        elif grupo_muscular == 'gluteos':
+            return redirect('usuarios/gluteos.html')
+        elif grupo_muscular == 'posterior':
+            return redirect('usuarios/posterior.html')
+        elif grupo_muscular == 'antebraço':
+            return redirect('usuarios/antebraco.html')
 
 def cadastro(request):
     # Salvar os dados da tela para o banco de dados
@@ -67,7 +67,7 @@ def login(request):
 
 @login_required    
 def exercicios(request):
-    return render(request,'treino.html', treino)
+    return render(request,'treino.html')
 
 def registro(request):
     if request.method == "POST":
