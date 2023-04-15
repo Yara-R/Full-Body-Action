@@ -1,29 +1,53 @@
 {% extends 'usuarios/base.html' %} {% block conteudo %}
 {% csrf_token %}
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Exemplo de Imagens com Legenda</title>
-</head>
-<body>
-	<h1>biceps</h1>
-	<div>
-		<img src="http://www.ferrosports.com.br/img_external/biceps/image10.gif" alt="Imagem 1">
-		<p>Rosca com Martelo</p>
-	</div>
-	<div>
-		<img src="http://www.ferrosports.com.br/img_external/biceps/image11.gif" alt="Imagem 2">
-		<p>Rosca Direta</p>
-	</div>
-	<div>
-		<img src="http://www.ferrosports.com.br/img_external/biceps/image8.gif" alt="Imagem 3">
-		<p>Rosca Direta (Cross)</p>
-	</div>
-	<div>
-		<img src="http://www.ferrosports.com.br/img_external/biceps/image6.gif" alt="Imagem 4">
-		<p>Rosca Dumbell</p>
-	</div>
-</body>
-</html>
- 
+
+<div style="padding-top: 50px;">
+    <img src="imagem.jpg" />
+</div>
+
+  <center>
+    <table>
+      <tr>
+        <td>
+          <img
+            src="http://www.ferrosports.com.br/img_external/biceps/image11.gif"
+            class="container."
+            alt="Rosca Direta"
+            height="50%" width="50%"
+          />
+          <h2>Rosca c/barra</h2>
+        </td>
+        <td>
+          <img
+            src="http://www.ferrosports.com.br/img_external/biceps/image10.gif"
+            class="container."
+            alt="Imagem 2"
+            height="50%" width="50%"
+          />
+          <h2>Rosca Martelo</h2>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="http://www.ferrosports.com.br/img_external/biceps/image6.gif"
+            class="container."
+            alt="Imagem 3"
+            height="50%" width="50%"
+          />
+          <h2>Rosca Unilateral</h2>
+        </td>
+        <td>
+          <img
+            src="http://www.ferrosports.com.br/img_external/biceps/image5.gif"
+            class="container."
+            alt="Imagem 4"
+            height="50%" width="50%"
+          />
+          <h2>Rosca apoiada</h2>
+        </td>
+      </tr>
+    </table>
+  </center>
+
 {% endblock %}
