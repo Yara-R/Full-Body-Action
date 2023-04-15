@@ -6,11 +6,40 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 def home(request):
+    if request.method =="POST":
+        return render(request,'usuarios/treino.html')
+    if request.method =="GET":
+        return render(request,'usuarios/treino.html')
+    else:
+        return HttpResponse('Deu zica')
+
+def home(request):
+    if request.method == 'POST':
+        grupo_muscular = request.POST.get('grupo_muscular')
+        if grupo_muscular == 'Bíceps':
+            return redirect('biceps.html')
+        elif grupo_muscular =='Costas':
+            return redirect('costas.html')
+        elif grupo_muscular == 'Peito':
+            return redirect('peito.html')
+        elif grupo_muscular == 'Quadriceps':
+            return redirect('quadriceps.html')
+        elif grupo_muscular== 'Tríceps':
+            return redirect('triceps.html')
+        elif grupo_muscular == 'Panturrilhas':
+            return redirect('panturrilhas.html')
+        elif grupo_muscular == 'Glutéos':
+            return redirect('gluteos.html')
+        elif grupo_muscular == 'Posterior':
+            return redirect('posterior.html')
+        elif grupo_muscular == 'Antebraço':
+            return redirect('antebraco.html')
+
+def cadastro(request):
+    # Salvar os dados da tela para o banco de dados
     if request.method == "GET":
         return render(request,'usuarios/cadastro.html')
-
-def usuarios(request):
-    # Salvar os dados da tela para o banco de dados
+                      
     novo_usuario = Usuario()
     novo_usuario.nome = request.POST.get('nome')
     novo_usuario.email = request.POST.get('email')
@@ -35,37 +64,6 @@ def login(request):
     else:
         return HttpResponse('Email ou senha errados')
 
-def treino(request):
-    if request.method =="POST":
-        return render(request,'usuarios/treino.html')
-    if request.method =="GET":
-        return render(request,'usuarios/treino.html')
-    else:
-        return HttpResponse('Deu zica')
-
-def treino(request):
-    if request.method == 'POST':
-        grupo_muscular = request.POST.get('grupo_muscular')
-        if grupo_muscular == 'Bíceps':
-            return redirect('biceps.html')
-        elif grupo_muscular =='Costas':
-            return redirect('costas.html')
-        elif grupo_muscular == 'Peito':
-            return redirect('peito.html')
-        elif grupo_muscular == 'Quadriceps':
-            return redirect('quadriceps.html')
-        elif grupo_muscular== 'Tríceps':
-            return redirect('triceps.html')
-        elif grupo_muscular == 'Panturrilhas':
-            return redirect('panturrilhas.html')
-        elif grupo_muscular == 'Glutéos':
-            return redirect('gluteos.html')
-        elif grupo_muscular == 'Posterior':
-            return redirect('posterior.html')
-        elif grupo_muscular == 'Antebraço':
-            return redirect('antebraco.html')
-
-    
 
 @login_required    
 def exercicios(request):

@@ -2,11 +2,9 @@ from django.urls import path
 from app_FullBA import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('', views.usuarios, name='usuarios'),
+    path('home/', views.home, name= 'treino'),
+    path('cadastro/', views.cadastro, name='usuarios'),
     path('login/', views.login, name='login'),
-    path('exercicios/', views.exercicios, name= 'exercicios'),
-    path('treino/', views.treino, name= 'treino'),
     path('consumo_agua/', views.registro, name='registro_agua'),
     path('biceps/', views.biceps, name ='biceps'),
     path('costas/', views.costas, name ='costas'),
