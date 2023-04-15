@@ -1,10 +1,29 @@
 {% extends 'usuarios/base.html' %} {% block conteudo %}
 {% csrf_token %}
+<!DOCTYPE html>
+<html>
 <head>
-    <title>biceps</title>
+	<title>Exemplo de Imagens com Legenda</title>
 </head>
-
-<img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fbr.pinterest.com%2Fpin%2F609041549595918893%2F&psig=AOvVaw1IJuUJ1l5hZ_oDM4NLq1qS&ust=1681679134138000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCJiKrIzlrP4CFQAAAAAdAAAAABAE.jpg" alt="Rosca Invertida">
-<img src="caminho/para/imagem2.jpg" alt="Rosca Barra">
-<img src="caminho/para/imagem3.jpg" alt="Descrição da imagem 3">
+<body>
+	<h1>biceps</h1>
+	<div>
+		<img src="http://www.ferrosports.com.br/img_external/biceps/image10.gif" alt="Imagem 1">
+		<p>Rosca com Martelo</p>
+	</div>
+	<div>
+		<img src="http://www.ferrosports.com.br/img_external/biceps/image11.gif" alt="Imagem 2">
+		<p>Rosca Direta</p>
+	</div>
+	<div>
+		<img src="http://www.ferrosports.com.br/img_external/biceps/image8.gif" alt="Imagem 3">
+		<p>Rosca Direta (Cross)</p>
+	</div>
+	<div>
+		<img src="http://www.ferrosports.com.br/img_external/biceps/image6.gif" alt="Imagem 4">
+		<p>Rosca Dumbell</p>
+	</div>
+</body>
+</html>
+ 
 {% endblock %}
