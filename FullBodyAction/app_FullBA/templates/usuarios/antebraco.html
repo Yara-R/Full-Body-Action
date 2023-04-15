@@ -1,15 +1,52 @@
 {% extends 'usuarios/base.html' %} 
 {% block conteudo %}
   {% csrf_token %}
-  
-  <h1>Exercício de Rosca Punho para Antebraço</h1>
+  <div style="padding-top: 50px;">
+    <img src="imagem.jpg" />
+</div>
 
   <center>
-    <img
-      src="http://www.ferrosports.com.br/img_external/antebraco/image401.gif"
-      class="container."
-      alt="Rosca Punho"
-      height="12%" width="12%"
-    />
+    <table>
+      <tr>
+        <td>
+          <img
+            src="http://www.ferrosports.com.br/img_external/antebraco/image401.gif"
+            class="container."
+            alt="Rosca Punho"
+            height="50%" width="50%"
+          />
+          <h2>Rosca Punho (Barra)</h2>
+        </td>
+        <td>
+          <img
+            src="http://www.ferrosports.com.br/img_external/antebraco/image403.gif"
+            class="container."
+            alt="Imagem 2"
+            height="50%" width="50%"
+          />
+          <h2>Rosca Inversa Punho (Barra)</h2>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="http://www.ferrosports.com.br/img_external/antebraco/image407.gif"
+            class="container."
+            alt="Imagem 3"
+            height="50%" width="50%"
+          />
+          <h2>Rosca Inversa Punho Dumbell</h2>
+        </td>
+        <td>
+          <img
+            src="http://www.ferrosports.com.br/img_external/antebraco/image411.gif"
+            class="container."
+            alt="Imagem 4"
+            height="50%" width="50%"
+          />
+          <h2>Rosca Punho Cross Over</h2>
+        </td>
+      </tr>
+    </table>
   </center>
 {% endblock %}
