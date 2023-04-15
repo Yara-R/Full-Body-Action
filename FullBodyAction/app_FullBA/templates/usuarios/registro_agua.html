@@ -1,7 +1,8 @@
 {% extends 'usuarios/base.html' %} 
 {% block conteudo %}
 <!-- precisa colocar o url de alguma das paginas e tirar essa url login-->
-<form action="{% url 'login' %}" method="post">
+<!--<form action="{% url 'login' %}" method="post">-->
+  {% csrf_token %}
   <div style="text-align: center" class="container">
     <h1>Consumo de Água</h1>
     Data<input type="date" name="Data" class="form-control-sm" />
