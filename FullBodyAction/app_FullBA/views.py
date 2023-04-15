@@ -8,12 +8,12 @@ from django.shortcuts import render, redirect
 def home(request):
     if request.method =="POST":
         return render(request,'usuarios/treino.html')
-    if request.method =="GET":
+    elif request.method =="GET":
         return render(request,'usuarios/treino.html')
     else:
         return HttpResponse('Deu zica')
 
-def musculo(request):
+def treino(request):
     if request.method == 'POST':
         grupo_muscular = request.POST.get('grupo_muscular')
         if grupo_muscular == 'biceps':
