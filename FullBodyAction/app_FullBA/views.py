@@ -45,7 +45,9 @@ def cadastro(request):
     # Salvar os dados da tela para o banco de dados
     if request.method == "GET":
         return render(request,'usuarios/cadastro.html')
-                      
+    if request.method == "POST":
+        return render(request,'usuarios/cadastro.html')
+                         
     novo_usuario = Usuario()
     novo_usuario.nome = request.POST.get('nome')
     novo_usuario.email = request.POST.get('email')
