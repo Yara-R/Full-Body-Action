@@ -84,3 +84,9 @@ def registro(request):
         return render(request,'usuarios/registro_agua.html')
     else:
         return HttpResponse('Algo deu errado :/')
+
+def medidas(request):
+    if request.method == "GET":
+        return render(request,'usuarios/medidas.html')
+    else:
+        return HttpResponse('Ocorreu um erro')
