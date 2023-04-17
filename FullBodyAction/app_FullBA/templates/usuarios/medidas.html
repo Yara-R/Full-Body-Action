@@ -1,0 +1,18 @@
+{% extends 'usuarios/base.html' %} 
+{% block conteudo %}
+  {% csrf_token %}
+<form action="{% url 'treino' %}" method ="post">
+    {% csrf_token %}
+    <div style="text-align: center"class="container">
+      <h1>Cadastro de medidas</h1>
+      Peito: <br /><input Peito="Peito" class="form-control-sm" type="text"><br />
+      Pescoço:<br /><input Pescoço="Pescoço" class="form-control-sm" type="text"><br />
+      Braço: <br /><input Braço="Braço" class="form-control-sm" type="text"><br />
+      Antebraço:<br /> <input Antebraço:="Antebraço" class="form-control-sm" type="text"><br />
+      Quadril:<br /> <input Quadril="Quadril" class="form-control-sm" type="text"><br />
+      Panturrilha: <br /><input Panturrilha="Panturrilha:" class="form-control-sm" type="text"><br />
+      Cintura:<br /> <input Cintura:="Cintura" class="form-control-sm" type="text"><br />
+      <input type='submit' class="form-control-sm"></input> 
+    </div> 
+</form>
+{% endblock %}

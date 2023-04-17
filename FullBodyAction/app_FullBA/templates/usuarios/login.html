@@ -14,7 +14,15 @@
       <input type='submit' class="form-control-sm"></input> 
       <br />
       <br />
-      <button style="text-decoration: none; color: #000000" href="{% url 'cadastro' %}">Cadastre-se!</button>
     </div>
-</form>
+  </form>
+
+  <form action="{% url 'cadastro' %}" method ="post">
+    {% csrf_token %}
+    <div style="text-align: center"class="container">
+      <br />
+      <br />
+      <button type='submit'>Cadastre-se!</button>
+    </div>
+  </form>
 {% endblock %}
