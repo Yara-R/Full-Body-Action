@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-=$%nm&rz+(tmm7lq)!)yjwc-t=g0@1fs2vf*nurs_&1u_y5sg+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["fullbodyaction.us-east-2.elasticbeanstalk.com"]
 
 
 # Application definition
@@ -64,7 +64,7 @@ WSGI_APPLICATION = 'FullBodyAction.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'utils.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
