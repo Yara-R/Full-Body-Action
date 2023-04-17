@@ -10,3 +10,6 @@ https://www.figma.com/proto/9ho1qYNJdCXaTmFY9Cy4cm/prot%C3%B3tipo-lo-fi?node-id=
 
 Diagrama de atividades:
 https://miro.com/app/board/uXjVMV1OSnU=/?share_link_id=150213117850
+
+Relato da programação em par:
+https://docs.google.com/document/d/1bXAW3zhHbaJRgQiZff8ijzfC_pMpjU__CcvfigkVOi0/edit?usp=sharing
