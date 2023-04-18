@@ -2,6 +2,9 @@ Esse projeto foi criado por Geymison Erick dos Santos, João Pedro Araujo, Kaiqu
 
 Full Body Action é uma aplicação web para saúde e fitness onde o usuário escolhe o músculo para ver fatos e exercícios sobre ele, registrar o consumo de água e registrar as medidas corporais, tudo de forma gameficada.
 
+Site da aplicação:
+http://fullbodyaction.us-east-2.elasticbeanstalk.com
+
 Jira do projeto:
 https://fullbodyaction.atlassian.net/jira/software/projects/FULLBA/boards/2
 
