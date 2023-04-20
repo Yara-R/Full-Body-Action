@@ -1,9 +1,11 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
 from .models import Usuario
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
+
 
 def home(request):
     if request.method =="POST":
@@ -50,12 +52,9 @@ def cadastro(request):
     else:
         return HttpResponse('Erro')
     
-def usuarios(request):                        
-    novo_usuario = Usuario()
-    novo_usuario.nome = request.POST.get('nome')
-    novo_usuario.email = request.POST.get('email')
-    novo_usuario.senha = request.POST.get('password')
-    novo_usuario.save()
+def usuario(request):
+    user = User.objects.create_user(request.POST['nome'], request.POST['email'], request.POST['password'])
+    user.save()
 
 def login(request):
     if request.method == "POST":
@@ -67,11 +66,11 @@ def login(request):
     login_usuario.email_login = request.POST.get('email')
     login_usuario.senha_login = request.POST.get('senha')
 
-    user = authenticate(email=login_usuario.email_login, senha=login_usuario.senha_login)
+    user = authenticate(request, email=login_usuario.email_login, senha=login_usuario.senha_login)
 
-    if user:
+    if user is not None:
         login(request, user)
-        return render(request, 'usuarios/treino.html')
+        return render(request, 'usuarios/perfil.html')
     else:
         return HttpResponse('Email ou senha errados')
 
@@ -92,5 +91,13 @@ def registro(request):
 def medidas(request):
     if request.method == "GET":
         return render(request,'usuarios/medidas.html')
+    else:
+        return HttpResponse('Ocorreu um erro')
+
+#@login_required 
+def perfil(request):
+    if request.method == "GET":
+        info = Usuario.objects.all()
+        return render(request,'usuarios/perfil.html', {'nome' : info})
     else:
         return HttpResponse('Ocorreu um erro')

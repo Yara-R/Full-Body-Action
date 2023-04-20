@@ -9,6 +9,7 @@ urlpatterns = [
     path('musculo/', views.smash, name='smash'),
     path('consumo_agua/', views.registro, name='registro_agua'),
     path('medidas/', views.medidas, name= 'medidas'),
-    path('usuarios/', views.usuarios, name= 'usuarios'),
+    path('usuarios/', views.usuario, name= 'usuarios'),
+    path('perfil/', views.perfil, name='perfil'),
     
 ]
