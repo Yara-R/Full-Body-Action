@@ -11,3 +11,4 @@ class Registro_Agua(models.Model):
     hora = models.DateTimeField()
     quantidade_ml = models.IntegerField()
 
+
