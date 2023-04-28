@@ -56,6 +56,18 @@
       color:#fff;
       padding: 0.5rem;
   }
+
+  body .navbar{
+    background-color: #000;
+    padding: 14px 16px;
+    color: white;
+    text-align: center;
+    
+  }
+  body .navbar a{
+    padding: 14px 16px;
+  }
+
   .header .navbar a{
       font-size: 1.1rem;
       margin: 0 1rem;
