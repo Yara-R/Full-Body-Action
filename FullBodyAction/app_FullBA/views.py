@@ -14,6 +14,14 @@ def home(request):
         return render(request,'usuarios/home.html')
     else:
         return HttpResponse('Deu zica')
+    
+def treino(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/treino.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/treino.html')
+    else:
+        return HttpResponse('Deu zica')
 
 def smash(request):
     musculo = request.GET.get('musculo')
@@ -75,8 +83,7 @@ def login(request):
         return HttpResponse('Email ou senha errados')
 
   
-def exercicios(request):
-    return render(request,'treino.html')
+
 
 #@login_required 
 def registro(request):

@@ -1,12 +1,14 @@
-{% load static %}
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+<!--{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>FullBodyAction </title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <!-- Link do icone -->
-    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css%22/%3E
+    <! Link do icone -->
+   <!-- <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css%22/%3E
 </head>
 <body>
     <header class="header">
@@ -23,7 +25,7 @@
             <a href="#">Login</a>
             <a href="#" class="btn">Cadastro</a>
         </nav>
-    </header>
+    </header> -->
 
     <section class="home">
         <div class="max-width">
@@ -39,3 +41,4 @@
     </section>
 </body>
 </html>
+{% endblock %}

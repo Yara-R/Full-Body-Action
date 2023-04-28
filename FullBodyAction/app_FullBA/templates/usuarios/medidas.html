@@ -1,9 +1,11 @@
 {% extends 'usuarios/base.html' %} 
 {% block conteudo %}
   {% csrf_token %}
-<form action="{% url 'treino' %}" method ="post">
+<form action="{% url 'home' %}" method ="post">
     {% csrf_token %}
-    <div style="text-align: center"class="container">
+    <div style="text-align: center; text-decoration: none; color: #ffffff" class="container">
+      <br />
+      <br />
       <h1>Cadastro de medidas</h1>
       Peito: <br /><input Peito="Peito" class="form-control-sm" type="text"><br />
       Pescoço:<br /><input Pescoço="Pescoço" class="form-control-sm" type="text"><br />
