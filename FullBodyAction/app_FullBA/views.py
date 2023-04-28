@@ -9,9 +9,9 @@ from django.shortcuts import redirect
 
 def home(request):
     if request.method =="POST":
-        return render(request,'usuarios/treino.html')
+        return render(request,'usuarios/home.html')
     elif request.method =="GET":
-        return render(request,'usuarios/treino.html')
+        return render(request,'usuarios/home.html')
     else:
         return HttpResponse('Deu zica')
 
