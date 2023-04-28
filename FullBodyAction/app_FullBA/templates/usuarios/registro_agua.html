@@ -3,13 +3,19 @@
 <!-- precisa colocar o url de alguma das paginas e tirar essa url login-->
 <!--<form action="{% url 'login' %}" method="post">-->
   {% csrf_token %}
-  <div style="text-align: center" class="container">
+  <div style="text-align: center ; text-decoration: none; color: #ffffff" class="container">
+    <br />
+    <br />
     <h1>Consumo de Água</h1>
-    Data<input type="date" name="Data" class="form-control-sm" />
     <br />
-    Hora<input type="time" name="Hora" class="form-control-sm" />
     <br />
-    Quantidade<select name="Quantidade" size="1">
+    Data<br /><input type="date" name="Data" class="form-control-sm" />
+    <br />
+    <br />
+    Hora<br /><input type="time" name="Hora" class="form-control-sm" />
+    <br />
+    <br />
+    Quantidade<br /><select name="Quantidade" size="1">
       <option>---</option>
       <option>50ml</option>
       <option>100ml</option>
@@ -21,6 +27,7 @@
       <option>750ml</option>
       <option>1000ml</option>
     </select>
+    <br />
     <br />
     <input type="submit" value="Enviar" class="form-control-sm" />
   </div>

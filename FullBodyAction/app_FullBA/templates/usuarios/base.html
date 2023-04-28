@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Full Body Action </title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/academias.css' %}">
     <!-- Link do icone -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
@@ -15,13 +16,57 @@
 <body>
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
-      <span class="navbar-brand mb-0 "><a style="text-decoration: none; color: #ffffff" href="{% url 'home' %}">Full Body Action</a></span>
-      <span class="navbar-brand mb-0 "><a style="text-decoration: none; color: #ffffff" href="{% url 'treino' %}"><i class="fa-regular fa-weight-scale"></i>Treino</a></span>
-      <span class="navbar-brand mb-0 "><a style="text-decoration: none; color: #ffffff"><i class="fa-solid fa-map-pin"></i>Academias</a></span>
-      <span class="navbar-brand mb-0 "><a style="text-decoration: none; color: #ffffff" href="{% url 'registro_agua' %}"><i class="fa-solid fa-glass-water"></i>Agua</a></span>
-      <span class="navbar-brand mb-0 "><a style="text-decoration: none; color: #ffffff" href="{% url 'medidas' %}"><i class="fa-solid fa-weight-scale"></i>Medidas</a></span>
-      <span class="navbar-brand mb-0 "><a style="text-decoration: none; color: #ffffff" href="{% url 'login' %}"><i class="fa-regular fa-right-to-bracket" style="color: #ffffff;"></i>Login</a></span>
-      <span class="navbar-brand mb-0 "><a style="text-decoration: none; color: #ffffff" href="{% url 'perfil' %}"><i class="fa fa-fw fa-user"></i>Perfil</a></span>
+      <span class="navbar-brand mb-0 ">
+        <a style="text-decoration: none; color: #ffffff" href="{% url 'home' %}">
+          Full Body Action
+        </a>
+      </span>
+      <span class="navbar-brand mb-0 navicon">
+        <a style="text-decoration: none; color: #ffffff" href="{% url 'treino' %}">
+          <i class="fa-regular fa-weight-scale"></i>
+          <span class="navicon-text">
+            Treino
+          </span>
+        </a>
+      </span>
+      <span class="navbar-brand mb-0 ">
+        <a style="text-decoration: none; color: #ffffff" href="{% url 'academias' %}">
+          <i class="fa-solid fa-map-pin"></i>
+          <span class="navicon-text">
+            Academias
+          </span>
+        </a>
+      </span>
+      <span class="navbar-brand mb-0 ">
+        <a style="text-decoration: none; color: #ffffff" href="{% url 'registro_agua' %}">
+          <i class="fa-solid fa-glass-water"></i>
+          Agua
+        </a>
+      </span>
+      <span class="navbar-brand mb-0 ">
+        <a style="text-decoration: none; color: #ffffff" href="{% url 'medidas' %}">
+          <i class="fa-solid fa-weight-scale"></i>
+          <span class="navicon-text">
+            Medidas
+          </span>
+        </a>
+      </span>
+      <span class="navbar-brand mb-0 ">
+        <a style="text-decoration: none; color: #ffffff" href="{% url 'login' %}">
+          <i class="fa-regular fa-right-to-bracket" style="color: #ffffff;"></i>
+          <span class="navicon-text">
+            Login
+          </span>
+        </a>
+      </span>
+      <span class="navbar-brand mb-0 ">
+        <a style="text-decoration: none; color: #ffffff" href="{% url 'perfil' %}">
+          <i class="fa fa-fw fa-user"></i>
+          <span class="navicon-text">
+            Perfil
+          </span>
+        </a>
+      </span>
     </div>
   </nav>    
 

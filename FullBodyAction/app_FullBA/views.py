@@ -108,3 +108,11 @@ def perfil(request):
         return render(request,'usuarios/perfil.html', {'nome' : info})
     else:
         return HttpResponse('Ocorreu um erro')
+    
+def academias(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/academias.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/academias.html')
+    else:
+        return HttpResponse('Deu zica')

@@ -2,7 +2,9 @@
 {% block conteudo %}
 <form action="{% url 'login' %}" method ="post">
     {% csrf_token %}
-    <div style="text-align: center ; text-decoration: none; color: #ffffff"class="container">
+    <div style="text-align: center ; text-decoration: none; color: #ffffff" class="container">
+      <br />
+      <br />
       <h1>Cadastro</h1>
       <br />
       Nome <input name="nome" class="form-control-sm" type="text">
