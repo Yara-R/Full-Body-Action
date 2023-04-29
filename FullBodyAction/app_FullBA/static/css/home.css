@@ -64,7 +64,7 @@ nav {
   width: 150px;
   padding: 12px;
   color:#fff;
-  background:darkblue;
+  background: #dba021;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
@@ -104,8 +104,8 @@ nav {
 
   .header .btn{
       background: transparent;
-      color:darkblue;
-      border: 1px solid darkblue;
+      color: #dba021;
+      border: 1px solid #dba021;
       font-size: 12px;
       padding: 8px;
   
