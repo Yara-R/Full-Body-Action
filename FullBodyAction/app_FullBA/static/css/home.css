@@ -5,14 +5,59 @@
     padding: 0;
     outline: none;
     border: none;
-    text-decoration: none;
     box-sizing: border-box;
     transition: 0.2s linear;
     text-transform:  capitalize;
     font-family: "Poppins", sans-serif;
   }
-  body{
-      background: #282A35;
+
+body {
+    background: #29292E;
+}
+
+nav {
+    background: #121214;
+    padding: 0rem 0rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+  }
+  
+  div.logo a {
+    font-weight: bold;
+    color: #dba021;
+    border-right: 1px solid #DDD;
+    padding-right: 1rem;
+  }
+  
+  .menu {
+    padding: 1rem 1rem;
+  }
+  
+  .menu-item {
+    padding: 1rem 1rem;
+    color: #dba021;
+  }
+  
+  .menu-item:hover {
+    background: #dba021;
+    color: #121214;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    transition: background 0.2s color 0.2s;
+  }
+  
+  .menu-item span {
+    padding-left: 0.125rem;
   }
   .btn{
   margin-top: 2rem;
@@ -57,26 +102,6 @@
       padding: 0.5rem;
   }
 
-  body .navbar{
-    background-color: #000;
-    padding: 14px 16px;
-    color: white;
-    text-align: center;
-    
-  }
-  body .navbar a{
-    padding: 14px 16px;
-  }
-
-  .header .navbar a{
-      font-size: 1.1rem;
-      margin: 0 1rem;
-      color:#fff;
-  
-  }
-  .header .navbar a:hover{
-      color:#baa6cf;
-  }
   .header .btn{
       background: transparent;
       color:darkblue;
