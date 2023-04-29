@@ -15,60 +15,54 @@
 </head>
 <body>
   <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 ">
-        <a style="text-decoration: none; color: #FFC406" href="{% url 'home' %}">
-          Full Body Action
-        </a>
-      </span>
-      <span class="navbar-brand mb-0 navicon">
-        <a style="text-decoration: none; color: #FFC406" href="{% url 'treino' %}">
-          <i class="fa-regular fa-weight-scale"></i>
-          <span class="navicon-text">
-            Treino
-          </span>
-        </a>
-      </span>
-      <span class="navbar-brand mb-0 ">
-        <a style="text-decoration: none; color: #FFC406" href="{% url 'academias' %}">
-          <i class="fa-solid fa-map-pin"></i>
-          <span class="navicon-text">
-            Academias
-          </span>
-        </a>
-      </span>
-      <span class="navbar-brand mb-0 ">
-        <a style="text-decoration: none; color: #FFC406" href="{% url 'registro_agua' %}">
-          <i class="fa-solid fa-glass-water"></i>
-          Agua
-        </a>
-      </span>
-      <span class="navbar-brand mb-0 ">
-        <a style="text-decoration: none; color: #FFC406" href="{% url 'medidas' %}">
-          <i class="fa-solid fa-weight-scale"></i>
-          <span class="navicon-text">
-            Medidas
-          </span>
-        </a>
-      </span>
-      <span class="navbar-brand mb-0 ">
-        <a style="text-decoration: none; color: #FFC406" href="{% url 'login' %}">
-          <i class="fa-regular fa-right-to-bracket" style="color: #FFC406;"></i>
-          <span class="navicon-text">
-            Login
-          </span>
-        </a>
-      </span>
-      <span class="navbar-brand mb-0 ">
-        <a style="text-decoration: none; color: #FFC406" href="{% url 'perfil' %}">
-          <i class="fa fa-fw fa-user"></i>
-          <span class="navicon-text">
-            Perfil
-          </span>
-        </a>
-      </span>
+    <div class="logo">
+      <a href="{% url 'home' %}">
+        Full Body Action
+      </a>
     </div>
-  </nav>    
+
+    <div class="menu">
+      <a class="menu-item" href="{% url 'treino' %}">
+        <i class="fa-regular fa-weight-scale"></i>
+        <span>
+          Treino
+        </span>
+      </a>
+      <a class="menu-item" href="{% url 'academias' %}">
+        <i class="fa-solid fa-map-pin"></i>
+        <span>
+          Academias
+        </span>
+      </a>
+      <a class="menu-item" href="{% url 'registro_agua' %}">
+        <i class="fa-solid fa-glass-water"></i>
+        <span>
+          Agua
+        </span>
+      </a>
+      <a class="menu-item" href="{% url 'medidas' %}">
+        <i class="fa-solid fa-weight-scale"></i>
+        <span>
+          Medidas
+        </span>
+      </a>
+    </div>
+
+    <div class="menu">
+      <a class="menu-item" href="{% url 'login' %}">
+        <i class="fa-regular fa-right-to-bracket"></i>
+        <span>
+          Login
+        </span>
+      </a>
+      <a class="menu-item" href="{% url 'perfil' %}">
+        <i class="fa fa-fw fa-user"></i>
+        <span>
+          Perfil
+        </span>
+      </a>
+    </div>
+  </nav>   
 
 
     {% block conteudo %}
