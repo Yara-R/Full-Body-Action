@@ -12,7 +12,7 @@ def home(request):
     if request.method =="POST":
         return render(request,'usuarios/home.html')
     elif request.method =="GET":
-        return render(request,'usuarios/home.html')
+        return render(request,'usuarios/home.html ')
     else:
         return HttpResponse('Deu zica')
     
