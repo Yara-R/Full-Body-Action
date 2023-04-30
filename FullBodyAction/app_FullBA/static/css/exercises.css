@@ -11,7 +11,7 @@
     max-width: 1300px;
     padding: 2rem;
     margin: auto;
-    color:#fff;
+    color: #f9c34e;
 }
 
 .description h2 {
@@ -19,7 +19,6 @@
     font-style: normal;
 }
 .description h3{
-    padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 1.5rem;
     text-transform: none;

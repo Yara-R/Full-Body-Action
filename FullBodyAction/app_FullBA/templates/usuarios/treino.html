@@ -1,48 +1,35 @@
 {% extends 'usuarios/base.html' %} 
 {% block conteudo %}
 {% csrf_token %}
-  <head style="text-align: center ; text-decoration: none; color: #ffffff">
-    <title>Treinos</title>
-  </head>
-  <body style="text-align: center ; text-decoration: none; color: #ffffff">
-    <br />
-    <br />
-    <br />
-    <center>
-      <h1>Escolha o Grupo Muscular</h1>
-    </center>
-    <br />
-    <br />
-    <br />
-    <center>
-      <img
-        src="https://as2.ftcdn.net/v2/jpg/00/31/95/23/1000_F_31952349_Th8EGE3Hn99NUkl43mzZYkBLx3GWso4C.jpg"
-        class="container."
-        alt="..."
-        height="60%" width="60%"
-      />
-    </center>
-    <br />
-    <br />
-    <br />
-    <form method="get" action="{% url 'smash' %}">
-      <select style="width: 150px; height: 25px;" class="form-select" aria-label="Default select example" name="musculo">
-        <option selected>Escolha o músculo</option>
-        <option value="biceps">Bícpes</option>
-        <option value="costas">Costas</option>
-        <option value="peito">Peito</option>
-        <option value="quadriceps">Quadriceps</option>
-        <option value="triceps">Tríceps</option>
-        <option value="panturrilhas">Panturrilhas</option>
-        <option value="gluteos">Glutéos</option>
-        <option value="posterior">Posterior</option>
-        <option value="antebraco">Antebraço</option>
-      </select>
-      <button style="width: 50px; height: 25px;" type="submit">Ir</button>
-      <br />
-      <br />
-      <br />
 
-  </body>
-</form>
+<h1>Escolha o Grupo Muscular</h1>
+<center>
+  <img
+    src="https://as2.ftcdn.net/v2/jpg/00/31/95/23/1000_F_31952349_Th8EGE3Hn99NUkl43mzZYkBLx3GWso4C.jpg"
+    class="container."
+    alt="..."
+    height="60%" width="60%"
+  />
+</center>
+
+<div class="choice">
+  <form method="get" action="{% url 'smash' %}">
+
+    <select style="width: 500px; height: 40px; border-radius: 4px;" aria-label="Default select example" name="musculo">
+      <option selected>Escolha o músculo</option>
+      <option value="biceps">Bícpes</option>
+      <option value="costas">Costas</option>
+      <option value="peito">Peito</option>
+      <option value="quadriceps">Quadriceps</option>
+      <option value="triceps">Tríceps</option>
+      <option value="panturrilhas">Panturrilhas</option>
+      <option value="gluteos">Glúteos</option>
+      <option value="posterior">Isquotibiais</option>
+      <option value="antebraco">Antebraço</option>
+    </select>
+
+      <button style="width: 70px; height: 40px; border-radius: 4px;" type="submit">Ir</button>
+
+  </form>
+</div>
 {% endblock %}

@@ -1,0 +1,22 @@
+h1{
+    text-align: center;
+    text-decoration: none;
+    color: #dba021;
+    padding:  0.5rem 1rem;
+}
+
+h2{
+    text-decoration: none;
+    color: #dba021;
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+}
+
+td {
+    text-align: center;
+    display: table-cell;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
