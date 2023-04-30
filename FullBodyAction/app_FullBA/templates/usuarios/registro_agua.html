@@ -1,21 +1,29 @@
 {% extends 'usuarios/base.html' %} 
 {% block conteudo %}
-<!-- precisa colocar o url de alguma das paginas e tirar essa url login-->
-<!--<form action="{% url 'login' %}" method="post">-->
-  {% csrf_token %}
-  <div style="text-align: center ; text-decoration: none; color: #ffffff" class="container">
-    <br />
-    <br />
-    <h1>Consumo de Água</h1>
-    <br />
-    <br />
-    Data<br /><input type="date" name="Data" class="form-control-sm" />
-    <br />
-    <br />
-    Hora<br /><input type="time" name="Hora" class="form-control-sm" />
-    <br />
-    <br />
-    Quantidade<br /><select name="Quantidade" size="1">
+{% csrf_token %}
+ 
+<h1>Consumo de Água</h1>
+
+<div class="submissions">
+  <span class="form-input">
+    <h5>
+      Data
+    </h5>
+    <input type="date" name="Data" class="form-control-sm" />
+  </span>
+
+  <span class="form-input">
+    <h5>
+      Hora
+    </h5>
+    <input type="time" name="Hora" class="form-control-sm" />
+  </span>
+
+  <span class="form-input">
+    <h5>
+      Quantidade
+    </h5>
+    <select name="Quantidade" size="1">
       <option>---</option>
       <option>50ml</option>
       <option>100ml</option>
@@ -27,9 +35,9 @@
       <option>750ml</option>
       <option>1000ml</option>
     </select>
-    <br />
-    <br />
-    <input type="submit" value="Enviar" class="form-control-sm" />
-  </div>
-</form>
+  </span>
+
+    <input style="" type="submit" value="Enviar" class="form-control-sm submit-button"  />
+</div>
+
 {% endblock %}

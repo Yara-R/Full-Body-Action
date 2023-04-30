@@ -1,20 +1,53 @@
 {% extends 'usuarios/base.html' %} 
 {% block conteudo %}
-  {% csrf_token %}
+{% csrf_token %}
 <form action="{% url 'home' %}" method ="post">
-    {% csrf_token %}
-    <div style="text-align: center; text-decoration: none; color: #ffffff" class="container">
-      <br />
-      <br />
-      <h1>Cadastro de medidas</h1>
-      Peito: <br /><input Peito="Peito" class="form-control-sm" type="text"><br />
-      Pescoço:<br /><input Pescoço="Pescoço" class="form-control-sm" type="text"><br />
-      Braço: <br /><input Braço="Braço" class="form-control-sm" type="text"><br />
-      Antebraço:<br /> <input Antebraço:="Antebraço" class="form-control-sm" type="text"><br />
-      Quadril:<br /> <input Quadril="Quadril" class="form-control-sm" type="text"><br />
-      Panturrilha: <br /><input Panturrilha="Panturrilha:" class="form-control-sm" type="text"><br />
-      Cintura:<br /> <input Cintura:="Cintura" class="form-control-sm" type="text"><br />
-      <input type='submit' class="form-control-sm"></input> 
-    </div> 
+
+<h1>Cadastro de medidas</h1>
+
+<div class="submissions">
+  <span class="form-input">
+      <input placeholder="Peito" Peito="Peito" class="form-control-sm" type="text">
+  </span>
+
+  <span class="form-input">
+      <input placeholder="Costas" Costas="Costas" class="form-control-sm" type="text">
+  </span>
+
+  <span class="form-input">
+      <input placeholder="Ombros" Ombros="Ombros" class="form-control-sm" type="text">
+  </span>
+
+  <span class="form-input">
+      <input placeholder="Pescoço" Pescoco="Pescoço" class="form-control-sm" type="text">
+  </span>    
+    
+  <span class="form-input">
+      <input placeholder="Braço" Braco="Braço" class="form-control-sm" type="text">
+  </span>  
+
+  <span class="form-input">
+      <input placeholder="Antebraço" Antebraco:="Antebraço" class="form-control-sm" type="text">
+  </span>  
+
+  <span class="form-input">
+      <input placeholder="Quadril" Quadril="Quadril" class="form-control-sm" type="text">
+  </span>
+
+  <span class="form-input">
+      <input placeholder="Cintura" Cintura:="Cintura" class="form-control-sm" type="text">
+  </span>    
+    
+  <span class="form-input">
+      <input placeholder="Coxa" Coxa:="Coxa" class="form-control-sm" type="text">
+  </span>  
+
+  <span class="form-input">
+      <input placeholder="Panturrilha" Panturrilha="Panturrilha:" class="form-control-sm" type="text">
+  </span>  
+
+
+  <input type='submit' class="form-control-sm submit-button"></input> 
+</div>
 </form>
 {% endblock %}

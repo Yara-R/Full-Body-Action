@@ -1,12 +1,12 @@
-.exercise{
-    text-align: center;
-    text-decoration: none;
-    color: #dba021;
-    padding: 0.5rem 1rem;
-}
 .exercise img{
+    display: flex;
+    align-content: center;
+    justify-content: center;
     padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
+
 .description{
     max-width: 1300px;
     padding: 2rem;
@@ -14,11 +14,11 @@
     color: #f9c34e;
 }
 
-.description h2 {
+.description h3 {
     padding-top: 1rem;
     font-style: normal;
 }
-.description h3{
+.description h4{
     padding-bottom: 1rem;
     padding-left: 1.5rem;
     text-transform: none;

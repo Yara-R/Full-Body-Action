@@ -2,20 +2,16 @@
 {% block conteudo %}
 <form action="{% url 'home' %}" method ="post">
     {% csrf_token %}
-    <div style="text-align: center; text-decoration: none; color: #ffffff"class="container">
-      <br />
-      <br />
-      <h1>LogIn</h1>
-      <br />
-      E-mail <input name="email" class="form-control-sm" type="text">
-      <br />
-      <br />
-      Senha <input name="password" class="form-control-sm" type="text">
-      <br />
-      <br />
-      <input type='submit' class="form-control-sm"></input> 
-      <br />
-      <br />
+    <h1>LogIn</h1>
+    <div class="submissions">
+      <span class="form-input">
+        <input placeholder="E-mail" name="email" class="form-control-sm" type="text">
+      </span>
+      <span class="form-input">
+        <input placeholder="Senha" name="password" class="form-control-sm" type="text">
+      </span>
+      <input type='submit' class="form-control-sm submit-button"></input> 
+      
     </div>
   </form>
 
@@ -24,7 +20,7 @@
     <div style="text-align: center"class="container">
       <br />
       <br />
-      <button type='submit'>Cadastre-se!</button>
+      <button type='submit' class="submit-button">Cadastre-se!</button>
     </div>
   </form>
 {% endblock %}
