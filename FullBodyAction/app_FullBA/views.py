@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 
+# Página Home
 
 def home(request):
     if request.method =="POST":
@@ -15,6 +16,10 @@ def home(request):
     else:
         return HttpResponse('Deu zica')
     
+#-------------------------------------------------------------------------------------------------------------
+
+# Escolha do músculo (História 1)
+
 def treino(request):
     if request.method =="POST":
         return render(request, 'usuarios/treino.html')
@@ -26,7 +31,7 @@ def treino(request):
 def smash(request):
     musculo = request.GET.get('musculo')
     if musculo == 'biceps':
-        return render(request, f'usuarios/biceps.html')
+        return render(request, 'usuarios/biceps.html')
     elif musculo =='costas':
         return render(request, f'usuarios/costas.html')
     elif musculo == 'peito':
@@ -43,13 +48,17 @@ def smash(request):
         return render(request, f'usuarios/posterior.html')
     elif musculo == 'antebraco':
         return render(request, f'usuarios/antebraco.html')
-        
+    
 def redirect_to_muscle(request):
     muscle = request.GET.get('muscle', '')
     if muscle:
         return redirect(f'/muscle/{muscle}/')
     else:
         return redirect('index')
+    
+#-------------------------------------------------------------------------------------------------------------
+
+# Cadastro, login dos usuários
 
 def cadastro(request):
     # Salvar os dados da tela para o banco de dados
@@ -82,8 +91,9 @@ def login(request):
     else:
         return HttpResponse('Email ou senha errados')
 
-  
+ #------------------------------------------------------------------------------------------------------------- 
 
+# Resgistro de água (História 2)
 
 #@login_required 
 def registro(request):
@@ -93,6 +103,10 @@ def registro(request):
         return render(request,'usuarios/registro_agua.html')
     else:
         return HttpResponse('Algo deu errado :/')
+    
+#-------------------------------------------------------------------------------------------------------------
+
+# Resgistro de Medidas corporais (História 3)
 
 #@login_required 
 def medidas(request):
@@ -101,6 +115,10 @@ def medidas(request):
     else:
         return HttpResponse('Ocorreu um erro')
 
+#-------------------------------------------------------------------------------------------------------------
+
+# Pagina do usuario (História 6) 
+   
 #@login_required 
 def perfil(request):
     if request.method == "GET":
@@ -108,11 +126,26 @@ def perfil(request):
         return render(request,'usuarios/perfil.html', {'nome' : info})
     else:
         return HttpResponse('Ocorreu um erro')
-    
+
+#-------------------------------------------------------------------------------------------------------------    
+
+# Mapa das academias proximas (História 7)    
 def academias(request):
     if request.method =="POST":
         return render(request, 'usuarios/academias.html')
     elif request.method =="GET":
         return render(request, 'usuarios/academias.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+#-------------------------------------------------------------------------------------------------------------
+
+#Exercícios de Bíceps:
+
+def rosca_com_barra(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/rosca_com_barra.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/rosca_com_barra.html')
     else:
         return HttpResponse('Deu zica')

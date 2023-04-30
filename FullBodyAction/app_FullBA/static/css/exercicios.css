@@ -1,0 +1,26 @@
+.exercise{
+    text-align: center;
+    text-decoration: none;
+    color: #dba021;
+    padding: 0.5rem 1rem;
+}
+.exercise img{
+    padding-top: 1rem;
+}
+.description{
+    max-width: 1300px;
+    padding: 2rem;
+    margin: auto;
+    color:#fff;
+}
+
+.description h2 {
+    padding-top: 1rem;
+    font-style: normal;
+}
+.description h3{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    text-transform: none;
+}

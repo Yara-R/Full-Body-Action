@@ -12,5 +12,7 @@ urlpatterns = [
     path('medidas/', views.medidas, name= 'medidas'),
     path('usuarios/', views.usuario, name= 'usuarios'),
     path('perfil/', views.perfil, name='perfil'),
-    path('academias/', views.academias, name='academias')
+    path('academias/', views.academias, name='academias'),
+
+    path('rosca_com_barra/', views.rosca_com_barra, name='rosca_com_barra'),
 ]
