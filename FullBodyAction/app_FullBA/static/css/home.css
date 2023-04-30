@@ -59,20 +59,19 @@ nav {
   .menu-item span {
     padding-left: 0.125rem;
   }
+
   .btn{
-  margin-top: 2rem;
-  width: 150px;
-  padding: 12px;
-  color:#fff;
-  background: #dba021;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  
+    padding: 1rem 1rem;
+    background: transparent;
+    border: 1px solid #dba021;
+    color:#dba021;
+    border-radius: 6px;
+    cursor: pointer;
   }
   .btn:hover{
-      background:#baa6cf;
-      transition: 0.4s;
+    background: #dba021;
+    color: black;
+    transition: background 0.2s color 0.2s;
   }
   .header{
       position: fixed;
