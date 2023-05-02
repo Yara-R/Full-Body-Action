@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
+from django.http import JsonResponse
 
 # Página Home
 
@@ -150,6 +151,12 @@ def rosca_com_barra(request):
     else:
         return HttpResponse('Deu zica')
 
+def rate_view(request):
+  rating_value = request.POST.get('rating')
+  # faça algo com o valor da avaliação, como salvar no banco de dados
+  return JsonResponse({'success': True})
+
+
 def rosca_martelo(request):
     if request.method == "POST":
         return render(request, 'usuarios/rosca_martelo.html')
@@ -165,5 +172,4 @@ def rosca_unilateral(request):
         return render(request, 'usuarios/rosca_unilateral.html')
     else:
         return HttpResponse('Deu zica')
-    
     

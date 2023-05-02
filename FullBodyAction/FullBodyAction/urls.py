@@ -1,6 +1,7 @@
 from django.urls import path
 from app_FullBA import views
 from django.urls import path
+from app_FullBA.views import rate_view
 
 urlpatterns = [
     path('', views.home, name = 'home'),
@@ -15,7 +16,10 @@ urlpatterns = [
     path('academias/', views.academias, name='academias'),
 
     path('rosca_com_barra/', views.rosca_com_barra, name='rosca_com_barra'),
+
+    path('rate/', rate_view, name='rate'),
+
     path('rosca_martelo/', views.rosca_martelo, name= 'rosca_martelo'),
     path('rosca_unilateral/', views.rosca_unilateral, name ='rosca_unilateral'),
-    
+
 ]

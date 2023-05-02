@@ -39,4 +39,32 @@
     </h4>
 </div>
 
+<!-- arquivo HTML -->
+<div class="rating">
+
+    <input class="rating__input" type="radio" name="rating" id="star1" value="1">
+    <label class="rating__label" for="star1"></label>
+
+    <input class="rating__input" type="radio" name="rating" id="star2" value="2">
+    <label class="rating__label" for="star2"></label>
+
+    <input class="rating__input" type="radio" name="rating" id="star3" value="3">
+    <label class="rating__label" for="star3"></label>
+
+    <input class="rating__input" type="radio" name="rating" id="star4" value="4">
+    <label class="rating__label" for="star4"></label>
+
+    <input class="rating__input" type="radio" name="rating" id="star5" value="5">
+    <label class="rating__label" for="star5"></label>
+  </div>
+
+<script>
+    const ratingInputs = document.querySelectorAll('.rating__input');
+    ratingInputs.forEach(input => {
+    input.addEventListener('change', event => {
+        const ratingValue = event.target.value;
+    });
+});
+</script>
+
 {% endblock %}
