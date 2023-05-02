@@ -23,3 +23,42 @@
     padding-left: 1.5rem;
     text-transform: none;
 }
+
+/* arquivo CSS */
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .rating__input {
+    display: none;
+  }
+  
+  .rating__label {
+    display: inline-block;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0 0.25em;
+    cursor: pointer;
+  }
+  
+  .rating__label:before {
+    content: '\2605';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #ddd;
+    transition: color 0.2s;
+  }
+  
+  .rating__label:hover:before,
+  .rating__input:checked ~ .rating__label:before {
+    color: #f90;
+  }
+  
