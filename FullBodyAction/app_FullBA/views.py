@@ -150,8 +150,29 @@ def rosca_com_barra(request):
         return render(request, 'usuarios/rosca_com_barra.html')
     else:
         return HttpResponse('Deu zica')
+<<<<<<< HEAD
     
 def rate_view(request):
   rating_value = request.POST.get('rating')
   # faça algo com o valor da avaliação, como salvar no banco de dados
   return JsonResponse({'success': True})
+=======
+
+def rosca_martelo(request):
+    if request.method == "POST":
+        return render(request, 'usuarios/rosca_martelo.html')
+    elif request.method == "GET":
+        return render(request, 'usuarios/rosca_martelo.html')
+    else:
+        return HttpResponse('Deu zica')
+
+def rosca_unilateral(request):
+    if request.method == "POST":
+        return render(request, 'usuarios/rosca_unilateral.html')
+    elif request.method == "GET":
+        return render(request, 'usuarios/rosca_unilateral.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+    
+>>>>>>> 5046e5824422448295a17b2c31018265b3eda88f
