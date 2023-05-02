@@ -11,4 +11,17 @@ class Registro_Agua(models.Model):
     hora = models.DateTimeField()
     quantidade_ml = models.IntegerField()
 
+class medidas(models.Model):
+    peito = models.DecimalField(max_digits = 3, decimal_places = 2)
+    costas = models.DecimalField(max_digits = 3, decimal_places = 2)
+    ombro = models.DecimalField(max_digits = 3, decimal_places = 2)
+    pescoco = models.DecimalField(max_digits = 3, decimal_places = 2)
+    braco = models.DecimalField(max_digits = 3, decimal_places = 2)
+    antebraco = models.DecimalField(max_digits = 3, decimal_places = 2)
+    quadril = models.DecimalField(max_digits = 3, decimal_places = 2)
+    cintura = models.DecimalField(max_digits = 3, decimal_places = 2)
+    coxa = models.DecimalField(max_digits = 3, decimal_places = 2)
+    panturrilha = models.DecimalField(max_digits = 3, decimal_places = 2)
+    
+
 
