@@ -19,6 +19,7 @@
     font-style: normal;
 }
 .description h4{
+    padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 1.5rem;
     text-transform: none;
@@ -30,7 +31,7 @@
     justify-content: center;
     align-items: center;
     margin: 0;
-    padding: 0;
+    padding: 1rem;
   }
   
   .rating__input {
@@ -40,8 +41,8 @@
   .rating__label {
     display: inline-block;
     position: relative;
-    width: 1.5em;
-    height: 1.5em;
+    width: 2em;
+    height: 2em;
     margin: 0 0.25em;
     cursor: pointer;
   }
