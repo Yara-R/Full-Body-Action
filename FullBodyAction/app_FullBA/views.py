@@ -157,4 +157,13 @@ def rosca_martelo(request):
         return render(request, 'usuarios/rosca_martelo.html')
     else:
         return HttpResponse('Deu zica')
+
+def rosca_unilateral(request):
+    if request.method == "POST":
+        return render(request, 'usuarios/rosca_unilateral.html')
+    elif request.method == "GET":
+        return render(request, 'usuarios/rosca_unilateral.html')
+    else:
+        return HttpResponse('Deu zica')
+    
     
