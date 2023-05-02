@@ -149,3 +149,12 @@ def rosca_com_barra(request):
         return render(request, 'usuarios/rosca_com_barra.html')
     else:
         return HttpResponse('Deu zica')
+
+def rosca_martelo(request):
+    if request.method == "POST":
+        return render(request, 'usuarios/rosca_martelo.html')
+    elif request.method == "GET":
+        return render(request, 'usuarios/rosca_martelo.html')
+    else:
+        return HttpResponse('Deu zica')
+    
