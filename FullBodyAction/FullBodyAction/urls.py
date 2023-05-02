@@ -16,5 +16,6 @@ urlpatterns = [
 
     path('rosca_com_barra/', views.rosca_com_barra, name='rosca_com_barra'),
     path('rosca_martelo/', views.rosca_martelo, name= 'rosca_martelo'),
-
+    path('rosca_unilateral/', views.rosca_unilateral, name ='rosca_unilateral'),
+    
 ]
