@@ -5,19 +5,22 @@ from app_FullBA.views import rate_view
 
 urlpatterns = [
     path('', views.home, name = 'home'),
-    path('treino/', views.treino, name='treino'),
+    
     path('cadastro/', views.cadastro, name='cadastro'),
     path('login/', views.login, name='login'),
-    path('musculo/', views.smash, name='smash'),
+    # path('login/', user_login, name='login'),
+    path('perfil/', views.perfil, name='perfil'),
+
     path('consumo_agua/', views.registro, name='registro_agua'),
     path('medidas/', views.medidas, name= 'medidas'),
-    path('usuarios/', views.usuario, name= 'usuarios'),
-    path('perfil/', views.perfil, name='perfil'),
+    
     path('academias/', views.academias, name='academias'),
 
+    path('treino/', views.treino, name='treino'),
+    path('musculo/', views.smash, name='smash'),
     path('rosca_com_barra/', views.rosca_com_barra, name='rosca_com_barra'),
-
     path('rate/', rate_view, name='rate'),
+    path('post/<int:pk>/comment/', views.add_comment, name='add_comment'),
 
     path('rosca_martelo/', views.rosca_martelo, name= 'rosca_martelo'),
     path('rosca_unilateral/', views.rosca_unilateral, name ='rosca_unilateral'),

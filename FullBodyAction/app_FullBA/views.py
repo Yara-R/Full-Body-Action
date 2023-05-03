@@ -1,7 +1,9 @@
-from django.http.response import HttpResponse
-from django.shortcuts import render
-from .models import Usuario
+from django.http.response import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
+from .models import Comment
+from .forms import CommentForm, UserForm, LoginForm
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
@@ -60,37 +62,36 @@ def redirect_to_muscle(request):
 #-------------------------------------------------------------------------------------------------------------
 
 # Cadastro, login dos usuários
-
-def cadastro(request):
-    # Salvar os dados da tela para o banco de dados
-    if request.method == "GET":
-        return render(request,'usuarios/cadastro.html')
-    if request.method == "POST":
-        return render(request,'usuarios/cadastro.html')
-    else:
-        return HttpResponse('Erro')
     
-def usuario(request):
-    user = User.objects.create_user(request.POST['nome'], request.POST['email'], request.POST['password'])
-    user.save()
-
 def login(request):
-    if request.method == "POST":
-        return render(request,'usuarios/login.html')
-    if request.method == "GET":
-        return render(request,'usuarios/login.html')
-    
-    login_usuario = Usuario()
-    login_usuario.email_login = request.POST.get('email')
-    login_usuario.senha_login = request.POST.get('senha')
-
-    user = authenticate(request, email=login_usuario.email_login, senha=login_usuario.senha_login)
-
-    if user is not None:
-        login(request, user)
-        return render(request, 'usuarios/perfil.html')
+    if request.method == 'POST' or request.method == 'GET':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            user = authenticate(request, email=email, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('home')
+            else:
+                form.add_error(None, 'Invalid email or password')
+            
     else:
-        return HttpResponse('Email ou senha errados')
+        form = LoginForm()
+    return render(request, 'usuarios/login.html', {'form': form})
+    
+def cadastro(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'usuarios/login.html')
+    else:
+        form = UserForm()
+
+    return render(request, 'usuarios/cadastro.html', {'form': form})
+
+
 
  #------------------------------------------------------------------------------------------------------------- 
 
@@ -155,6 +156,20 @@ def rate_view(request):
   rating_value = request.POST.get('rating')
   # faça algo com o valor da avaliação, como salvar no banco de dados
   return JsonResponse({'success': True})
+
+@login_required
+def add_comment(request):
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.author = request.user
+            comment.save()
+            return redirect('post_detail', pk=comment.post.pk)
+    else:
+        form = CommentForm()
+    return render(request, 'usuarios/rosca_com_barra.html', {'form': form})
+
 
 
 def rosca_martelo(request):

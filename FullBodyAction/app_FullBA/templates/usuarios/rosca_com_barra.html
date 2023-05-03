@@ -67,4 +67,34 @@
 });
 </script>
 
+<form method="post">
+    {% csrf_token %}
+    <div class="form-comments">
+        <label for="name">Nome:</label>
+        <input type="text" name="name" class="form-control" required>
+    </div>
+
+    <div class="form-comments">
+        <label for="email">Email:</label>
+        <input type="email" name="email" class="form-control" required>
+    </div>
+
+    <div class="form-comments">
+        <label for="message">Mensagem:</label>
+        <textarea name="message" class="form-control" required></textarea>
+    </div>
+
+    <button type="submit" class="btn">Enviar</button>
+</form>
+
+{% for comment in post.comments.all %}
+    <div class="comment">
+        <p><strong>{{ comment.author }}</strong> em {{ comment.created_at }}</p>
+        <p>{{ comment.content }}</p>
+    </div>
+{% empty %}
+    <p>Nenhum comentário ainda.</p>
+{% endfor %}
+
+
 {% endblock %}

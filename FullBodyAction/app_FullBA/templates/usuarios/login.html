@@ -3,16 +3,10 @@
 <form action="{% url 'home' %}" method ="post">
     {% csrf_token %}
     <h1>LogIn</h1>
-    <div class="submissions">
-      <span class="form-input">
-        <input placeholder="E-mail" name="email" class="form-control-sm" type="text">
-      </span>
-      <span class="form-input">
-        <input placeholder="Senha" name="password" class="form-control-sm" type="text">
-      </span>
-      <input type='submit' class="form-control-sm submit-button"></input> 
-      
-    </div>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Login</button>
   </form>
 
   <form action="{% url 'cadastro' %}" method ="post">
