@@ -15,7 +15,7 @@ class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
     created_at = models.DateTimeField(auto_now=True)
     content = models.TextField()
-=======
+
 class medidas(models.Model):
     peito = models.DecimalField(max_digits = 3, decimal_places = 2)
     costas = models.DecimalField(max_digits = 3, decimal_places = 2)
@@ -28,6 +28,3 @@ class medidas(models.Model):
     coxa = models.DecimalField(max_digits = 3, decimal_places = 2)
     panturrilha = models.DecimalField(max_digits = 3, decimal_places = 2)
     
-
-
->>>>>>> 61ee1629ed98326afa72ea86794093e171438b86
