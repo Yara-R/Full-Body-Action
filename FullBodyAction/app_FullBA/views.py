@@ -165,5 +165,12 @@ def rosca_unilateral(request):
         return render(request, 'usuarios/rosca_unilateral.html')
     else:
         return HttpResponse('Deu zica')
-    
+
+def rosca_apoiada(request):
+    if request.method =='POST':
+        return render(request, 'usuarios/rosca_apoiada.html')
+    elif request.method =='GET':
+        return render(request, 'usuario/rosca_apoiada.html')
+    else:
+        return HttpResponse('Deu zica')
     
