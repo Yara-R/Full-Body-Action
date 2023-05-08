@@ -10,13 +10,12 @@ class Registro_Agua(models.Model):
     hora = models.DateTimeField()
     quantidade_ml = models.IntegerField()
 
-<<<<<<< HEAD
 class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
     created_at = models.DateTimeField(auto_now=True)
     content = models.TextField()
 
-class medidas(models.Model):
+class Medidas(models.Model):
     peito = models.DecimalField(max_digits = 3, decimal_places = 2)
     costas = models.DecimalField(max_digits = 3, decimal_places = 2)
     ombro = models.DecimalField(max_digits = 3, decimal_places = 2)

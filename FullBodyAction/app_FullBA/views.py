@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from django.http import JsonResponse
+from .models import Medidas
 
 # Página Home
 
@@ -112,10 +113,29 @@ def registro(request):
 
 #@login_required 
 def medidas(request):
+    # form = medidasForm()
+    # return render(request, 'usuarios/medidas.html', {
+    #     'form': form
+    # })
     if request.method == "GET":
         return render(request,'usuarios/medidas.html')
     else:
-        return HttpResponse('Ocorreu um erro')
+        peito = request.POST["peito"]
+        costas = request.POST["costas"]
+        ombros = request.POST["ombros"]
+        pescoco = request.POST["pescoco"]
+        braco = request.POST["braco"]
+        antebraco = request.POST["antebraco"]
+        quadril = request.POST["quadril"]
+        cintura = request.POST["cintura"]
+        coxa = request.POST["coxa"]
+        panturrilha = request.POST["panturrilha"]
+
+        medidas = Medidas(peito=peito, costas=costas, ombros=ombros, pescoco=pescoco, 
+                          braco=braco, antebraco=antebraco, quadril =quadril,
+                          cintura=cintura, coxa=coxa, panturrilha=panturrilha)
+        medidas.save()
+
 
 #-------------------------------------------------------------------------------------------------------------
 
