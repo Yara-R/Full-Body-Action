@@ -8,6 +8,9 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from django.http import JsonResponse
+from .models import Medidas
+from django.views.decorators.csrf import csrf_protect
+
 
 # Página Home
 
@@ -111,11 +114,31 @@ def registro(request):
 # Resgistro de Medidas corporais (História 3)
 
 #@login_required 
+@csrf_protect
 def medidas(request):
+    # form = medidasForm()
+    # return render(request, 'usuarios/medidas.html', {
+    #     'form': form
+    # })
     if request.method == "GET":
         return render(request,'usuarios/medidas.html')
     else:
-        return HttpResponse('Ocorreu um erro')
+        peito = request.POST["peito"]
+        costas = request.POST["costas"]
+        ombros = request.POST["ombros"]
+        pescoco = request.POST["pescoco"]
+        braco = request.POST["braco"]
+        antebraco = request.POST["antebraco"]
+        quadril = request.POST["quadril"]
+        cintura = request.POST["cintura"]
+        coxa = request.POST["coxa"]
+        panturrilha = request.POST["panturrilha"]
+
+        medidas = Medidas(peito=peito, costas=costas, ombros=ombros, pescoco=pescoco, 
+                          braco=braco, antebraco=antebraco, quadril =quadril,
+                          cintura=cintura, coxa=coxa, panturrilha=panturrilha)
+        medidas.save()
+
 
 #-------------------------------------------------------------------------------------------------------------
 
@@ -139,18 +162,6 @@ def academias(request):
         return render(request, 'usuarios/academias.html')
     else:
         return HttpResponse('Deu zica')
-    
-#-------------------------------------------------------------------------------------------------------------
-
-#Exercícios de Bíceps:
-
-def rosca_com_barra(request):
-    if request.method =="POST":
-        return render(request, 'usuarios/rosca_com_barra.html')
-    elif request.method =="GET":
-        return render(request, 'usuarios/rosca_com_barra.html')
-    else:
-        return HttpResponse('Deu zica')
 
 def rate_view(request):
   rating_value = request.POST.get('rating')
@@ -170,21 +181,148 @@ def add_comment(request):
         form = CommentForm()
     return render(request, 'usuarios/rosca_com_barra.html', {'form': form})
 
+#-------------------------------------------------------------------------------------------------------------
 
+#Exercícios de Bíceps:
 
-def rosca_martelo(request):
+def biceps_rosca_martelo(request):
     if request.method == "POST":
-        return render(request, 'usuarios/rosca_martelo.html')
+        return render(request, 'usuarios/biceps_rosca_martelo.html')
     elif request.method == "GET":
-        return render(request, 'usuarios/rosca_martelo.html')
+        return render(request, 'usuarios/biceps_rosca_martelo.html')
     else:
         return HttpResponse('Deu zica')
 
-def rosca_unilateral(request):
+def biceps_rosca_unilateral(request):
     if request.method == "POST":
-        return render(request, 'usuarios/rosca_unilateral.html')
+        return render(request, 'usuarios/biceps_rosca_unilateral.html')
     elif request.method == "GET":
-        return render(request, 'usuarios/rosca_unilateral.html')
+        return render(request, 'usuarios/biceps_rosca_unilateral.html')
     else:
         return HttpResponse('Deu zica')
     
+def biceps_rosca_apoiada(request):
+    if request.method == "POST":
+        return render(request, 'usuarios/biceps_rosca_apoiada.html')
+    elif request.method == "GET":
+        return render(request, 'usuarios/biceps_rosca_apoiada.html')
+    else:
+        return HttpResponse('Deu zica')
+
+def biceps_rosca_com_barra(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/biceps_rosca_com_barra.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/biceps_rosca_com_barra.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+
+#-------------------------------------------------------------------------------------------------------------
+
+#Exericicos de Peito
+
+def peito_supino(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/peito_supino.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/peito_supino.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def peito_crucifixo(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/peito_crucifixo.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/peito_crucifixo.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def peito_cross_over(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/peito_cross_over.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/peito_cross_over.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def peito_peck_deck(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/peito_peck_deck.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/peito_peck_deck.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+
+#-------------------------------------------------------------------------------------------------------------
+
+#Exericicos de Costas
+
+def costa_pull_down_aberto(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/costa_pull_down_aberto.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/costa_pull_down_aberto.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def costa_pull_down_supinado(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/costa_pull_down_supinado.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/costa_pull_down_supinado.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def costa_low_row(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/costa_low_row.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/costa_low_row.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def costa_remada_curva(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/costa_remada_curva.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/costa_remada_curva.html')
+    else:
+        return HttpResponse('Deu zica')
+
+#-------------------------------------------------------------------------------------------------------------
+
+#Exericicos de Posterior
+
+def posterior_agachamento(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/posterior_agachamento.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/posterior_agachamento.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def posterior_leg_curl(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/posterior_leg_curl.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/posterior_leg_curl.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def posterior_agachamento_smith(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/posterior_agachamento_smith.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/posterior_agachamento_smith.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def posterior_hack_squat(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/posterior_hack_squat.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/posterior_hack_squat.html')
+    else:
+        return HttpResponse('Deu zica')

@@ -1,4 +1,4 @@
-Esse projeto foi criado por Geymison Erick dos Santos, João Pedro Araujo, Kaique Gabriel Henrique Alves, Mariana Correia, Yara Rodrigues Inácio.
+Esse projeto foi criado por Geymison Erick dos Santos, João Pedro Araujo, Kaique Gabriel Henrique Alves, Mariana Correia, Matheus Xavier Gama Tenório Canel, Yara Rodrigues Inácio.
 
 Full Body Action é uma aplicação web para saúde e fitness onde o usuário escolhe o músculo para ver fatos e exercícios sobre ele, registrar o consumo de água e registrar as medidas corporais, tudo de forma gameficada.
 

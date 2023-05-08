@@ -18,11 +18,37 @@ urlpatterns = [
 
     path('treino/', views.treino, name='treino'),
     path('musculo/', views.smash, name='smash'),
-    path('rosca_com_barra/', views.rosca_com_barra, name='rosca_com_barra'),
     path('rate/', rate_view, name='rate'),
     path('post/<int:pk>/comment/', views.add_comment, name='add_comment'),
 
-    path('rosca_martelo/', views.rosca_martelo, name= 'rosca_martelo'),
-    path('rosca_unilateral/', views.rosca_unilateral, name ='rosca_unilateral'),
+
+    #Exercicios Biceps---
+    path('biceps_rosca_com_barra/', views.biceps_rosca_com_barra, name='biceps_rosca_com_barra'),
+    path('biceps_rosca_martelo/', views.biceps_rosca_martelo, name= 'biceps_rosca_martelo'),
+    path('biceps_rosca_unilateral/', views.biceps_rosca_unilateral, name ='biceps_rosca_unilateral'),
+    path('biceps_rosca_apoiada/', views.biceps_rosca_apoiada, name ='biceps_rosca_apoiada'),
+
+    #---Exercicios Peito---
+    path('peito_supino/', views.peito_supino, name='peito_supino'),
+    path('peito_crucifixo/', views.peito_crucifixo, name='peito_crucifixo'),
+    path('peito_cross_over/', views.peito_cross_over, name='peito_cross_over'),
+    path('peito_peck_deck/', views.peito_peck_deck, name='peito_peck_deck'),
+
+    #---Exercícios Costa---
+    path('costa_pull_down_aberto/', views.costa_pull_down_aberto, name='costa_pull_down_aberto'),
+    path('costa_pull_down_supinado/', views.costa_pull_down_supinado, name='costa_pull_down_supinado'),
+    path('costa_low_row/', views.costa_low_row, name='costa_low_row'),
+    path('costa_remada_curva/', views.costa_remada_curva, name='costa_remada_curva'),
+
+
+    #---Exercícios Posterior---
+
+    path('posterior_agachamento/', views.posterior_agachamento, name='posterior_agachamento'),
+    path('posterior_leg_curl/', views.posterior_leg_curl, name='posterior_leg_curl'),
+    path('posterior_agachamento_smith/', views.posterior_agachamento_smith, name='posterior_agachamento_smith'),
+    path('posterior_hack_squat/', views.posterior_hack_squat, name='posterior_hack_squat'),
+
+
+
 
 ]

@@ -1,7 +1,8 @@
 {% extends 'usuarios/base.html' %} 
 {% block conteudo %}
-{% csrf_token %}
+
 <form action="{% url 'home' %}" method ="post">
+    {% csrf_token %}
 
 <h1>Cadastro de medidas</h1>
 
@@ -19,15 +20,15 @@
   </span>
 
   <span class="form-input">
-      <input placeholder="Pescoço" name="pescoço" class="form-control-sm" type="text">
+      <input placeholder="Pescoço" name="pescoco" class="form-control-sm" type="text">
   </span>    
     
   <span class="form-input">
-      <input placeholder="Braço" name="braço" class="form-control-sm" type="text">
+      <input placeholder="Braço" name="braco" class="form-control-sm" type="text">
   </span>  
 
   <span class="form-input">
-      <input placeholder="Antebraço" name="antebraço" class="form-control-sm" type="text">
+      <input placeholder="Antebraço" name="antebraco" class="form-control-sm" type="text">
   </span>  
 
   <span class="form-input">
