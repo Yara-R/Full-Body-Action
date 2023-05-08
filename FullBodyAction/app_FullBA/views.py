@@ -291,3 +291,38 @@ def costa_remada_curva(request):
     else:
         return HttpResponse('Deu zica')
 
+#-------------------------------------------------------------------------------------------------------------
+
+#Exericicos de Posterior
+
+def posterior_agachamento(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/posterior_agachamento.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/posterior_agachamento.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def posterior_leg_curl(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/posterior_leg_curl.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/posterior_leg_curl.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def posterior_agachamento_smith(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/posterior_agachamento_smith.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/posterior_agachamento_smith.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def posterior_hack_squat(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/posterior_hack_squat.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/posterior_hack_squat.html')
+    else:
+        return HttpResponse('Deu zica')

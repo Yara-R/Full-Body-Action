@@ -41,5 +41,14 @@ urlpatterns = [
     path('costa_remada_curva/', views.costa_remada_curva, name='costa_remada_curva'),
 
 
+    #---Exercícios Posterior---
+
+    path('posterior_agachamento/', views.posterior_agachamento, name='posterior_agachamento'),
+    path('posterior_leg_curl/', views.posterior_leg_curl, name='posterior_leg_curl'),
+    path('posterior_agachamento_smith/', views.posterior_agachamento_smith, name='posterior_agachamento_smith'),
+    path('posterior_hack_squat/', views.posterior_hack_squat, name='posterior_hack_squat'),
+
+
+
 
 ]
