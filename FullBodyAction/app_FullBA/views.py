@@ -162,18 +162,6 @@ def academias(request):
         return render(request, 'usuarios/academias.html')
     else:
         return HttpResponse('Deu zica')
-    
-#-------------------------------------------------------------------------------------------------------------
-
-#Exercícios de Bíceps:
-
-def rosca_com_barra(request):
-    if request.method =="POST":
-        return render(request, 'usuarios/rosca_com_barra.html')
-    elif request.method =="GET":
-        return render(request, 'usuarios/rosca_com_barra.html')
-    else:
-        return HttpResponse('Deu zica')
 
 def rate_view(request):
   rating_value = request.POST.get('rating')
@@ -193,7 +181,9 @@ def add_comment(request):
         form = CommentForm()
     return render(request, 'usuarios/rosca_com_barra.html', {'form': form})
 
+#-------------------------------------------------------------------------------------------------------------
 
+#Exercícios de Bíceps:
 
 def rosca_martelo(request):
     if request.method == "POST":
@@ -211,3 +201,18 @@ def rosca_unilateral(request):
     else:
         return HttpResponse('Deu zica')
     
+def rosca_apoiada(request):
+    if request.method == "POST":
+        return render(request, 'usuarios/rosca_apoiada.html')
+    elif request.method == "GET":
+        return render(request, 'usuarios/rosca_apoiada.html')
+    else:
+        return HttpResponse('Deu zica')
+
+def rosca_com_barra(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/rosca_com_barra.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/rosca_com_barra.html')
+    else:
+        return HttpResponse('Deu zica')

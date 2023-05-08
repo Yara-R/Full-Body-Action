@@ -18,11 +18,14 @@ urlpatterns = [
 
     path('treino/', views.treino, name='treino'),
     path('musculo/', views.smash, name='smash'),
-    path('rosca_com_barra/', views.rosca_com_barra, name='rosca_com_barra'),
     path('rate/', rate_view, name='rate'),
     path('post/<int:pk>/comment/', views.add_comment, name='add_comment'),
 
+
+    #Exercicios Biceps---
+    path('rosca_com_barra/', views.rosca_com_barra, name='rosca_com_barra'),
     path('rosca_martelo/', views.rosca_martelo, name= 'rosca_martelo'),
     path('rosca_unilateral/', views.rosca_unilateral, name ='rosca_unilateral'),
+    path('rosca_apoiada/', views.rosca_apoiada, name ='rosca_apoiada')
 
 ]
