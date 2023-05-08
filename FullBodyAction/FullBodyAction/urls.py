@@ -1,7 +1,6 @@
 from django.urls import path
 from app_FullBA import views
 from django.urls import path
-from app_FullBA.views import rate_view
 
 urlpatterns = [
     path('', views.home, name = 'home'),
@@ -18,8 +17,8 @@ urlpatterns = [
 
     path('treino/', views.treino, name='treino'),
     path('musculo/', views.smash, name='smash'),
-    path('rate/', rate_view, name='rate'),
-    path('post/<int:pk>/comment/', views.add_comment, name='add_comment'),
+
+   path('comentarios/', views.comentarios, name='comentarios'),
 
 
     #Exercicios Biceps---

@@ -10,14 +10,13 @@ class Registro_Agua(models.Model):
     hora = models.DateTimeField()
     quantidade_ml = models.IntegerField()
 
-<<<<<<< HEAD
+class Avaliacao(models.Model):
+    estrelas = models.IntegerField(default=0, blank=True, null=True)
+class Comentario(models.Model):
+    autor = models.CharField(max_length=100)
+    texto = models.TextField()
+    data = models.DateTimeField(auto_now_add=True)
 
-=======
->>>>>>> 235677735942686b2cee17a9aa67601554723892
-class Comment(models.Model):
-    author = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
-    created_at = models.DateTimeField(auto_now=True)
-    content = models.TextField()
 
 class Medidas(models.Model):
     peito = models.DecimalField(max_digits = 3, decimal_places = 2)
