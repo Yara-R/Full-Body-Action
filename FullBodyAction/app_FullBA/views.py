@@ -9,6 +9,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from django.http import JsonResponse
 from .models import Medidas
+from django.views.decorators.csrf import csrf_protect
+
 
 # Página Home
 
@@ -112,6 +114,7 @@ def registro(request):
 # Resgistro de Medidas corporais (História 3)
 
 #@login_required 
+@csrf_protect
 def medidas(request):
     # form = medidasForm()
     # return render(request, 'usuarios/medidas.html', {

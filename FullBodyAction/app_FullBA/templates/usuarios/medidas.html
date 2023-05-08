@@ -1,7 +1,8 @@
 {% extends 'usuarios/base.html' %} 
 {% block conteudo %}
-{% csrf_token %}
+
 <form action="{% url 'home' %}" method ="post">
+    {% csrf_token %}
 
 <h1>Cadastro de medidas</h1>
 

@@ -2,7 +2,7 @@ from django.forms import ModelForm
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import User, Comment
-from .models import medidas
+from .models import Medidas
 
 class UserForm(forms.ModelForm):
     class Meta:
@@ -20,7 +20,7 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('content',)
 
-class medidasForm(forms.Modelform):
-    class Meta:
-        model = medidas
-        fields = ('peito', 'costas', 'ombro', 'pescoco', 'braco', 'antebraco', 'quadril', 'cintura', 'coxa', 'panturrilha')
+# class medidasForm(forms.Modelform):
+#     class Meta:
+#         model = medidas
+#         fields = ('peito', 'costas', 'ombro', 'pescoco', 'braco', 'antebraco', 'quadril', 'cintura', 'coxa', 'panturrilha')
