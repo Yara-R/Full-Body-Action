@@ -34,6 +34,12 @@ urlpatterns = [
     path('peito_cross_over/', views.peito_cross_over, name='peito_cross_over'),
     path('peito_peck_deck/', views.peito_peck_deck, name='peito_peck_deck'),
 
+    #---Exercícios Costa---
+    path('costa_pull_down_aberto/', views.costa_pull_down_aberto, name='costa_pull_down_aberto'),
+    path('costa_pull_down_supinado/', views.costa_pull_down_supinado, name='costa_pull_down_supinado'),
+    path('costa_low_row/', views.costa_low_row, name='costa_low_row'),
+    path('costa_remada_curva/', views.costa_remada_curva, name='costa_remada_curva'),
+
 
 
 ]

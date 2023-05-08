@@ -254,3 +254,40 @@ def peito_peck_deck(request):
     else:
         return HttpResponse('Deu zica')
     
+
+#-------------------------------------------------------------------------------------------------------------
+
+#Exericicos de Costas
+
+def costa_pull_down_aberto(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/costa_pull_down_aberto.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/costa_pull_down_aberto.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def costa_pull_down_supinado(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/costa_pull_down_supinado.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/costa_pull_down_supinado.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def costa_low_row(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/costa_low_row.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/costa_low_row.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def costa_remada_curva(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/costa_remada_curva.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/costa_remada_curva.html')
+    else:
+        return HttpResponse('Deu zica')
+
