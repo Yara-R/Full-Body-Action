@@ -185,34 +185,72 @@ def add_comment(request):
 
 #Exercícios de Bíceps:
 
-def rosca_martelo(request):
+def biceps_rosca_martelo(request):
     if request.method == "POST":
-        return render(request, 'usuarios/rosca_martelo.html')
+        return render(request, 'usuarios/biceps_rosca_martelo.html')
     elif request.method == "GET":
-        return render(request, 'usuarios/rosca_martelo.html')
+        return render(request, 'usuarios/biceps_rosca_martelo.html')
     else:
         return HttpResponse('Deu zica')
 
-def rosca_unilateral(request):
+def biceps_rosca_unilateral(request):
     if request.method == "POST":
-        return render(request, 'usuarios/rosca_unilateral.html')
+        return render(request, 'usuarios/biceps_rosca_unilateral.html')
     elif request.method == "GET":
-        return render(request, 'usuarios/rosca_unilateral.html')
+        return render(request, 'usuarios/biceps_rosca_unilateral.html')
     else:
         return HttpResponse('Deu zica')
     
-def rosca_apoiada(request):
+def biceps_rosca_apoiada(request):
     if request.method == "POST":
-        return render(request, 'usuarios/rosca_apoiada.html')
+        return render(request, 'usuarios/biceps_rosca_apoiada.html')
     elif request.method == "GET":
-        return render(request, 'usuarios/rosca_apoiada.html')
+        return render(request, 'usuarios/biceps_rosca_apoiada.html')
     else:
         return HttpResponse('Deu zica')
 
-def rosca_com_barra(request):
+def biceps_rosca_com_barra(request):
     if request.method =="POST":
-        return render(request, 'usuarios/rosca_com_barra.html')
+        return render(request, 'usuarios/biceps_rosca_com_barra.html')
     elif request.method =="GET":
-        return render(request, 'usuarios/rosca_com_barra.html')
+        return render(request, 'usuarios/biceps_rosca_com_barra.html')
     else:
         return HttpResponse('Deu zica')
+    
+
+#-------------------------------------------------------------------------------------------------------------
+
+#Exericicos de Peito
+
+def peito_supino(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/peito_supino.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/peito_supino.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def peito_crucifixo(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/peito_crucifixo.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/peito_crucifixo.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def peito_cross_over(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/peito_cross_over.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/peito_cross_over.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def peito_peck_deck(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/peito_peck_deck.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/peito_peck_deck.html')
+    else:
+        return HttpResponse('Deu zica')
+    

@@ -23,9 +23,17 @@ urlpatterns = [
 
 
     #Exercicios Biceps---
-    path('rosca_com_barra/', views.rosca_com_barra, name='rosca_com_barra'),
-    path('rosca_martelo/', views.rosca_martelo, name= 'rosca_martelo'),
-    path('rosca_unilateral/', views.rosca_unilateral, name ='rosca_unilateral'),
-    path('rosca_apoiada/', views.rosca_apoiada, name ='rosca_apoiada')
+    path('biceps_rosca_com_barra/', views.biceps_rosca_com_barra, name='biceps_rosca_com_barra'),
+    path('biceps_rosca_martelo/', views.biceps_rosca_martelo, name= 'biceps_rosca_martelo'),
+    path('biceps_rosca_unilateral/', views.biceps_rosca_unilateral, name ='biceps_rosca_unilateral'),
+    path('biceps_rosca_apoiada/', views.biceps_rosca_apoiada, name ='biceps_rosca_apoiada'),
+
+    #---Exercicios Peito---
+    path('peito_supino/', views.peito_supino, name='peito_supino'),
+    path('peito_crucifixo/', views.peito_crucifixo, name='peito_crucifixo'),
+    path('peito_cross_over/', views.peito_cross_over, name='peito_cross_over'),
+    path('peito_peck_deck/', views.peito_peck_deck, name='peito_peck_deck'),
+
+
 
 ]
