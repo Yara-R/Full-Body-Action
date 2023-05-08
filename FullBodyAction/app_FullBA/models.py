@@ -10,7 +10,7 @@ class Registro_Agua(models.Model):
     hora = models.DateTimeField()
     quantidade_ml = models.IntegerField()
 
-<<<<<<< HEAD
+
 class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
     created_at = models.DateTimeField(auto_now=True)
