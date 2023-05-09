@@ -15,10 +15,10 @@ class LoginForm(forms.Form):
 class CommentForm(forms.ModelForm):
     content = forms.CharField(widget=forms.Textarea(attrs={'rows': 3}))
 
-    #class Meta:
-        #model = Comment
-        #fields = ('content',)
-
+    class Meta:
+        model = Comment
+        fields = ('content',)
+=======
 from django.forms import ModelForm
 from django import forms
 from django.contrib.auth.forms import UserCreationForm

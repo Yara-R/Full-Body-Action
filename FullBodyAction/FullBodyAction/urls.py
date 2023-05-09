@@ -15,6 +15,15 @@ urlpatterns = [
     
     path('academias/', views.academias, name='academias'),
 
+<<<<<<< HEAD
+
+    path('rosca_com_barra/', views.rosca_com_barra, name='rosca_com_barra'),
+    path('rosca_martelo/', views.rosca_martelo, name= 'rosca_martelo'),
+    path('rosca_unilateral/', views.rosca_unilateral, name ='rosca_unilateral'),
+    path('rosca_apoiada', views.rosca_apoiada, name = 'rosca_apoiada'),
+
+=======
+>>>>>>> eace2d8297e962c8f9595fb003b6814fd579cd6c
     path('treino/', views.treino, name='treino'),
     path('musculo/', views.smash, name='smash'),
 
