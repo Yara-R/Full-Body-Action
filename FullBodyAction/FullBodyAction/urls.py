@@ -48,7 +48,11 @@ urlpatterns = [
     path('posterior_agachamento_smith/', views.posterior_agachamento_smith, name='posterior_agachamento_smith'),
     path('posterior_hack_squat/', views.posterior_hack_squat, name='posterior_hack_squat'),
 
+    #---Exercícios Posterior---
 
-
+    path('triceps_banco/', views.triceps_banco, name='triceps_banco'),
+    path('triceps_cross_corda/', views.triceps_cross_corda, name='triceps_cross_corda'),
+    path('triceps_cross_unilateral/', views.triceps_cross_unilateral, name='triceps_cross_unilateral'),
+    path('triceps_frances/', views.triceps_frances, name='triceps_frances'),
 
 ]

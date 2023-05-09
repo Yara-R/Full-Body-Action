@@ -326,3 +326,39 @@ def posterior_hack_squat(request):
         return render(request, 'usuarios/posterior_hack_squat.html')
     else:
         return HttpResponse('Deu zica')
+
+#-------------------------------------------------------------------------------------------------------------
+
+#Exericicos de Posterior
+
+def triceps_banco(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/triceps_banco.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/triceps_banco.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def triceps_cross_corda(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/triceps_cross_corda.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/triceps_cross_corda.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def triceps_cross_unilateral(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/triceps_cross_unilateral.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/triceps_cross_unilateral.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def triceps_frances(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/triceps_frances.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/triceps_frances.html')
+    else:
+        return HttpResponse('Deu zica')
