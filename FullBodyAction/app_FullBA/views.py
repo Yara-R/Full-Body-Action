@@ -197,10 +197,7 @@ def biceps_rosca_unilateral(request):
         return render(request, 'usuarios/biceps_rosca_unilateral.html')
     else:
         return HttpResponse('Deu zica')
-<<<<<<< HEAD
 
-=======
->>>>>>> eace2d8297e962c8f9595fb003b6814fd579cd6c
 
 def rosca_apoiada(request):
     if request.method =='POST':
@@ -209,13 +206,8 @@ def rosca_apoiada(request):
         return render(request, 'usuario/rosca_apoiada.html')
     else:
         return HttpResponse('Deu zica')
-<<<<<<< HEAD
     
-
     
-=======
-      
->>>>>>> eace2d8297e962c8f9595fb003b6814fd579cd6c
 def biceps_rosca_apoiada(request):
     if request.method == "POST":
         return render(request, 'usuarios/biceps_rosca_apoiada.html')
