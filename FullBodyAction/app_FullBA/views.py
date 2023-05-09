@@ -1,7 +1,7 @@
 from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from .models import Comment
-from .forms import CommentForm, UserForm, LoginForm
+from .models import Comentario, Avaliacao
+from .forms import UserForm, LoginForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
@@ -10,6 +10,7 @@ from django.shortcuts import redirect
 from django.http import JsonResponse
 from .models import Medidas
 from django.views.decorators.csrf import csrf_protect
+
 
 
 # Página Home
@@ -163,23 +164,19 @@ def academias(request):
     else:
         return HttpResponse('Deu zica')
 
-def rate_view(request):
-  rating_value = request.POST.get('rating')
-  # faça algo com o valor da avaliação, como salvar no banco de dados
-  return JsonResponse({'success': True})
+def mostrar_avaliacoes(request):
+    avaliacoes = Avaliacao.objects.all()
+    media_avaliacoes = avaliacoes.aggregate(models.Avg('estrelas'))
+    return render(request, 'avaliacoes.html', {'avaliacoes': avaliacoes, 'media_avaliacoes': media_avaliacoes})
 
-@login_required
-def add_comment(request):
+def comentarios(request):
+    comentarios = Comentario.objects.all().order_by('-data')
     if request.method == 'POST':
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.author = request.user
-            comment.save()
-            return redirect('post_detail', pk=comment.post.pk)
-    else:
-        form = CommentForm()
-    return render(request, 'usuarios/rosca_com_barra.html', {'form': form})
+        autor = request.POST['autor']
+        texto = request.POST['texto']
+        Comentario.objects.create(autor=autor, texto=texto)
+        return redirect('comentarios')
+    return render(request, 'comentarios.html', {'comentarios': comentarios})
 
 #-------------------------------------------------------------------------------------------------------------
 

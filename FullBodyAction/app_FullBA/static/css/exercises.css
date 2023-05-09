@@ -41,8 +41,8 @@
   .rating__label {
     display: inline-block;
     position: relative;
-    width: 2em;
-    height: 2em;
+    width: 2rem;
+    height: 2rem;
     margin: 0 0.25em;
     cursor: pointer;
   }
@@ -66,7 +66,26 @@
 
   /* Comentarios */
 
-.form-comments {
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    padding: 0.5rem;
+    color: #dba021;
+  }
+
+  .form-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 0.5rem 0.5rem;
+    width: 25%;
+}
+
+/* .form-comments {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -96,4 +115,4 @@
     -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
          -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
             transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-}
+} */
