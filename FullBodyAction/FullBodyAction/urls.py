@@ -16,6 +16,7 @@ urlpatterns = [
     path('academias/', views.academias, name='academias'),
 
 
+
     path('rosca_com_barra/', views.biceps_rosca_com_barra, name='rosca_com_barra'),
     path('rosca_martelo/', views.biceps_rosca_martelo, name= 'rosca_martelo'),
     path('rosca_unilateral/', views.biceps_rosca_unilateral, name ='rosca_unilateral'),

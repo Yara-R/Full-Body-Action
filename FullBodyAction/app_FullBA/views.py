@@ -198,6 +198,7 @@ def biceps_rosca_unilateral(request):
     else:
         return HttpResponse('Deu zica')
 
+
 def rosca_apoiada(request):
     if request.method =='POST':
         return render(request, 'usuarios/rosca_apoiada.html')
@@ -205,7 +206,11 @@ def rosca_apoiada(request):
         return render(request, 'usuario/rosca_apoiada.html')
     else:
         return HttpResponse('Deu zica')
+    
+
+    
       
+
 def biceps_rosca_apoiada(request):
     if request.method == "POST":
         return render(request, 'usuarios/biceps_rosca_apoiada.html')
