@@ -359,3 +359,39 @@ def triceps_frances(request):
         return render(request, 'usuarios/triceps_frances.html')
     else:
         return HttpResponse('Deu zica')
+
+#-------------------------------------------------------------------------------------------------------------
+
+#Exericicos antebraço
+
+def antebraco_rosca_punho(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/antebraco_rosca_punho.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/antebraco_rosca_punho.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def antebraco_rosca_inversa_punho(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/antebraco_rosca_inversa_punho.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/antebraco_rosca_inversa_punho.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def antebraco_rosca_inversa_punho_dumbell(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/antebraco_rosca_inversa_punho_dumbell.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/antebraco_rosca_inversa_punho_dumbell.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def antebraco_rosca_punho_cross_over(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/antebraco_rosca_punho_cross_over.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/antebraco_rosca_punho_cross_over.html')
+    else:
+        return HttpResponse('Deu zica')
