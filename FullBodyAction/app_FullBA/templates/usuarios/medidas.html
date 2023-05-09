@@ -1,49 +1,50 @@
 {% extends 'usuarios/base.html' %} 
 {% block conteudo %}
-{% csrf_token %}
+
 <form action="{% url 'home' %}" method ="post">
+    {% csrf_token %}
 
 <h1>Cadastro de medidas</h1>
 
 <div class="submissions">
   <span class="form-input">
-      <input placeholder="Peito" Peito="Peito" class="form-control-sm" type="text">
+      <input placeholder="Peito" name="peito" class="form-control-sm" type="text">
   </span>
 
   <span class="form-input">
-      <input placeholder="Costas" Costas="Costas" class="form-control-sm" type="text">
+      <input placeholder="Costas" name="costas" class="form-control-sm" type="text">
   </span>
 
   <span class="form-input">
-      <input placeholder="Ombros" Ombros="Ombros" class="form-control-sm" type="text">
+      <input placeholder="Ombros" name="ombros" class="form-control-sm" type="text">
   </span>
 
   <span class="form-input">
-      <input placeholder="Pescoço" Pescoco="Pescoço" class="form-control-sm" type="text">
+      <input placeholder="Pescoço" name="pescoco" class="form-control-sm" type="text">
   </span>    
     
   <span class="form-input">
-      <input placeholder="Braço" Braco="Braço" class="form-control-sm" type="text">
+      <input placeholder="Braço" name="braco" class="form-control-sm" type="text">
   </span>  
 
   <span class="form-input">
-      <input placeholder="Antebraço" Antebraco:="Antebraço" class="form-control-sm" type="text">
+      <input placeholder="Antebraço" name="antebraco" class="form-control-sm" type="text">
   </span>  
 
   <span class="form-input">
-      <input placeholder="Quadril" Quadril="Quadril" class="form-control-sm" type="text">
+      <input placeholder="Quadril" name="quadril" class="form-control-sm" type="text">
   </span>
 
   <span class="form-input">
-      <input placeholder="Cintura" Cintura:="Cintura" class="form-control-sm" type="text">
+      <input placeholder="Cintura" name="cintura" class="form-control-sm" type="text">
   </span>    
     
   <span class="form-input">
-      <input placeholder="Coxa" Coxa:="Coxa" class="form-control-sm" type="text">
+      <input placeholder="Coxa" name="coxa" class="form-control-sm" type="text">
   </span>  
 
   <span class="form-input">
-      <input placeholder="Panturrilha" Panturrilha="Panturrilha:" class="form-control-sm" type="text">
+      <input placeholder="Panturrilha" name="panturrilha:" class="form-control-sm" type="text">
   </span>  
 
 
