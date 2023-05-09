@@ -15,12 +15,12 @@ urlpatterns = [
     
     path('academias/', views.academias, name='academias'),
 
-<<<<<<< HEAD
+
     path('rosca_com_barra/', views.rosca_com_barra, name='rosca_com_barra'),
     path('rosca_martelo/', views.rosca_martelo, name= 'rosca_martelo'),
     path('rosca_unilateral/', views.rosca_unilateral, name ='rosca_unilateral'),
     path('rosca_apoiada', views.rosca_apoiada, name = 'rosca_apoiada'),
-=======
+
     path('treino/', views.treino, name='treino'),
     path('musculo/', views.smash, name='smash'),
 
@@ -66,6 +66,5 @@ urlpatterns = [
     path('antebraco_rosca_inversa_punho/', views.antebraco_rosca_inversa_punho, name='antebraco_rosca_inversa_punho'),
     path('antebraco_rosca_inversa_punho_dumbell/', views.antebraco_rosca_inversa_punho_dumbell, name='antebraco_rosca_inversa_punho_dumbell'),
     path('antebraco_rosca_punho_cross_over/', views.antebraco_rosca_punho_cross_over, name='antebraco_rosca_punho_cross_over'),
->>>>>>> 10f92a28a132eb74401abdb62a79cb63d112083b
 
 ]
