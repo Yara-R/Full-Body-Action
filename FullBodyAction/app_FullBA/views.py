@@ -1,6 +1,6 @@
 from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from .models import Comentario, Avaliacao
+from .models import Comentario, Avaliacao, User
 from .forms import UserForm, LoginForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
@@ -148,7 +148,7 @@ def medidas(request):
 #@login_required 
 def perfil(request):
     if request.method == "GET":
-        info = Usuario.objects.all()
+        info = User.objects.all()
         return render(request,'usuarios/perfil.html', {'nome' : info})
     else:
         return HttpResponse('Ocorreu um erro')

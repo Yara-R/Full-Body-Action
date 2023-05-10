@@ -1,5 +1,5 @@
-from django.test import LiveServerTestCase
 from selenium import webdriver
+from django.test import LiveServerTestCase
 
 # Create your tests here.
 class TestHome(LiveServerTestCase):
@@ -8,6 +8,11 @@ class TestHome(LiveServerTestCase):
     def test_title(self):
         self.browser.get('http://127.0.0.1:8000/')
         assert "The install worked" in self.browser.title
+
+    def test_abrir_perfil(self):
+        self.browser.get("")
+        perfil = self.browser.find.element(By.CLASS_NAME, 'menu-item')
+        assert perfil.get_atribute('herf') == "{% url 'perfil' %}"
         
 '''
     def test_link(self):
