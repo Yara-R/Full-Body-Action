@@ -408,3 +408,113 @@ def antebraco_rosca_punho_cross_over(request):
         return render(request, 'usuarios/antebraco_rosca_punho_cross_over.html')
     else:
         return HttpResponse('Deu zica')
+    
+#-------------------------------------------------------------------------------------------------------------
+
+#Exercícios de Panturrilhas:
+
+
+def panturrilha_gemeos_elevacao(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/panturrilha_gemeos_elevacao.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/panturrilha_gemeos_elevacao.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def panturrilha_gemeos_sentado(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/panturrilha_gemeos_sentado.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/panturrilha_gemeos_sentado.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def panturrilha_gemeos_maquina_em_pe(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/panturrilha_gemeos_maquina_em_pe.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/panturrilha_gemeos_maquina_em_pe.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def panturrilha_flexora_vertical(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/panturrilha_flexora_vertical.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/panturrilha_flexora_vertical.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+#-------------------------------------------------------------------------------------------------------------
+
+#Exercícios de Quadriceps:
+
+def quadriceps_cadeira_extensora(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/quadriceps_cadeira_extensora.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/quadriceps_cadeira_extensora.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def quadriceps_cadeira_flexora(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/quadriceps_cadeira_flexora.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/quadriceps_cadeira_flexora.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def quadriceps_afundo(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/quadriceps_afundo.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/quadriceps_afundo.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def quadriceps_hack_squat(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/quadriceps_hack_squat.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/quadriceps_hack_squat.html')
+    else:
+        return HttpResponse('Deu zica')
+
+#-------------------------------------------------------------------------------------------------------------
+
+#Exercícios de Gluteos:
+
+
+def gluteo_crew(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/gluteo_crew.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/gluteo_crew.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def gluteo_caneleira(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/gluteo_caneleira.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/gluteo_caneleira.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def gluteo_caneleira_extensao(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/gluteo_caneleira_extensao.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/gluteo_caneleira_extensao.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def gluteo_maquina(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/gluteo_maquina.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/gluteo_maquina.html')
+    else:
+        return HttpResponse('Deu zica')
