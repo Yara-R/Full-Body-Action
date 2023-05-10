@@ -9,15 +9,53 @@ class TestHome(LiveServerTestCase):
         self.browser.get('http://127.0.0.1:8000/')
         assert "The install worked" in self.browser.title
 
-    def test_abrir_perfil(self):
-        self.browser.get("")
-        perfil = self.browser.find.element(By.CLASS_NAME, 'menu-item')
-        assert perfil.get_atribute('herf') == "{% url 'perfil' %}"
-        
-'''
-    def test_link(self):
-        self.browser.get('')
-        logo = self.browser.find.element(By.CLASS_NAME, 'logo')
-        assert logo.get_atribute('herf') == ""
-        
-'''
+
+class TestAcademia(LiveServerTestCase):
+        def test_gym(self):
+            driver = webdriver.Chrome()
+            driver.get('http://127.0.0.1:8000//academias/')
+            driver.quit()
+
+class TestEntrar(LiveServerTestCase):
+        def test_login(self):
+
+            driver = webdriver.Chrome()
+            driver.get('http://127.0.0.1:8000//login/')
+            
+            input_email = driver.find_element_by_name('email')
+            input_email.send_keys('usuario@teste.com')
+
+            input_senha = driver.find_element_by_name('senha')
+            input_senha.send_keys('123456')
+
+            enviar = driver.find_element_by_xpath('//button[@type="submit"]')
+            enviar.click()
+
+            self.assertIn('http://http://127.0.0.1:8000/', driver.current_url)
+
+            cadastrar = driver.find_element_by_xpath('//button[@type="submit"]')
+            cadastrar.click()
+            
+            driver.quit()
+
+        def test_cadastro(self):
+
+            driver = webdriver.Chrome()
+            driver.get('http://127.0.0.1:8000//login/')
+            
+            input_nome = driver.find_element_by_name('nome')
+            input_nome.send_keys('usuario')
+
+            input_email = driver.find_element_by_name('email')
+            input_email.send_keys('usuario@teste.com')
+
+            input_senha = driver.find_element_by_name('senha')
+            input_senha.send_keys('123456')
+
+            enviar = driver.find_element_by_xpath('//button[@type="submit"]')
+            enviar.click()
+
+            driver.quit()
+
+
+# Teste da história 10 (Yara)

@@ -68,7 +68,7 @@ def redirect_to_muscle(request):
 # Cadastro, login dos usuários
     
 def login(request):
-    if request.method == 'POST' or request.method == 'GET':
+    if request.method == 'GET':
         form = LoginForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
@@ -157,9 +157,9 @@ def perfil(request):
 
 # Mapa das academias proximas (História 7)    
 def academias(request):
-    if request.method =="POST":
-        return render(request, 'usuarios/academias.html')
-    elif request.method =="GET":
+    # if request.method =="POST":
+    #     return render(request, 'usuarios/academias.html')
+    if request.method =="GET":
         return render(request, 'usuarios/academias.html')
     else:
         return HttpResponse('Deu zica')
