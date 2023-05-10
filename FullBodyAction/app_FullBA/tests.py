@@ -25,7 +25,7 @@ class TestEntrar(LiveServerTestCase):
             input_email = driver.find_element_by_name('email')
             input_email.send_keys('usuario@teste.com')
 
-            input_senha = driver.find_element_by_name('senha')
+            input_senha = driver.find_element_by_name('password')
             input_senha.send_keys('123456')
 
             enviar = driver.find_element_by_xpath('//button[@type="submit"]')
@@ -43,13 +43,13 @@ class TestEntrar(LiveServerTestCase):
             driver = webdriver.Chrome()
             driver.get('http://127.0.0.1:8000//cadastro/')
             
-            input_nome = driver.find_element_by_name('nome')
+            input_nome = driver.find_element_by_name('name')
             input_nome.send_keys('usuario')
 
             input_email = driver.find_element_by_name('email')
             input_email.send_keys('usuario@teste.com')
 
-            input_senha = driver.find_element_by_name('senha')
+            input_senha = driver.find_element_by_name('password')
             input_senha.send_keys('123456')
 
             enviar = driver.find_element_by_xpath('//button[@type="submit"]')
