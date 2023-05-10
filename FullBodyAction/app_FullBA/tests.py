@@ -41,7 +41,7 @@ class TestEntrar(LiveServerTestCase):
         def test_cadastro(self):
 
             driver = webdriver.Chrome()
-            driver.get('http://127.0.0.1:8000//login/')
+            driver.get('http://127.0.0.1:8000//cadastro/')
             
             input_nome = driver.find_element_by_name('nome')
             input_nome.send_keys('usuario')
@@ -57,5 +57,19 @@ class TestEntrar(LiveServerTestCase):
 
             driver.quit()
 
+class TestAvaliar(LiveServerTestCase):
+        def test_comentario(self):
 
-# Teste da história 10 (Yara)
+            driver = webdriver.Chrome()
+            driver.get('http://127.0.0.1:8000//biceps_rosca_com_barra/')
+            
+            input_nome = driver.find_element_by_name('autor')
+            input_nome.send_keys('usuario')
+
+            input_comentario = driver.find_element_by_name('texto')
+            input_comentario.send_keys('abcd')
+
+            enviar = driver.find_element_by_xpath('//input[@type="submit"]')
+            enviar.click()
+            
+            driver.quit()
