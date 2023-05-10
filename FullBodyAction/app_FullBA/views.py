@@ -121,7 +121,7 @@ def medidas(request):
     # return render(request, 'usuarios/medidas.html', {
     #     'form': form
     # })
-    if request.method == "GET":
+    if request.method == "GET" or request.method == "POST":
         return render(request,'usuarios/medidas.html')
     else:
         peito = request.POST["peito"]
