@@ -61,4 +61,18 @@ urlpatterns = [
     path('antebraco_rosca_inversa_punho_dumbell/', views.antebraco_rosca_inversa_punho_dumbell, name='antebraco_rosca_inversa_punho_dumbell'),
     path('antebraco_rosca_punho_cross_over/', views.antebraco_rosca_punho_cross_over, name='antebraco_rosca_punho_cross_over'),
 
-]
+
+ #---Exercícios panturrilhas---
+
+    path('panturrilha_gemeos_elevacao/', views.panturrilha_gemeos_elevacao, name= 'panturrilha_gemeos_elevacao'),
+    path('panturrilha_gemeos_sentado/', views.panturrilha_gemeos_sentado, name = 'panturrilha_gemeos_sentado'),
+    path('panturrilha_gemeos_maquina_em_pe/', views.panturrilha_gemeos_maquina_em_pe, name = 'panturrilha_gemeos_maquina_em_pe'),
+    path('panturrilha_flexora_vertical/', views.panturrilha_flexora_vertical, name = 'panturrilha_flexora_vertical'),
+
+#---Exercícios quadriceps---
+
+    path('quadriceps_cadeira_extensora/', views.quadriceps_cadeira_extensora, name= 'quadriceps_cadeira_extensora'),
+    path('quadriceps_cadeira_flexora/', views.quadriceps_cadeira_flexora, name = 'quadriceps_cadeira_flexora'),
+    path('quadriceps_afundo/', views.quadriceps_afundo, name = 'quadriceps_afundo'),
+    path('quadriceps_hack_squat/', views.quadriceps_hack_squat, name = 'quadriceps_hack_squat'),
+] 
