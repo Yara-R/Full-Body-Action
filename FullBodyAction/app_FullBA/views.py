@@ -481,3 +481,40 @@ def quadriceps_hack_squat(request):
         return render(request, 'usuarios/quadriceps_hack_squat.html')
     else:
         return HttpResponse('Deu zica')
+
+#-------------------------------------------------------------------------------------------------------------
+
+#Exercícios de Gluteos:
+
+
+def gluteo_crew(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/gluteo_crew.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/gluteo_crew.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def gluteo_caneleira(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/gluteo_caneleira.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/gluteo_caneleira.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def gluteo_caneleira_extensao(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/gluteo_caneleira_extensao.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/gluteo_caneleira_extensao.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+def gluteo_maquina(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/gluteo_maquina.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/gluteo_maquina.html')
+    else:
+        return HttpResponse('Deu zica')

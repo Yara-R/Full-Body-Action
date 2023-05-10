@@ -82,4 +82,14 @@ urlpatterns = [
     path('quadriceps_cadeira_flexora/', views.quadriceps_cadeira_flexora, name = 'quadriceps_cadeira_flexora'),
     path('quadriceps_afundo/', views.quadriceps_afundo, name = 'quadriceps_afundo'),
     path('quadriceps_hack_squat/', views.quadriceps_hack_squat, name = 'quadriceps_hack_squat'),
+
+
+#---Exercícios panturrilhas---
+
+    path('gluteo_crew/', views.gluteo_crew, name= 'gluteo_crew'),
+    path('gluteo_caneleira/', views.gluteo_caneleira, name = 'gluteo_caneleira'),
+    path('gluteo_caneleira_extensao/', views.gluteo_caneleira_extensao, name = 'gluteo_caneleira_extensao'),
+    path('gluteo_maquina/', views.gluteo_maquina, name = 'gluteo_maquina'),
+
+    
 ] 
