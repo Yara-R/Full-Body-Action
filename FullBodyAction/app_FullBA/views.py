@@ -117,28 +117,26 @@ def registro(request):
 #@login_required 
 @csrf_protect
 def medidas(request):
-    # form = medidasForm()
-    # return render(request, 'usuarios/medidas.html', {
-    #     'form': form
-    # })
-    if request.method == "GET" or request.method == "POST":
+    if request.method == "GET":
+        print("Funcionou")
         return render(request,'usuarios/medidas.html')
-    else:
-        peito = request.POST["peito"]
-        costas = request.POST["costas"]
-        ombros = request.POST["ombros"]
-        pescoco = request.POST["pescoco"]
-        braco = request.POST["braco"]
-        antebraco = request.POST["antebraco"]
-        quadril = request.POST["quadril"]
-        cintura = request.POST["cintura"]
-        coxa = request.POST["coxa"]
-        panturrilha = request.POST["panturrilha"]
 
-        medidas = Medidas(peito=peito, costas=costas, ombros=ombros, pescoco=pescoco, 
-                          braco=braco, antebraco=antebraco, quadril =quadril,
+    else:
+        peito = float(request.POST.get("peito", 0))
+        costas = float(request.POST.get("costas", 0))
+        ombro = float(request.POST.get("ombro", 0))
+        pescoco = float(request.POST.get("pescoco", 0))
+        braco = float(request.POST.get("braco", 0))
+        antebraco = float(request.POST.get("antebraco", 0))
+        quadril = float(request.POST.get("quadril", 0))
+        cintura = float(request.POST.get("cintura", 0))
+        coxa = float(request.POST.get("coxa", 0))
+        panturrilha = float(request.POST.get("panturrilha", 0))
+
+        print("Funcionou")
+        Medidas.objects.create(peito=peito, costas=costas, ombro=ombro, pescoco=pescoco, 
+                          braco=braco, antebraco=antebraco, quadril=quadril,
                           cintura=cintura, coxa=coxa, panturrilha=panturrilha)
-        medidas.save()
 
 
 #-------------------------------------------------------------------------------------------------------------
