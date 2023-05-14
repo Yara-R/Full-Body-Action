@@ -1,11 +1,11 @@
 import os
-from django.test import LiveServerTestCase
+from django.test import TestCase
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
 
-class TestFullBA(LiveServerTestCase):
+class TestFullBA(TestCase):
 
     @classmethod
     def setUpClass(cls):
@@ -22,11 +22,11 @@ class TestFullBA(LiveServerTestCase):
         super().tearDownClass()
 
     def test_gyms(self):
-        self.driver.get(self.live_server_url + '/academias/')
+        self.driver.get("http://127.0.0.1:8000/academias/")
         self.driver.quit()
 
     def test_login(self):
-        self.driver.get(self.live_server_url + '/login/')
+        self.driver.get("http://127.0.0.1:8000/login/")
 
         input_email = self.driver.find_element(By.NAME, 'email')
         input_email.send_keys('usuario@teste.com')
@@ -40,7 +40,7 @@ class TestFullBA(LiveServerTestCase):
         self.assertIn(self.live_server_url + '/', self.driver.current_url)
 
     def test_cadastro(self):
-        self.driver.get(self.live_server_url + '/cadastro/')
+        self.driver.get("http://127.0.0.1:8000/cadastro/")
 
         input_nome = self.driver.find_element(By.NAME, 'name')
         input_nome.send_keys('usuario')
@@ -55,7 +55,7 @@ class TestFullBA(LiveServerTestCase):
         enviar.click()
 
     def test_comentario(self):
-        self.driver.get(self.live_server_url + '/biceps_rosca_com_barra/')
+        self.driver.get("http://127.0.0.1:8000/biceps_rosca_com_barra/")
 
         input_nome = self.driver.find_element(By.NAME, 'autor')
         input_nome.send_keys('usuario')

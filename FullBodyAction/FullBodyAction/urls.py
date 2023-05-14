@@ -11,18 +11,13 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('perfil/', views.perfil, name='perfil'),
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     path('consumo_agua/', views.agua, name='registro_agua'),
-=======
+
     path('admin/', admin.site.urls),
     path ('accounts/', include('django.contrib.auth.urls')),
 
-    path('consumo_agua/', views.registro, name='registro_agua'),
->>>>>>> 94cd28243b657e2fc95b2be2a379ac11eb79a4fe
-=======
     path('consumo_agua/', views.agua, name='registro_agua'),
->>>>>>> 538244c6309341bbf617897f80f2aaf1c20ed13e
     path('medidas/', views.medidas, name= 'medidas'),
     
     path('academias/', views.academias, name='academias'),

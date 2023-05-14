@@ -25,7 +25,7 @@ def home(request):
 #-------------------------------------------------------------------------------------------------------------
 
 # Escolha do músculo (História 1)
-@login_required
+# @login_required
 def treino(request):
     if request.method =="POST":
         return render(request, 'usuarios/treino.html')
@@ -33,7 +33,7 @@ def treino(request):
         return render(request, 'usuarios/treino.html')
     else:
         return HttpResponse('Deu zica')
-@login_required
+# @login_required
 def smash(request):
     musculo = request.GET.get('musculo')
     if musculo == 'biceps':
@@ -132,7 +132,7 @@ def agua(request):
 
 # Resgistro de Medidas corporais (História 3)
 
-@login_required 
+# @login_required 
 @csrf_protect
 def medidas(request):
     if request.method == "GET":
@@ -161,7 +161,7 @@ def medidas(request):
 
 # Pagina do usuario (História 6) 
    
-@login_required 
+# @login_required 
 def perfil(request):
     if request.method == "GET":
         info = User.objects.all()
@@ -187,11 +187,12 @@ def mostrar_avaliacoes(request):
 
 def comentarios(request):
     comentarios = Comentario.objects.all().order_by('-data')
-    if request.method == 'POST':
-        autor = request.POST['autor']
-        texto = request.POST['texto']
-        Comentario.objects.create(autor=autor, texto=texto)
-        return redirect('comentarios')
+    if request.method == "POST":
+        autor = request.POST.get("autor", "Usuario")
+        texto = request.POST.get("texto", "")
+        if autor and texto:
+            Comentario.objects.create(autor=autor, texto=texto)
+            return redirect('comentarios')
     return render(request, 'comentarios.html', {'comentarios': comentarios})
 
 #-------------------------------------------------------------------------------------------------------------
