@@ -1,14 +1,18 @@
 from django.urls import path
 from app_FullBA import views
 from django.urls import path
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
     path('', views.home, name = 'home'),
     
     path('cadastro/', views.cadastro, name='cadastro'),
     path('login/', views.login, name='login'),
-    # path('login/', user_login, name='login'),
     path('perfil/', views.perfil, name='perfil'),
+
+    path('admin/', admin.site.urls),
+    path ('accounts/', include('django.contrib.auth.urls')),
 
     path('consumo_agua/', views.registro, name='registro_agua'),
     path('medidas/', views.medidas, name= 'medidas'),
