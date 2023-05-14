@@ -10,7 +10,7 @@ urlpatterns = [
     # path('login/', user_login, name='login'),
     path('perfil/', views.perfil, name='perfil'),
 
-    path('consumo_agua/', views.registro, name='registro_agua'),
+    path('consumo_agua/', views.agua, name='registro_agua'),
     path('medidas/', views.medidas, name= 'medidas'),
     
     path('academias/', views.academias, name='academias'),

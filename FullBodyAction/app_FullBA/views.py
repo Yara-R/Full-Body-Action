@@ -67,42 +67,42 @@ def redirect_to_muscle(request):
 
 # Cadastro, login dos usuários
     
-def login(request):
-    if request.method == 'GET':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            email = form.cleaned_data['email']
-            password = form.cleaned_data['password']
-            user = authenticate(request, email=email, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('home')
-            else:
-                form.add_error(None, 'Invalid email or password')
-            
-    else:
-        form = LoginForm()
-    return render(request, 'usuarios/login.html', {'form': form})
-    
+@csrf_protect
 def cadastro(request):
-    if request.method == 'POST':
-        form = UserForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return render(request, 'usuarios/login.html')
-    else:
-        form = UserForm()
+    if request.method == "GET":
+        return render(request, 'usuarios/cadastro.html')
+    elif request.method == "POST":
+        nome = request.POST.get("name", "Usuario")
+        email = request.POST.get("email", "")
+        senha = request.POST.get("password", "")
+        if nome and email and senha:
+            user = User.objects.create_user(username=email, email=email, password=senha, first_name=nome)
+            return HttpResponseRedirect("/cadastro/success/")
+        else:
+            return HttpResponse("Todos os campos são obrigatórios.")
 
-    return render(request, 'usuarios/cadastro.html', {'form': form})
-
-
+@csrf_protect
+def login(request):
+    if request.method == "GET":
+        return render(request, 'usuarios/login.html')
+    elif request.method == "POST":
+        email = request.POST.get("email", "")
+        senha = request.POST.get("password", "")
+        user = authenticate(request, username=email, password=senha)
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page
+            return HttpResponseRedirect("/login/success/")
+        else:
+            return HttpResponse("Credenciais inválidas.")
+    
 
  #------------------------------------------------------------------------------------------------------------- 
 
 # Resgistro de água (História 2)
 
 #@login_required 
-def registro(request):
+def agua(request):
     if request.method == "POST":
         return render(request, 'usuarios/registro_agua.html')
     if request.method =="GET":
