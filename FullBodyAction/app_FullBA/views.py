@@ -1,4 +1,4 @@
-from django.http.response import HttpResponse, HttpResponseRedirect
+from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Comentario, Avaliacao, User
 from .forms import UserForm, LoginForm
@@ -7,7 +7,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
-from django.http import JsonResponse
 from .models import Medidas
 from django.views.decorators.csrf import csrf_protect
 
@@ -26,7 +25,7 @@ def home(request):
 #-------------------------------------------------------------------------------------------------------------
 
 # Escolha do músculo (História 1)
-
+@login_required
 def treino(request):
     if request.method =="POST":
         return render(request, 'usuarios/treino.html')
@@ -34,7 +33,7 @@ def treino(request):
         return render(request, 'usuarios/treino.html')
     else:
         return HttpResponse('Deu zica')
-
+@login_required
 def smash(request):
     musculo = request.GET.get('musculo')
     if musculo == 'biceps':
@@ -55,7 +54,7 @@ def smash(request):
         return render(request, f'usuarios/posterior.html')
     elif musculo == 'antebraco':
         return render(request, f'usuarios/antebraco.html')
-    
+@login_required    
 def redirect_to_muscle(request):
     muscle = request.GET.get('muscle', '')
     if muscle:
@@ -66,7 +65,11 @@ def redirect_to_muscle(request):
 #-------------------------------------------------------------------------------------------------------------
 
 # Cadastro, login dos usuários
+<<<<<<< HEAD
     
+@csrf_protect
+=======
+  
 def login(request):
     if request.method == 'GET':
         form = LoginForm(request.POST)
@@ -84,25 +87,42 @@ def login(request):
         form = LoginForm()
     return render(request, 'usuarios/login.html', {'form': form})
     
+>>>>>>> 94cd28243b657e2fc95b2be2a379ac11eb79a4fe
 def cadastro(request):
-    if request.method == 'POST':
-        form = UserForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return render(request, 'usuarios/login.html')
-    else:
-        form = UserForm()
+    if request.method == "GET":
+        return render(request, 'usuarios/cadastro.html')
+    elif request.method == "POST":
+        nome = request.POST.get("name", "Usuario")
+        email = request.POST.get("email", "")
+        senha = request.POST.get("password", "")
+        if nome and email and senha:
+            user = User.objects.create_user(username=email, email=email, password=senha, first_name=nome)
+            return HttpResponseRedirect("/cadastro/success/")
+        else:
+            return HttpResponse("Todos os campos são obrigatórios.")
 
-    return render(request, 'usuarios/cadastro.html', {'form': form})
-
-
+@csrf_protect
+def login(request):
+    if request.method == "GET":
+        return render(request, 'usuarios/login.html')
+    elif request.method == "POST":
+        email = request.POST.get("email", "")
+        senha = request.POST.get("password", "")
+        user = authenticate(request, username=email, password=senha)
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page
+            return HttpResponseRedirect("/login/success/")
+        else:
+            return HttpResponse("Credenciais inválidas.")
+    
 
  #------------------------------------------------------------------------------------------------------------- 
 
 # Resgistro de água (História 2)
 
 #@login_required 
-def registro(request):
+def agua(request):
     if request.method == "POST":
         return render(request, 'usuarios/registro_agua.html')
     if request.method =="GET":
@@ -114,7 +134,7 @@ def registro(request):
 
 # Resgistro de Medidas corporais (História 3)
 
-#@login_required 
+@login_required 
 @csrf_protect
 def medidas(request):
     if request.method == "GET":
@@ -143,7 +163,7 @@ def medidas(request):
 
 # Pagina do usuario (História 6) 
    
-#@login_required 
+@login_required 
 def perfil(request):
     if request.method == "GET":
         info = User.objects.all()
@@ -204,10 +224,7 @@ def rosca_apoiada(request):
         return render(request, 'usuario/rosca_apoiada.html')
     else:
         return HttpResponse('Deu zica')
-    
-
-    
-      
+         
 
 def biceps_rosca_apoiada(request):
     if request.method == "POST":
