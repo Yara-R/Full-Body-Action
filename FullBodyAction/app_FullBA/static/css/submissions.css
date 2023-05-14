@@ -7,6 +7,7 @@
     justify-content: center;
     padding: 0.5rem;
     color: #dba021;
+    width: 25%;
 }
 
 .form-input{
@@ -14,7 +15,6 @@
     flex-direction: column;
     justify-content: left;
     padding: 0.5rem 0.5rem;
-    width: 25%;
 }
 
 h5{

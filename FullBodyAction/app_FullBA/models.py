@@ -1,5 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, User
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+
+from django.contrib.auth.models import AbstractUser
 
 class User(models.Model):
     name = models.CharField(max_length=50)
