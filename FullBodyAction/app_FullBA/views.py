@@ -65,10 +65,8 @@ def redirect_to_muscle(request):
 #-------------------------------------------------------------------------------------------------------------
 
 # Cadastro, login dos usuários
-<<<<<<< HEAD
     
 @csrf_protect
-=======
   
 def login(request):
     if request.method == 'GET':
@@ -87,7 +85,7 @@ def login(request):
         form = LoginForm()
     return render(request, 'usuarios/login.html', {'form': form})
     
->>>>>>> 94cd28243b657e2fc95b2be2a379ac11eb79a4fe
+
 def cadastro(request):
     if request.method == "GET":
         return render(request, 'usuarios/cadastro.html')
@@ -97,7 +95,7 @@ def cadastro(request):
         senha = request.POST.get("password", "")
         if nome and email and senha:
             user = User.objects.create_user(username=email, email=email, password=senha, first_name=nome)
-            return HttpResponseRedirect("/cadastro/success/")
+            return render(request, 'usuarios/login.html')
         else:
             return HttpResponse("Todos os campos são obrigatórios.")
 
@@ -112,7 +110,7 @@ def login(request):
         if user is not None:
             login(request, user)
             # Redirect to a success page
-            return HttpResponseRedirect("/login/success/")
+            return render(request, 'usuarios/perfil.html')
         else:
             return HttpResponse("Credenciais inválidas.")
     
