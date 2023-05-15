@@ -534,3 +534,13 @@ def gluteo_maquina(request):
         return render(request, 'usuarios/gluteo_maquina.html')
     else:
         return HttpResponse('Deu zica')
+    
+#---------------------------------------------------------------------------------------------
+
+def registro_treinos(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/registro_treinos.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/registro_treinos.html')
+    else:
+        return HttpResponse('Deu zica')
