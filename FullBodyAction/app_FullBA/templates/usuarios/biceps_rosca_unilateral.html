@@ -66,7 +66,6 @@
 
 <form method="POST">
     {% csrf_token %}
-    <div class="submissions">
         <span class="form-input">
             <input placeholder="Nome de usuário" type="text" name="autor">
         </span>
@@ -74,7 +73,6 @@
             <textarea placeholder="Comentário" name="texto"></textarea>
         </span>
         <input type='submit' class="form-control-sm submit-button" value="Comentar"></input>
-    </div>
 </form>
 
 <div class="description" >

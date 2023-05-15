@@ -27,7 +27,7 @@ def home(request):
 
 # Escolha do músculo (História 1)
 
-@login_required
+# @login_required
 
 def treino(request):
     if request.method =="POST":
@@ -37,7 +37,7 @@ def treino(request):
     else:
         return HttpResponse('Deu zica')
 
-@login_required
+# @login_required
 def smash(request):
     musculo = request.GET.get('musculo')
     if musculo == 'biceps':
@@ -58,7 +58,7 @@ def smash(request):
         return render(request, f'usuarios/posterior.html')
     elif musculo == 'antebraco':
         return render(request, f'usuarios/antebraco.html')
-@login_required    
+# @login_required    
 def redirect_to_muscle(request):
     muscle = request.GET.get('muscle', '')
     if muscle:
@@ -136,7 +136,7 @@ def cadastro(request):
 
 # Resgistro de água (História 2)
 
-@login_required 
+# @login_required 
 def agua(request):
     if request.method == "POST":
         return render(request, 'usuarios/registro_agua.html')
@@ -150,14 +150,14 @@ def agua(request):
 # Resgistro de Medidas corporais (História 3)
 
 
-@login_required 
+# @login_required 
 @csrf_protect
 def medidas(request):
     if request.method == "GET":
-        print("Funcionou")
+        # print("Funcionou")
         return render(request,'usuarios/medidas.html')
 
-    else:
+    if request.method == "POST":
         peito = float(request.POST.get("peito", 0))
         costas = float(request.POST.get("costas", 0))
         ombro = float(request.POST.get("ombro", 0))
@@ -206,15 +206,15 @@ def mostrar_avaliacoes(request):
 def comentarios(request):
     comentarios = Comentario.objects.all().order_by('-data')
     if request.method == "POST":
-<<<<<<< HEAD
+
         autor = request.POST.get("autor", 0)
         texto = request.POST.get("texto", 0)
-=======
+
         return render(request, 'comentarios.html')
     else:
         autor = request.POST.get("autor", "Usuario")
         texto = request.POST.get("texto", "")
->>>>>>> ec6bfb904df22d4d7954b3ee449f0826dcb39465
+
         if autor and texto:
             Comentario.objects.create(autor=autor, texto=texto, data=data)
             return redirect('comentarios')

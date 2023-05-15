@@ -50,15 +50,14 @@
           Medidas
         </span>
       </a>
-    </div>
-    <div class="menu">
+  
       <a class="menu-item" href="{% url 'registro_treinos' %}">
-        <i class="fa-solid fa-weight-scale"></i>
+        {% comment %} <i class="fa-solid fa-weight-scale"></i> {% endcomment %}
         <span>
           Registro de treinos
         </span>
       </a>
-
+    </div>
     <div class="menu">
       {% if  user.is_authenticated %}
         <h4> Olá, {{user.username}}</h4>

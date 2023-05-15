@@ -29,60 +29,162 @@ class TestFullBA(LiveServerTestCase):
 
     def test_cadastro(self):
         self.driver.get("http://127.0.0.1:8000/cadastro/")
-        time.sleep(5)
+        time.sleep(2)
 
         input_nome = self.driver.find_element(By.NAME, 'name')
         input_nome.send_keys('usuario')
+        time.sleep(2)
 
         input_email = self.driver.find_element(By.NAME, 'email')
         input_email.send_keys('usuario@teste.com')
+        time.sleep(2)
 
         input_senha = self.driver.find_element(By.NAME, 'password')
         input_senha.send_keys('123456')
+        time.sleep(2)
 
         enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
         enviar.click()
 
-    #  Está dando erro
-    def test_login(self):
-        self.driver.get("http://127.0.0.1:8000/login/")
-        time.sleep(5)
+        input_email_login = self.driver.find_element(By.NAME, 'email')
+        input_email_login.send_keys('usuario@teste.com')
+        time.sleep(2)
 
-        input_email = self.driver.find_element(By.NAME, 'email')
-        input_email.send_keys('usuario@teste.com')
+        input_senha_login = self.driver.find_element(By.NAME, 'password')
+        input_senha_login.send_keys('123456')
+        time.sleep(2)
 
-        input_senha = self.driver.find_element(By.NAME, 'password')
-        input_senha.send_keys('123456')
+        enviar_login = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
+        enviar_login.click()
+        time.sleep(2)
 
-        enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
-        enviar.click()
-
-    def test_comentario(self):
+    def test_B_Rosca_Barra(self):
         self.driver.get("http://127.0.0.1:8000/biceps_rosca_com_barra/")
-        time.sleep(5)
+        time.sleep(2)
 
         input_nome = self.driver.find_element(By.NAME, 'autor')
         input_nome.send_keys('usuario')
+        time.sleep(2)
 
         input_comentario = self.driver.find_element(By.NAME, 'texto')
         input_comentario.send_keys('abcd')
+        time.sleep(2)
 
         enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
         enviar.click()
+        time.sleep(2)
+        
+        # input_voto = self.driver.find_element(By.ID, "star5")
+        # input_voto.click()
 
 
-# from selenium import webdriver
-# from webdriver_manager.chrome import ChromeDriverManager
-# from selenium.webdriver.chrome.service import Service
-# from time import sleep
-# servico = Service(ChromeDriverManager().install())
-# navegador = webdriver.Chrome(service=servico)
+    def test_B_Rosca_Apoiada(self):
+        self.driver.get("http://127.0.0.1:8000/biceps_rosca_apoiada/")
+        time.sleep(2)
 
-# navegador.get('http://127.0.0.1:8000/')
-# navegador.find_element('xpath','/html/body/nav/div[2]/a[4]').click()
-# sleep(3)
+        input_nome = self.driver.find_element(By.NAME, 'autor')
+        input_nome.send_keys('usuario')
+        time.sleep(2)
 
-#     #     input_voto = self.driver.find_element(By.NAME, 'rating')
-#     #     input_voto.click()
+        input_comentario = self.driver.find_element(By.NAME, 'texto')
+        input_comentario.send_keys('abcd')
+        time.sleep(2)
+
+        enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
+        enviar.click()
+        time.sleep(2)
+        
+        # input_voto = self.driver.find_element(By.ID, "star5")
+        # input_voto.click()
+
+
+    def test_B_Rosca_Martelo(self):
+        self.driver.get("http://127.0.0.1:8000/biceps_rosca_martelo/")
+        time.sleep(2)
+
+        input_nome = self.driver.find_element(By.NAME, 'autor')
+        input_nome.send_keys('usuario')
+        time.sleep(2)
+
+        input_comentario = self.driver.find_element(By.NAME, 'texto')
+        input_comentario.send_keys('abcd')
+        time.sleep(2)
+
+        enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
+        enviar.click()
+        time.sleep(2)
+        
+        # input_voto = self.driver.find_element(By.ID, "star5")
+        # input_voto.click()
+
+
+    def test_B_Rosca_Unilateral(self):
+        self.driver.get("http://127.0.0.1:8000/biceps_rosca_unilateral/")
+        time.sleep(2)
+
+        input_nome = self.driver.find_element(By.NAME, 'autor')
+        input_nome.send_keys('usuario')
+        time.sleep(2)
+
+        input_comentario = self.driver.find_element(By.NAME, 'texto')
+        input_comentario.send_keys('abcd')
+        time.sleep(2)
+
+        enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
+        enviar.click()
+        
+        # input_voto = self.driver.find_element(By.ID, "star5")
+        # input_voto.click()
+        # time.sleep(2)
+
+    def test_medidas(self):
+        self.driver.get('http://127.0.0.1:8000/medidas/')
+
+        # self.driver.find_element(By.XPATH,'/html/body/nav/div[2]/a[4]').click()
+        # time.sleep(3)
+
+        input_peito = self.driver.find_element(By.NAME, 'peito')
+        input_peito.send_keys("10")
+        time.sleep(1)
+
+        input_costas = self.driver.find_element(By.NAME, 'costas')
+        input_costas.send_keys("10")
+        time.sleep(1)
+
+        input_ombro = self.driver.find_element(By.NAME, 'ombro')
+        input_ombro.send_keys("10")
+        time.sleep(1)
+
+        input_pescoco = self.driver.find_element(By.NAME, 'pescoco')
+        input_pescoco.send_keys("10")
+        time.sleep(1)
+
+        input_braco = self.driver.find_element(By.NAME, 'braco')
+        input_braco.send_keys("10")
+        time.sleep(1)
+
+        input_antebraco = self.driver.find_element(By.NAME, 'antebraco')
+        input_antebraco.send_keys("10")
+        time.sleep(1)
+
+        input_quadril = self.driver.find_element(By.NAME, 'quadril')
+        input_quadril.send_keys("10")
+        time.sleep(1)
+
+        input_cintura = self.driver.find_element(By.NAME, 'cintura')
+        input_cintura.send_keys("10")
+        time.sleep(1)
+
+        input_coxa = self.driver.find_element(By.NAME, 'coxa')
+        input_coxa.send_keys("10")
+        time.sleep(1)
+
+        input_panturrilha = self.driver.find_element(By.NAME, 'panturrilha')
+        input_panturrilha.send_keys("10")
+        time.sleep(1)
+
+        input_salvar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
+        input_salvar.click()
+        time.sleep(1)
 
 
