@@ -178,9 +178,9 @@ def medidas(request):
 
 # Pagina do usuario (História 6)
 
-@login_required
+# @login_required
 def perfil(request):
-    if request.method == "GET":
+    if request.method == "GET" or request.method == "POST":
         info = User.objects.all()
         return render(request,'usuarios/perfil.html', {'nome' : info})
     else:
