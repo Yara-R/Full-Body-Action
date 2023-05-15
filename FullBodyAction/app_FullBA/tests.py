@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
 
+
 class TestFullBA(TestCase):
 
     @classmethod
@@ -65,3 +66,15 @@ class TestFullBA(TestCase):
 
         enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
         enviar.click()
+
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
+from time import sleep
+servico = Service(ChromeDriverManager().install())
+navegador = webdriver.Chrome(service=servico)
+
+navegador.get('http://127.0.0.1:8000/')
+navegador.find_element('xpath','/html/body/nav/div[2]/a[4]').click()
+sleep(3)
+

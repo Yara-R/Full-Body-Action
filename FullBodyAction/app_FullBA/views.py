@@ -12,6 +12,7 @@ from django.views.decorators.csrf import csrf_protect
 
 
 
+
 # Página Home
 
 def home(request):
@@ -188,10 +189,10 @@ def mostrar_avaliacoes(request):
 def comentarios(request):
     comentarios = Comentario.objects.all().order_by('-data')
     if request.method == "POST":
-        autor = request.POST.get("autor", "Usuario")
-        texto = request.POST.get("texto", "")
+        autor = request.POST.get("autor", 0)
+        texto = request.POST.get("texto", 0)
         if autor and texto:
-            Comentario.objects.create(autor=autor, texto=texto)
+            Comentario.objects.create(autor=autor, texto=texto, data=data)
             return redirect('comentarios')
     return render(request, 'comentarios.html', {'comentarios': comentarios})
 
