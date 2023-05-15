@@ -188,6 +188,8 @@ def mostrar_avaliacoes(request):
 def comentarios(request):
     comentarios = Comentario.objects.all().order_by('-data')
     if request.method == "POST":
+        return render(request, 'comentarios.html')
+    else:
         autor = request.POST.get("autor", "Usuario")
         texto = request.POST.get("texto", "")
         if autor and texto:
