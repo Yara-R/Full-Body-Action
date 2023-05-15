@@ -53,18 +53,22 @@
     </div>
 
     <div class="menu">
-      <a class="menu-item" href="{% url 'login' %}">
-        <i class="fa-regular fa-right-to-bracket"></i>
-        <span>
-          Login
-        </span>
-      </a>
-      <a class="menu-item" href="{% url 'perfil' %}">
-        <i class="fa fa-fw fa-user"></i>
-        <span>
-          Perfil
-        </span>
-      </a>
+      {% if  user.is_authenticated %}
+        <h4> Olá, {{user.username}}</h4>
+        <a class="menu-item" href="{% url 'logout' %}">
+          <i class="fa-regular fa-right-to-bracket"></i>
+          <span>
+            Sair
+          </span>
+        </a>
+      {% else %}
+        <a class="menu-item" href="{% url 'login' %}">
+          <i class="fa fa-fw fa-user"></i>
+            <span>
+              Acessar
+            </span>
+        </a>
+      {% endif %}
     </div>
   </nav>   
 
