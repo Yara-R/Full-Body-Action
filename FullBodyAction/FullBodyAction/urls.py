@@ -12,12 +12,11 @@ urlpatterns = [
     path('perfil/', views.perfil, name='perfil'),
 
 
-    path('consumo_agua/', views.agua, name='registro_agua'),
-
-    path('admin/', admin.site.urls),
-    path ('accounts/', include('django.contrib.auth.urls')),
+    # path('admin/', admin.site.urls),
+    # path ('accounts/', include('django.contrib.auth.urls')),
 
     path('consumo_agua/', views.agua, name='registro_agua'),
+
     path('medidas/', views.medidas, name= 'medidas'),
     
     path('academias/', views.academias, name='academias'),

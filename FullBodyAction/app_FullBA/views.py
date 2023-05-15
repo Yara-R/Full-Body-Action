@@ -6,9 +6,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect
 from .models import Medidas
 from django.views.decorators.csrf import csrf_protect
+from django.db import models
 
 
 
@@ -26,7 +26,9 @@ def home(request):
 #-------------------------------------------------------------------------------------------------------------
 
 # Escolha do músculo (História 1)
-# @login_required
+
+@login_required
+
 def treino(request):
     if request.method =="POST":
         return render(request, 'usuarios/treino.html')
@@ -34,7 +36,8 @@ def treino(request):
         return render(request, 'usuarios/treino.html')
     else:
         return HttpResponse('Deu zica')
-# @login_required
+
+@login_required
 def smash(request):
     musculo = request.GET.get('musculo')
     if musculo == 'biceps':
@@ -66,8 +69,9 @@ def redirect_to_muscle(request):
 #-------------------------------------------------------------------------------------------------------------
 
 # Cadastro, login dos usuários
-    
+
 @csrf_protect
+
   
 def login(request):
     if request.method == 'GET':
@@ -111,16 +115,28 @@ def login(request):
         if user is not None:
             login(request, user)
             # Redirect to a success page
-            return render(request, 'usuarios/perfil.html')
+            return HttpResponseRedirect("/login/success/")
         else:
             return HttpResponse("Credenciais inválidas.")
     
+def cadastro(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'usuarios/login.html')
+    else:
+        form = UserForm()
+
+    return render(request, 'usuarios/cadastro.html', {'form': form})
+
+
 
  #------------------------------------------------------------------------------------------------------------- 
 
 # Resgistro de água (História 2)
 
-#@login_required 
+@login_required 
 def agua(request):
     if request.method == "POST":
         return render(request, 'usuarios/registro_agua.html')
@@ -133,7 +149,8 @@ def agua(request):
 
 # Resgistro de Medidas corporais (História 3)
 
-# @login_required 
+
+@login_required 
 @csrf_protect
 def medidas(request):
     if request.method == "GET":
@@ -160,11 +177,11 @@ def medidas(request):
 
 #-------------------------------------------------------------------------------------------------------------
 
-# Pagina do usuario (História 6) 
-   
-# @login_required 
+# Pagina do usuario (História 6)
+
+# @login_required
 def perfil(request):
-    if request.method == "GET":
+    if request.method == "GET" or request.method == "POST":
         info = User.objects.all()
         return render(request,'usuarios/perfil.html', {'nome' : info})
     else:
@@ -189,8 +206,15 @@ def mostrar_avaliacoes(request):
 def comentarios(request):
     comentarios = Comentario.objects.all().order_by('-data')
     if request.method == "POST":
+<<<<<<< HEAD
         autor = request.POST.get("autor", 0)
         texto = request.POST.get("texto", 0)
+=======
+        return render(request, 'comentarios.html')
+    else:
+        autor = request.POST.get("autor", "Usuario")
+        texto = request.POST.get("texto", "")
+>>>>>>> ec6bfb904df22d4d7954b3ee449f0826dcb39465
         if autor and texto:
             Comentario.objects.create(autor=autor, texto=texto, data=data)
             return redirect('comentarios')
