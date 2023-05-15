@@ -10,7 +10,7 @@
       <button type="submit">Login</button>
     </form>
 
-    <form action="{% url 'cadastro' %}" method="post">
+    <form action="{% url 'cadastro' %}" method="get">
       {% csrf_token %}
       <div style="text-align: center"class="container">
         <br />

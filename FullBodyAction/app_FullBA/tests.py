@@ -1,18 +1,19 @@
 import os
-from django.test import TestCase
+import time
+from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
 
-class TestFullBA(TestCase):
+class TestFullBA(LiveServerTestCase):
 
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         chrome_options = Options()
         chrome_options.add_argument("--no-sandbox")
-        chrome_options.add_argument("--headless")
+        # chrome_options.add_argument("--headless")
         chrome_options.add_argument("--disable-gpu")
         cls.driver = webdriver.Chrome(options=chrome_options)
 
@@ -23,10 +24,12 @@ class TestFullBA(TestCase):
 
     def test_gyms(self):
         self.driver.get("http://127.0.0.1:8000/academias/")
+        time.sleep(5)
         self.driver.quit()
 
     def test_cadastro(self):
         self.driver.get("http://127.0.0.1:8000/cadastro/")
+        time.sleep(5)
 
         input_nome = self.driver.find_element(By.NAME, 'name')
         input_nome.send_keys('usuario')
@@ -57,6 +60,7 @@ class TestFullBA(TestCase):
 
     def test_comentario(self):
         self.driver.get("http://127.0.0.1:8000/biceps_rosca_com_barra/")
+        time.sleep(5)
 
         input_nome = self.driver.find_element(By.NAME, 'autor')
         input_nome.send_keys('usuario')
@@ -67,8 +71,6 @@ class TestFullBA(TestCase):
         enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
         enviar.click()
 
-    # def test_avali(self):
-    #     self.driver.get("http://127.0.0.1:8000/biceps_rosca_com_barra/")
-
     #     input_voto = self.driver.find_element(By.NAME, 'rating')
     #     input_voto.click()
+
