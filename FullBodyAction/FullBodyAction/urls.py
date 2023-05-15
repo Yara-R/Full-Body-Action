@@ -11,6 +11,7 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('perfil/', views.perfil, name='perfil'),
 
+<<<<<<< HEAD
     path('consumo_agua/', views.agua, name='registro_agua'),
     path('consumo_agua/', views.agua, name='registro_agua'),
     path('admin/', admin.site.urls),
@@ -20,9 +21,24 @@ urlpatterns = [
 
     path('consumo_agua/', views.agua, name='registro_agua'),
 
+=======
+    path('admin/', admin.site.urls),
+    path ('accounts/', include('django.contrib.auth.urls')),
+
+
+    path('consumo_agua/', views.agua, name='registro_agua'),
+
+    path('admin/', admin.site.urls),
+    path ('accounts/', include('django.contrib.auth.urls')),
+
+    path('consumo_agua/', views.agua, name='registro_agua'),
+
+>>>>>>> e4673c03fecd98754d86207e44ee197694c82ed6
     path('medidas/', views.medidas, name= 'medidas'),
     
     path('academias/', views.academias, name='academias'),
+
+    path('registro_treinos/', views.registro_treinos, name='registro_treinos'),
 
 
 
