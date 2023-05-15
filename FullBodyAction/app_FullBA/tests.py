@@ -44,19 +44,18 @@ class TestFullBA(LiveServerTestCase):
         enviar.click()
 
     #  Está dando erro
-    # def test_login(self):
-    #     self.driver.get("http://127.0.0.1:8000/login/")
+    def test_login(self):
+        self.driver.get("http://127.0.0.1:8000/login/")
+        time.sleep(5)
 
-    #     input_email = self.driver.find_element(By.NAME, 'email')
-    #     input_email.send_keys('usuario@teste.com')
+        input_email = self.driver.find_element(By.NAME, 'email')
+        input_email.send_keys('usuario@teste.com')
 
-    #     input_senha = self.driver.find_element(By.NAME, 'password')
-    #     input_senha.send_keys('123456')
+        input_senha = self.driver.find_element(By.NAME, 'password')
+        input_senha.send_keys('123456')
 
-    #     enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
-    #     enviar.click()
-
-    #     self.assertIn(self.live_server_url + '/', self.driver.current_url)
+        enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
+        enviar.click()
 
     def test_comentario(self):
         self.driver.get("http://127.0.0.1:8000/biceps_rosca_com_barra/")
