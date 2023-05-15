@@ -169,7 +169,9 @@ def medidas(request):
         coxa = float(request.POST.get("coxa", 0))
         panturrilha = float(request.POST.get("panturrilha", 0))
 
-        print("Funcionou")
+        return HttpResponse("Funcionou")
+
+        # print("Funcionou")
         Medidas.objects.create(peito=peito, costas=costas, ombro=ombro, pescoco=pescoco, 
                           braco=braco, antebraco=antebraco, quadril=quadril,
                           cintura=cintura, coxa=coxa, panturrilha=panturrilha)
