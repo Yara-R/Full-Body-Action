@@ -1,5 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, User
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+
+from django.contrib.auth.models import AbstractUser
 
 class User(models.Model):
     name = models.CharField(max_length=50)
@@ -12,6 +14,7 @@ class Registro_Agua(models.Model):
 
 class Avaliacao(models.Model):
     estrelas = models.IntegerField(default=0, blank=True, null=True)
+    
 class Comentario(models.Model):
     autor = models.CharField(max_length=100)
     texto = models.TextField()

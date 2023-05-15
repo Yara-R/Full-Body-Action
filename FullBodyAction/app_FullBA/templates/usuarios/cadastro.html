@@ -1,13 +1,28 @@
 {% extends 'usuarios/base.html' %}
 {% block conteudo %}
-<form action="{% url 'login' %}" method ="post">
-    {% csrf_token %}
+
+<form action="{% url 'cadastro' %}" method="post">
+  {% csrf_token %}
+
   <h1>Cadastro</h1>
 
+  <div class="submissions">
 
-    <form method="POST">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Cadastre-se</button>
-  </form>
+    <span class="form-input">
+      <input placeholder="NOME" name="name" class="form-control-sm" type="text">
+    </span>
+
+    <span class="form-input">
+      <input placeholder="EMAIL" name="email" class="form-control-sm" type="email">
+    </span>
+
+    <span class="form-input">
+      <input placeholder="SENHA" name="password" class="form-control-sm" type="password">
+    </span>
+
+    <input type="submit" value="Enviar" class="form-control-sm submit-button"> 
+
+  </div>
+</form>
+
 {% endblock %}

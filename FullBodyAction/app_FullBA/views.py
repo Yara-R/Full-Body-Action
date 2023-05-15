@@ -6,9 +6,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect
 from .models import Medidas
 from django.views.decorators.csrf import csrf_protect
+from django.db import models
 
 
 
@@ -25,7 +25,9 @@ def home(request):
 #-------------------------------------------------------------------------------------------------------------
 
 # Escolha do músculo (História 1)
+
 @login_required
+
 def treino(request):
     if request.method =="POST":
         return render(request, 'usuarios/treino.html')
@@ -33,6 +35,7 @@ def treino(request):
         return render(request, 'usuarios/treino.html')
     else:
         return HttpResponse('Deu zica')
+
 @login_required
 def smash(request):
     musculo = request.GET.get('musculo')
@@ -65,6 +68,9 @@ def redirect_to_muscle(request):
 #-------------------------------------------------------------------------------------------------------------
 
 # Cadastro, login dos usuários
+
+@csrf_protect
+
   
 def login(request):
     if request.method == 'GET':
@@ -83,25 +89,42 @@ def login(request):
         form = LoginForm()
     return render(request, 'usuarios/login.html', {'form': form})
     
+
 def cadastro(request):
-    if request.method == 'POST':
-        form = UserForm(request.POST)
-        if form.is_valid():
-            form.save()
+    if request.method == "GET":
+        return render(request, 'usuarios/cadastro.html')
+    elif request.method == "POST":
+        nome = request.POST.get("name", "Usuario")
+        email = request.POST.get("email", "")
+        senha = request.POST.get("password", "")
+        if nome and email and senha:
+            user = User.objects.create_user(username=email, email=email, password=senha, first_name=nome)
             return render(request, 'usuarios/login.html')
-    else:
-        form = UserForm()
+        else:
+            return HttpResponse("Todos os campos são obrigatórios.")
 
-    return render(request, 'usuarios/cadastro.html', {'form': form})
-
-
+@csrf_protect
+def login(request):
+    if request.method == "GET":
+        return render(request, 'usuarios/login.html')
+    elif request.method == "POST":
+        email = request.POST.get("email", "")
+        senha = request.POST.get("password", "")
+        user = authenticate(request, username=email, password=senha)
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page
+            return render(request, 'usuarios/perfil.html')
+        else:
+            return HttpResponse("Credenciais inválidas.")
+    
 
  #------------------------------------------------------------------------------------------------------------- 
 
 # Resgistro de água (História 2)
 
 #@login_required 
-def registro(request):
+def agua(request):
     if request.method == "POST":
         return render(request, 'usuarios/registro_agua.html')
     if request.method =="GET":
@@ -112,6 +135,7 @@ def registro(request):
 #-------------------------------------------------------------------------------------------------------------
 
 # Resgistro de Medidas corporais (História 3)
+
 
 @login_required 
 @csrf_protect
@@ -140,9 +164,9 @@ def medidas(request):
 
 #-------------------------------------------------------------------------------------------------------------
 
-# Pagina do usuario (História 6) 
-   
-@login_required 
+# Pagina do usuario (História 6)
+
+@login_required
 def perfil(request):
     if request.method == "GET":
         info = User.objects.all()
@@ -168,11 +192,14 @@ def mostrar_avaliacoes(request):
 
 def comentarios(request):
     comentarios = Comentario.objects.all().order_by('-data')
-    if request.method == 'POST':
-        autor = request.POST['autor']
-        texto = request.POST['texto']
-        Comentario.objects.create(autor=autor, texto=texto)
-        return redirect('comentarios')
+    if request.method == "POST":
+        return render(request, 'comentarios.html')
+    else:
+        autor = request.POST.get("autor", "Usuario")
+        texto = request.POST.get("texto", "")
+        if autor and texto:
+            Comentario.objects.create(autor=autor, texto=texto)
+            return redirect('comentarios')
     return render(request, 'comentarios.html', {'comentarios': comentarios})
 
 #-------------------------------------------------------------------------------------------------------------
@@ -510,5 +537,15 @@ def gluteo_maquina(request):
         return render(request, 'usuarios/gluteo_maquina.html')
     elif request.method =="GET":
         return render(request, 'usuarios/gluteo_maquina.html')
+    else:
+        return HttpResponse('Deu zica')
+    
+#---------------------------------------------------------------------------------------------
+
+def registro_treinos(request):
+    if request.method =="POST":
+        return render(request, 'usuarios/registro_treinos.html')
+    elif request.method =="GET":
+        return render(request, 'usuarios/registro_treinos.html')
     else:
         return HttpResponse('Deu zica')
