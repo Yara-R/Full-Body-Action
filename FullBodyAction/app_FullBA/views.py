@@ -114,10 +114,22 @@ def login(request):
         if user is not None:
             login(request, user)
             # Redirect to a success page
-            return render(request, 'usuarios/perfil.html')
+            return HttpResponseRedirect("/login/success/")
         else:
             return HttpResponse("Credenciais inválidas.")
     
+def cadastro(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'usuarios/login.html')
+    else:
+        form = UserForm()
+
+    return render(request, 'usuarios/cadastro.html', {'form': form})
+
+
 
  #------------------------------------------------------------------------------------------------------------- 
 

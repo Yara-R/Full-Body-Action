@@ -11,12 +11,37 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('perfil/', views.perfil, name='perfil'),
 
+<<<<<<< HEAD
     # path('admin/', admin.site.urls),
     # path ('accounts/', include('django.contrib.auth.urls')),
+=======
+<<<<<<< HEAD
+    path('consumo_agua/', views.agua, name='registro_agua'),
+    path('consumo_agua/', views.agua, name='registro_agua'),
+    path('admin/', admin.site.urls),
+    path ('accounts/', include('django.contrib.auth.urls')),
+
+    path('consumo_agua/', views.registro, name='registro_agua'),
+
+    path('consumo_agua/', views.agua, name='registro_agua'),
+
+=======
+    path('admin/', admin.site.urls),
+    path ('accounts/', include('django.contrib.auth.urls')),
+>>>>>>> c2ae21abe7668449f93fa31eeba704c35dc234e9
 
 
     path('consumo_agua/', views.agua, name='registro_agua'),
 
+<<<<<<< HEAD
+=======
+    path('admin/', admin.site.urls),
+    path ('accounts/', include('django.contrib.auth.urls')),
+
+    path('consumo_agua/', views.agua, name='registro_agua'),
+
+>>>>>>> e4673c03fecd98754d86207e44ee197694c82ed6
+>>>>>>> c2ae21abe7668449f93fa31eeba704c35dc234e9
     path('medidas/', views.medidas, name= 'medidas'),
     
     path('academias/', views.academias, name='academias'),
