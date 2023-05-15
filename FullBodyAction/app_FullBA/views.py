@@ -123,7 +123,7 @@ def login(request):
 
 # Resgistro de água (História 2)
 
-#@login_required 
+@login_required 
 def agua(request):
     if request.method == "POST":
         return render(request, 'usuarios/registro_agua.html')
