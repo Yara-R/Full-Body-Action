@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/muscle.css' %}">
     <link rel="stylesheet" href="{% static 'css/exemples.css' %}">
     <link rel="stylesheet" href="{% static 'css/exercises.css' %}">
+    <link rel="stylesheet" href="{% static 'css/registro_medidas.css' %}">
     <!-- Link do icone -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
@@ -50,15 +51,14 @@
           Medidas
         </span>
       </a>
-    </div>
-    <div class="menu">
+  
       <a class="menu-item" href="{% url 'registro_treinos' %}">
-        <i class="fa-solid fa-weight-scale"></i>
+        {% comment %} <i class="fa-solid fa-weight-scale"></i> {% endcomment %}
         <span>
           Registro de treinos
         </span>
       </a>
-
+    </div>
     <div class="menu">
       {% if  user.is_authenticated %}
         <h4> Olá, {{user.username}}</h4>

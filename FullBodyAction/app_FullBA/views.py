@@ -12,6 +12,7 @@ from django.db import models
 
 
 
+
 # Página Home
 
 def home(request):
@@ -26,7 +27,7 @@ def home(request):
 
 # Escolha do músculo (História 1)
 
-@login_required
+# @login_required
 
 def treino(request):
     if request.method =="POST":
@@ -36,7 +37,7 @@ def treino(request):
     else:
         return HttpResponse('Deu zica')
 
-@login_required
+# @login_required
 def smash(request):
     musculo = request.GET.get('musculo')
     if musculo == 'biceps':
@@ -57,7 +58,7 @@ def smash(request):
         return render(request, f'usuarios/posterior.html')
     elif musculo == 'antebraco':
         return render(request, f'usuarios/antebraco.html')
-@login_required    
+# @login_required    
 def redirect_to_muscle(request):
     muscle = request.GET.get('muscle', '')
     if muscle:
@@ -135,7 +136,7 @@ def cadastro(request):
 
 # Resgistro de água (História 2)
 
-@login_required 
+# @login_required 
 def agua(request):
     if request.method == "POST":
         return render(request, 'usuarios/registro_agua.html')
@@ -149,14 +150,14 @@ def agua(request):
 # Resgistro de Medidas corporais (História 3)
 
 
-@login_required 
+# @login_required 
 @csrf_protect
 def medidas(request):
     if request.method == "GET":
-        print("Funcionou")
+        # print("Funcionou")
         return render(request,'usuarios/medidas.html')
 
-    else:
+    if request.method == "POST":
         peito = float(request.POST.get("peito", 0))
         costas = float(request.POST.get("costas", 0))
         ombro = float(request.POST.get("ombro", 0))
@@ -168,19 +169,21 @@ def medidas(request):
         coxa = float(request.POST.get("coxa", 0))
         panturrilha = float(request.POST.get("panturrilha", 0))
 
-        print("Funcionou")
+        # print("Funcionou")
         Medidas.objects.create(peito=peito, costas=costas, ombro=ombro, pescoco=pescoco, 
                           braco=braco, antebraco=antebraco, quadril=quadril,
                           cintura=cintura, coxa=coxa, panturrilha=panturrilha)
+        
+        return HttpResponse("Funcionou")
 
 
 #-------------------------------------------------------------------------------------------------------------
 
 # Pagina do usuario (História 6)
 
-@login_required
+# @login_required
 def perfil(request):
-    if request.method == "GET":
+    if request.method == "GET" or request.method == "POST":
         info = User.objects.all()
         return render(request,'usuarios/perfil.html', {'nome' : info})
     else:
@@ -205,12 +208,17 @@ def mostrar_avaliacoes(request):
 def comentarios(request):
     comentarios = Comentario.objects.all().order_by('-data')
     if request.method == "POST":
+
+        autor = request.POST.get("autor", 0)
+        texto = request.POST.get("texto", 0)
+
         return render(request, 'comentarios.html')
     else:
         autor = request.POST.get("autor", "Usuario")
         texto = request.POST.get("texto", "")
+
         if autor and texto:
-            Comentario.objects.create(autor=autor, texto=texto)
+            Comentario.objects.create(autor=autor, texto=texto, data=data)
             return redirect('comentarios')
     return render(request, 'comentarios.html', {'comentarios': comentarios})
 

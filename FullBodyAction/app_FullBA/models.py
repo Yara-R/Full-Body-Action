@@ -18,7 +18,7 @@ class Avaliacao(models.Model):
 class Comentario(models.Model):
     autor = models.CharField(max_length=100)
     texto = models.TextField()
-    data = models.DateTimeField(auto_now_add=True)
+    # data = models.DateTimeField(auto_now_add=True)
 
 
 class Medidas(models.Model):

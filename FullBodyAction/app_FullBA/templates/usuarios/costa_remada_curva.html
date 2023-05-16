@@ -70,7 +70,6 @@
 
 <form method="POST">
     {% csrf_token %}
-    <div class="submissions">
         <span class="form-input">
             <input placeholder="Nome de usuário" type="text" name="autor">
         </span>
@@ -101,6 +100,5 @@
     <h4>Nenhum comentário ainda.</h4>
 {% endfor %}
 </ul>
-</div>
 
 {% endblock %}
