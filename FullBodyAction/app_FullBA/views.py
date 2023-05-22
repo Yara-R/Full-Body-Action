@@ -14,6 +14,13 @@ from django.db import models
 
 
 # Página Home
+def homee(request):
+    if request.method =="POST":
+        return render(request,'usuarios/homee.html')
+    elif request.method =="GET":
+        return render(request,'usuarios/homee.html')
+    else:
+        return HttpResponse('Deu zica')
 
 def home(request):
     if request.method =="POST":
