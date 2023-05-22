@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Full Body Action </title>
+  <meta charset="UTF-8">
+  <title>Full Body Action </title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" href="{% static 'css/submissions.css' %}">
     <link rel="stylesheet" href="{% static 'css/gyms.css' %}">
@@ -17,7 +17,7 @@
     <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css"> 
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css%22/%3E" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
+  </head>
 <body>
   <nav class="navbar navbar-light bg-light">
     <div class="logo">
@@ -58,24 +58,22 @@
           Registro de treinos
         </span>
       </a>
+
+      <a class="menu-item" href="{% url 'perfil' %}">
+        {% comment %} <i class="fa-solid fa-weight-scale"></i> {% endcomment %}
+        <i class="fas fa-user"></i>
+        <span>
+          Perfil
+        </span>
+      </a>
     </div>
     <div class="menu">
-      {% if  user.is_authenticated %}
-        <h4> Olá, {{user.username}}</h4>
-        <a class="menu-item" href="{% url 'logout' %}">
+        <a class="menu-item" href="{% url 'homee' %}">
           <i class="fa-regular fa-right-to-bracket"></i>
           <span>
-            Sair
+            Olá Saitama, deseja Sair?
           </span>
         </a>
-      {% else %}
-        <a class="menu-item" href="{% url 'login' %}">
-          <i class="fa fa-fw fa-user"></i>
-            <span>
-              Acessar
-            </span>
-        </a>
-      {% endif %}
     </div>
   </nav>   
 
