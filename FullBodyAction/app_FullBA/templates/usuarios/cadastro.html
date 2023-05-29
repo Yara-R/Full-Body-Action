@@ -1,21 +1,19 @@
 {% extends 'usuarios/basee.html' %}
 {% block conteudo %}
 
-<form action="{% url 'login' %}" method="get">
-  {% csrf_token %}
-
-  <h1>Cadastro</h1>
-
-  {% comment %} <div class="submissions"> {% endcomment %}
-
+  <form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    
+    <h1>Cadastro</h1>
+  
     <span class="form-input">
       <input placeholder="NOME" name="name" class="form-control-sm" type="text">
     </span>
-
+  
     <span class="form-input">
       <input placeholder="EMAIL" name="email" class="form-control-sm" type="email">
     </span>
-
+  
     <span class="form-input">
       <input placeholder="SENHA" name="password" class="form-control-sm" type="password">
     </span>
@@ -31,10 +29,10 @@
     <span class="form-input">
       <input placeholder="Idade" name="idade" class="form-control-sm" type="idade">
     </span>
-
-    <input type="submit" value="ENVIAR" class="form-control-sm submit-button"> 
-
-  {% comment %} </div> {% endcomment %}
-</form>
+  
+    <input type="submit" value="CADASTRAR" class="form-control-sm submit-button"> 
+  
+  </form>
+ 
 
 {% endblock %}

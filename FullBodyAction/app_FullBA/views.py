@@ -1,12 +1,12 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
-from .models import Comentario, Avaliacao, User
+from .models import Comentario, Avaliacao
 from .forms import UserForm, LoginForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from .models import Medidas, Agua
+from .models import Medidas, Agua, Cadastro
 from django.views.decorators.csrf import csrf_protect
 from django.db import models
 
@@ -102,15 +102,17 @@ def cadastro(request):
     if request.method == "GET":
         return render(request, 'usuarios/cadastro.html')
     elif request.method == "POST":
-        nome = request.POST.get("name", "Usuario")
+        nome = request.POST.get("name", "")
         email = request.POST.get("email", "")
         senha = request.POST.get("password", "")
-        if nome and email and senha:
-            user = User.objects.create_user(username=email, email=email, password=senha, first_name=nome)
-            return render(request, 'usuarios/login.html')
-        else:
-            return HttpResponse("Todos os campos são obrigatórios.")
+        peso = request.POST.get("password", 0.0)
+        altura = request.POST.get("password", 0.0)
+        idade = request.POST.get("password", 0)
 
+        Cadastro = User.objects.create_user(nome=nome, email=email, senha=senha, peso=peso, altura=altura, idade=idade)
+
+        return redirect('login') 
+     
 @csrf_protect
 def login(request):
     if request.method == "GET":
@@ -125,19 +127,6 @@ def login(request):
             return HttpResponseRedirect("/login/success/")
         else:
             return HttpResponse("Credenciais inválidas.")
-    
-def cadastro(request):
-    if request.method == 'POST':
-        form = UserForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return render(request, 'usuarios/login.html')
-    else:
-        form = UserForm()
-
-    return render(request, 'usuarios/cadastro.html', {'form': form})
-
-
 
  #------------------------------------------------------------------------------------------------------------- 
 
