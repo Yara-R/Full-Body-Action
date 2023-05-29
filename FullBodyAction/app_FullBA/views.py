@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from .models import Medidas
+from .models import Medidas, Agua
 from django.views.decorators.csrf import csrf_protect
 from django.db import models
 
@@ -144,13 +144,18 @@ def cadastro(request):
 # Resgistro de água (História 2)
 
 # @login_required 
+@csrf_protect
 def agua(request):
-    if request.method == "POST":
-        return render(request, 'usuarios/registro_agua.html')
     if request.method =="GET":
-        return render(request,'usuarios/registro_agua.html')
-    else:
-        return HttpResponse('Algo deu errado :/')
+        return render(request,'usuarios/agua.html')
+    if request.method == "POST":
+        data = float(request.POST.get("data", 0))
+        hora = float(request.POST.get("hora", 0))
+        quantidade = float(request.POST.get("quantidade", 0))
+
+        Agua.objects.create(data=data, hora=hora, quantidade=quantidade)
+    
+        return HttpResponse('Anjos digam amem')
     
 #-------------------------------------------------------------------------------------------------------------
 

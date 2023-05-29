@@ -1,0 +1,26 @@
+{% extends 'usuarios/base.html' %} 
+{% block conteudo %}
+
+<form action="{% url 'home' %}" method ="post">
+  {% csrf_token %}
+  
+<h1>Consumo de Água</h1>
+
+<span class="form-input">
+  <input name="data" class="form-control-sm" type="number">
+</span>
+
+<span class="form-input">
+  <input name="hora" class="form-control-sm" type="number">
+</span>
+
+<span class="form-input">
+  <input placeholder = "ml" name="quantidade" class="form-control-sm" type="number">
+</span>
+
+
+<input type='submit' value="SALVAR" class="form-control-sm submit-button"></input> 
+
+</form>
+
+{% endblock %}
