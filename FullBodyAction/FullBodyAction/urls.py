@@ -41,9 +41,6 @@ urlpatterns = [
     path('treino/', views.treino, name='treino'),
     path('musculo/', views.smash, name='smash'),
 
-   path('comentarios/', views.comentarios, name='comentarios'),
-
-
     #Exercicios Biceps---
     path('biceps_rosca_com_barra/', views.biceps_rosca_com_barra, name='biceps_rosca_com_barra'),
     path('biceps_rosca_martelo/', views.biceps_rosca_martelo, name= 'biceps_rosca_martelo'),

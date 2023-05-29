@@ -2,7 +2,8 @@ from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .models import Medidas, Agua, Cadastro, Avaliacao
-from .models import Comentario_Antebraco_rosca_inversa_punho_dumbell
+from .models import Comentario_Antebraco_rosca_inversa_punho_dumbell, Comentario_antebraco_rosca_punho_cross_over
+from .models import Comentario_antebraco_rosca_punho, Comentario_antebraco_rosca_inversa_punho
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from django.db import models
 
@@ -191,14 +192,7 @@ def mostrar_avaliacoes(request):
     media_avaliacoes = avaliacoes.aggregate(models.Avg('estrelas'))
     return render(request, 'avaliacoes.html', {'avaliacoes': avaliacoes, 'media_avaliacoes': media_avaliacoes})
 
-def comentarios(request):
-    
-    if request.method == "POST":
-        autor = request.POST.get("autor", "")
-        texto = request.POST.get("texto", "")
-        Comentario.objects.create(autor=autor, texto=texto)
 
-    # return render(request, 'comentarios.html', {'comentarios': comentarios})
 
 #-------------------------------------------------------------------------------------------------------------
 
@@ -399,18 +393,24 @@ def triceps_frances(request):
 def antebraco_rosca_punho(request):
     if request.method =="POST":
         return render(request, 'usuarios/antebraco_rosca_punho.html')
-    elif request.method =="GET":
-        return render(request, 'usuarios/antebraco_rosca_punho.html')
-    else:
-        return HttpResponse('Deu zica')
+    elif request.method == "POST":
+        autor = request.POST.get("autor", "")
+        texto = request.POST.get("texto", "")
+        Comentario_antebraco_rosca_punho.objects.create(autor=autor, texto=texto)
+    
+    comentarios = Comentario_antebraco_rosca_punho.objects.all()
+    return render(request, 'usuarios/antebraco_rosca_punho.html', {'comentarios': comentarios})
     
 def antebraco_rosca_inversa_punho(request):
     if request.method =="POST":
         return render(request, 'usuarios/antebraco_rosca_inversa_punho.html')
-    elif request.method =="GET":
-        return render(request, 'usuarios/antebraco_rosca_inversa_punho.html')
-    else:
-        return HttpResponse('Deu zica')
+    elif request.method =="POST":
+        autor = request.POST.get("autor", "")
+        texto = request.POST.get("texto", "")
+        Comentario_antebraco_rosca_inversa_punho.objects.create(autor=autor, texto=texto)
+    
+    comentarios = Comentario_antebraco_rosca_inversa_punho.objects.all()
+    return render(request, 'usuarios/antebraco_rosca_inversa_punho.html', {'comentarios': comentarios})
     
 def antebraco_rosca_inversa_punho_dumbell(request):
     if request.method =="POST":
@@ -427,10 +427,13 @@ def antebraco_rosca_inversa_punho_dumbell(request):
 def antebraco_rosca_punho_cross_over(request):
     if request.method =="POST":
         return render(request, 'usuarios/antebraco_rosca_punho_cross_over.html')
-    elif request.method =="GET":
-        return render(request, 'usuarios/antebraco_rosca_punho_cross_over.html')
-    else:
-        return HttpResponse('Deu zica')
+    elif request.method =="POST":
+        autor = request.POST.get("autor", "")
+        texto = request.POST.get("texto", "")
+        Comentario_antebraco_rosca_punho_cross_over.objects.create(autor=autor, texto=texto)
+    
+    comentarios = Comentario_antebraco_rosca_punho_cross_over.objects.all()
+    return render(request, 'usuarios/antebraco_rosca_punho_cross_over.html', {'comentarios': comentarios})
     
 #-------------------------------------------------------------------------------------------------------------
 
