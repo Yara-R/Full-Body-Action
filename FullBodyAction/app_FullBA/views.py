@@ -1,14 +1,10 @@
-from django.http.response import HttpResponse
+from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.decorators import login_required
-from .models import Medidas, Agua, Cadastro, Comentario, Avaliacao
-from django.views.decorators.csrf import csrf_protect
+from .models import Medidas, Agua, Cadastro, Avaliacao
+from .models import Comentario_Antebraco_rosca_inversa_punho_dumbell
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from django.db import models
-
-
 
 
 # Página Home
@@ -75,54 +71,34 @@ def redirect_to_muscle(request):
 
 # Cadastro, login dos usuários
 
-@csrf_protect
-
-  
-def login(request):
-    if request.method == 'GET':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            email = form.cleaned_data['email']
-            password = form.cleaned_data['password']
-            user = authenticate(request, email=email, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('home')
-            else:
-                form.add_error(None, 'Invalid email or password')
-            
-    else:
-        form = LoginForm()
-    return render(request, 'usuarios/login.html', {'form': form})
-    
-
 def cadastro(request):
     if request.method == "GET":
         return render(request, 'usuarios/cadastro.html')
     elif request.method == "POST":
         nome = request.POST.get("name", "")
         email = request.POST.get("email", "")
-        senha = request.POST.get("password", "")
-        peso = request.POST.get("password", 0.0)
-        altura = request.POST.get("password", 0.0)
-        idade = request.POST.get("password", 0)
+        senha = request.POST.get("senha", "")
+        peso = request.POST.get("peso", 0.0)
+        altura = request.POST.get("altura", 0.0)
+        idade = request.POST.get("idade", 0)
 
-        Cadastro.objects.create_user(nome=nome, email=email, senha=senha, peso=peso, altura=altura, idade=idade)
+        cadastro = Cadastro(nome=nome, email=email, senha=senha, peso=peso, altura=altura, idade=idade)
+        cadastro.save()
 
-        return redirect('login') 
+        return redirect('login')
      
 @csrf_protect
-def login(request):
+def login_view(request):
     if request.method == "GET":
         return render(request, 'usuarios/login.html')
     elif request.method == "POST":
         email = request.POST.get("email", "")
-        senha = request.POST.get("password", "")
-        user = authenticate(request, username=email, password=senha)
+        senha = request.POST.get("senha", "")
+        user = authenticate(request, email=email, senha=senha)
         if user is not None:
             login(request, user)
             # Redirect to a success page
-            return HttpResponseRedirect("/login/success/")
+            return redirect('home')
         else:
             return HttpResponse("Credenciais inválidas.")
 
@@ -216,21 +192,13 @@ def mostrar_avaliacoes(request):
     return render(request, 'avaliacoes.html', {'avaliacoes': avaliacoes, 'media_avaliacoes': media_avaliacoes})
 
 def comentarios(request):
-    comentarios = Comentario.objects.all().order_by('-data')
+    
     if request.method == "POST":
-
-        autor = request.POST.get("autor", 0)
-        texto = request.POST.get("texto", 0)
-
-        return render(request, 'comentarios.html')
-    else:
-        autor = request.POST.get("autor", "Usuario")
+        autor = request.POST.get("autor", "")
         texto = request.POST.get("texto", "")
+        Comentario.objects.create(autor=autor, texto=texto)
 
-        if autor and texto:
-            Comentario.objects.create(autor=autor, texto=texto, data=data)
-            return redirect('comentarios')
-    return render(request, 'comentarios.html', {'comentarios': comentarios})
+    # return render(request, 'comentarios.html', {'comentarios': comentarios})
 
 #-------------------------------------------------------------------------------------------------------------
 
@@ -447,10 +415,14 @@ def antebraco_rosca_inversa_punho(request):
 def antebraco_rosca_inversa_punho_dumbell(request):
     if request.method =="POST":
         return render(request, 'usuarios/antebraco_rosca_inversa_punho_dumbell.html')
-    elif request.method =="GET":
-        return render(request, 'usuarios/antebraco_rosca_inversa_punho_dumbell.html')
-    else:
-        return HttpResponse('Deu zica')
+    elif request.method == "POST":
+        autor = request.POST.get("autor", "")
+        texto = request.POST.get("texto", "")
+        Comentario_Antebraco_rosca_inversa_punho_dumbell.objects.create(autor=autor, texto=texto)
+    
+    comentarios = Comentario_Antebraco_rosca_inversa_punho_dumbell.objects.all()
+    return render(request, 'usuarios/antebraco_rosca_inversa_punho_dumbell.html', {'comentarios': comentarios})
+    
     
 def antebraco_rosca_punho_cross_over(request):
     if request.method =="POST":

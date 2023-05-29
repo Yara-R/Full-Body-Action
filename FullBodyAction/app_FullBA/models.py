@@ -11,10 +11,12 @@ class Cadastro(models.Model):
 class Avaliacao(models.Model):
     estrelas = models.IntegerField(default=0, blank=True, null=True)
     
-class Comentario(models.Model):
+class Comentario_Antebraco_rosca_inversa_punho_dumbell(models.Model):
     autor = models.CharField(max_length=100)
     texto = models.TextField()
-    # data = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.texto
 
 
 class Medidas(models.Model):
