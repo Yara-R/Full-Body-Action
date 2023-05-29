@@ -27,6 +27,8 @@ urlpatterns = [
     
     path('academias/', views.academias, name='academias'),
 
+    path('academiass/', views.academiass, name='academiass'),
+
     path('registro_treinos/', views.registro_treinos, name='registro_treinos'),
 
 

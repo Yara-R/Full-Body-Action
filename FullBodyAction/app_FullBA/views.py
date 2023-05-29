@@ -206,6 +206,14 @@ def academias(request):
         return render(request, 'usuarios/academias.html')
     else:
         return HttpResponse('Deu zica')
+    
+def academiass(request):
+    # if request.method =="POST":
+    #     return render(request, 'usuarios/academias.html')
+    if request.method =="GET":
+        return render(request, 'usuarios/academiass.html')
+    else:
+        return HttpResponse('Deu zica')
 
 def mostrar_avaliacoes(request):
     avaliacoes = Avaliacao.objects.all()
