@@ -1,16 +1,12 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
-from django.contrib.auth.models import AbstractUser
-
-class User(models.Model):
-    name = models.CharField(max_length=50)
-    email = models.EmailField()
-    password = models.CharField(max_length=50)
-class Registro_Agua(models.Model):
-    data = models.DateField()
-    hora = models.DateTimeField()
-    quantidade_ml = models.IntegerField()
+class Cadastro(models.Model):
+    nome = models.TextField()
+    email = models.TextField()
+    senha = models.CharField()
+    peso = models.DecimalField()
+    altura = models.DecimalField()
+    idade = models.IntegerField()
 
 class Avaliacao(models.Model):
     estrelas = models.IntegerField(default=0, blank=True, null=True)
@@ -32,3 +28,8 @@ class Medidas(models.Model):
     cintura = models.DecimalField(max_digits=5, decimal_places=2)
     coxa = models.DecimalField(max_digits=5, decimal_places=2)
     panturrilha = models.DecimalField(max_digits=5, decimal_places=2)
+
+class Agua(models.Model):
+    data = models.DecimalField(max_digits=8, decimal_places=2)
+    hora = models.DecimalField(max_digits=8, decimal_places=2)
+    quantidade = models.DecimalField(max_digits=5, decimal_places=2)
