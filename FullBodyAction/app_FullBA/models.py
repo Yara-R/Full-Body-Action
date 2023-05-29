@@ -3,9 +3,9 @@ from django.db import models
 class Cadastro(models.Model):
     nome = models.TextField()
     email = models.TextField()
-    senha = models.CharField()
-    peso = models.DecimalField()
-    altura = models.DecimalField()
+    senha = models.CharField(max_length=100)
+    peso = models.DecimalField(max_digits=5, decimal_places=2)
+    altura = models.DecimalField(max_digits=5, decimal_places=2)
     idade = models.IntegerField()
 
 class Avaliacao(models.Model):

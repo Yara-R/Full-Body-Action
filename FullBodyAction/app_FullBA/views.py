@@ -1,12 +1,10 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
-from .models import Comentario, Avaliacao
-from .forms import UserForm, LoginForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from .models import Medidas, Agua, Cadastro
+from .models import Medidas, Agua, Cadastro, Comentario, Avaliacao
 from django.views.decorators.csrf import csrf_protect
 from django.db import models
 
@@ -109,7 +107,7 @@ def cadastro(request):
         altura = request.POST.get("password", 0.0)
         idade = request.POST.get("password", 0)
 
-        Cadastro = User.objects.create_user(nome=nome, email=email, senha=senha, peso=peso, altura=altura, idade=idade)
+        Cadastro.objects.create_user(nome=nome, email=email, senha=senha, peso=peso, altura=altura, idade=idade)
 
         return redirect('login') 
      
