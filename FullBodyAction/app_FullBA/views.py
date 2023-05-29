@@ -145,17 +145,20 @@ def cadastro(request):
 
 # @login_required 
 @csrf_protect
+
 def agua(request):
-    if request.method =="GET":
-        return render(request,'usuarios/agua.html')
-    if request.method == "POST":
+    if request.method == "GET":
+        return render(request, 'usuarios/agua.html')
+    
+    elif request.method == "POST":
         data = float(request.POST.get("data", 0))
         hora = float(request.POST.get("hora", 0))
         quantidade = float(request.POST.get("quantidade", 0))
 
         Agua.objects.create(data=data, hora=hora, quantidade=quantidade)
     
-        return HttpResponse('Anjos digam amem')
+        return redirect('home')  
+
     
 #-------------------------------------------------------------------------------------------------------------
 
