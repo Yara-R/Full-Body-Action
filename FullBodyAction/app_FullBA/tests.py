@@ -7,7 +7,6 @@ from selenium.webdriver.common.by import By
 
 
 class TestFullBA(LiveServerTestCase):
-
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -22,14 +21,19 @@ class TestFullBA(LiveServerTestCase):
         cls.driver.quit()
         super().tearDownClass()
 
+    def tearDown(self):
+        self.driver.quit()
+        super().tearDown()
+
     def test_home(self):
-            self.driver.get("http://127.0.0.1:8000/")
-            time.sleep(5)
-            
+
+        self.driver.get("http://127.0.0.1:8000/")
+        time.sleep(5)
 
     def test_gyms(self):
         self.driver.get("http://127.0.0.1:8000/academias/")
         time.sleep(5)
+
         
     def test_Biceps_Choice(self):
         self.driver.get("http://127.0.0.1:8000/treino/")
@@ -78,7 +82,6 @@ class TestFullBA(LiveServerTestCase):
         enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
         enviar.click()
         time.sleep(2)
-        
         # input_voto = self.driver.find_element(By.ID, "star5")
         # input_voto.click()
 
@@ -98,7 +101,6 @@ class TestFullBA(LiveServerTestCase):
         enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
         enviar.click()
         time.sleep(2)
-        
         # input_voto = self.driver.find_element(By.ID, "star5")
         # input_voto.click()
 
@@ -117,7 +119,6 @@ class TestFullBA(LiveServerTestCase):
 
         enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
         enviar.click()
-        
         # input_voto = self.driver.find_element(By.ID, "star5")
         # input_voto.click()
         # time.sleep(2)
@@ -133,7 +134,6 @@ class TestFullBA(LiveServerTestCase):
         enviar = self.driver.find_element(By.XPATH, '//button[@type="submit"]')
         enviar.click()
         time.sleep(2)
-
     def test_C_Low_Row(self):
         self.driver.get("http://127.0.0.1:8000/costa_low_row/")
         time.sleep(2)
@@ -149,7 +149,6 @@ class TestFullBA(LiveServerTestCase):
         enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
         enviar.click()
         time.sleep(2)
-
     def test_C_Pull_Down_Aberto(self):
         self.driver.get("http://127.0.0.1:8000/costa_pull_down_aberto/")
         time.sleep(2)
@@ -362,7 +361,6 @@ class TestFullBA(LiveServerTestCase):
         enviar.click()
         time.sleep(2)
 
-
     def test_T_Frances(self):
         self.driver.get("http://127.0.0.1:8000/triceps_frances/")
         time.sleep(2)
@@ -502,7 +500,6 @@ class TestFullBA(LiveServerTestCase):
         enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
         enviar.click()
         time.sleep(2)
-
     
     def test_PT_Gemeos_Sentado(self):
         self.driver.get("http://127.0.0.1:8000/panturrilha_gemeos_sentado/")
@@ -747,8 +744,6 @@ class TestFullBA(LiveServerTestCase):
         enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
         enviar.click()
         time.sleep(2)
-
-
         
     def test_medidas(self):
         self.driver.get("http://127.0.0.1:8000/medidas/")
@@ -810,7 +805,7 @@ class TestFullBA(LiveServerTestCase):
         input_hora.send_keys("1030")
         time.sleep(2)
 
-        select = self.driver.find_element(By.CSS_SELECTOR, "select[name='Quantidade']")
+        select = self.driver.find_element(By.NAME, "quantidade")
         select.send_keys("250ml")
         time.sleep(2)
 
@@ -848,7 +843,7 @@ class TestFullBA(LiveServerTestCase):
         enviar_login = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
         enviar_login.click()
         time.sleep(2)
-        
+
     def test_perfil(self):
         self.driver.get("http://127.0.0.1:8000/perfil/")
         time.sleep(2)
