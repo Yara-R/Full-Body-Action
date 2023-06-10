@@ -1,7 +1,7 @@
 from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from .models import Medidas, Agua, Cadastro, Avaliacao
+from .models import Medidas, Agua, Cadastro, Avaliacao, User
 from .models import Comentario_Antebraco_rosca_inversa_punho_dumbell, Comentario_antebraco_rosca_punho_cross_over
 from .models import Comentario_antebraco_rosca_punho, Comentario_antebraco_rosca_inversa_punho
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
