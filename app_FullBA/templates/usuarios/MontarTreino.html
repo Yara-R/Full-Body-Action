@@ -1,79 +1,106 @@
+{% extends 'usuarios/base.html' %}
+
+{% block conteudo %}
 <!DOCTYPE html>
 <html>
 <head>
   <title>Monte o seu treino</title>
+  <style>
+    .centered-text {
+      text-align: center;
+    }
+    .checkbox-label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .submit-button {
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
 </head>
 <body>
-  <h1>Monte o seu treino</h1>
-  <h1>escolha o nome do seu treino</h1>
+  <h1 class="centered-text">Monte o seu treino</h1>
 
-  <span class="form-input">
-    <input placeholder="Nome do treino" name="nome do treino" class="text" type="text">
-</span>
-  
-  <h2>Escolha os exercícios:</h2>
-  <input type="checkbox" id="exercicio1" name="exercicio1">
-  <label for="exercicio1">Pantturilha flexora vertical</label><br>
-  
-  <input type="checkbox" id="exercicio2" name="exercicio2">
-  <label for="exercicio2">Panturrilha Elevação Gêmeos</label><br>
-  
-  <input type="checkbox" id="exercicio3" name="exercicio3">
-  <label for="exercicio3">Panturrilha Panturrilha Maquina</label><br>
+  <div class="centered-text">
+    <h1>Escolha o nome do seu treino</h1>
 
-  <input type="checkbox" id="exercicio4" name="exercicio4">
-  <label for="exercicio4">Panturrilha Elevação Gêmeos Sentado</label><br>
-  
-  <input type="checkbox" id="exercicio5" name="exercicio5">
-  <label for="exercicio5">Peito cross over</label><br>
-  
-  <input type="checkbox" id="exercicio6" name="exercicio6">
-  <label for="exercicio6">Peito crucifixo</label><br>
+    <form action="{% url 'home' %}" method="post">
+      {% csrf_token %}
+      <span class="form-input">
+        <input placeholder="Nome do treino" name="nome_do_treino" class="text" type="text" style="text-align: center;">
+      </span>
 
-  <input type="checkbox" id="exercicio6" name="exercicio7">
-  <label for="exercicio6">peito peck deck</label><br>
+      <h2>Escolha os exercícios:</h2><br>
+      <div style="text-align: left;">
+    <input type="checkbox" id="exercicio1" name="exercicio1">
+    <label for="exercicio1" >Panturrilha flexora vertical</label><br>
+    
+    <input type="checkbox" id="exercicio2" name="exercicio2">
+    <label for="exercicio2">Panturrilha Elevação Gêmeos</label><br>
+    
+    <input type="checkbox" id="exercicio3" name="exercicio3">
+    <label for="exercicio3">Panturrilha Panturrilha Maquina</label><br>
 
-  <input type="checkbox" id="exercicio6" name="exercicio8">
-  <label for="exercicio6">Peito supino</label><br>
+    <input type="checkbox" id="exercicio4" name="exercicio4">
+    <label for="exercicio4">Panturrilha Elevação Gêmeos Sentado</label><br>
+    
+    <input type="checkbox" id="exercicio5" name="exercicio5">
+    <label for="exercicio5">Peito cross over</label><br>
+    
+    <input type="checkbox" id="exercicio6" name="exercicio6">
+    <label for="exercicio6">Peito crucifixo</label><br>
 
-  <input type="checkbox" id="exercicio6" name="exercicio6">
-  <label for="exercicio6">Peito supuino inclinado</label><br>
+    <input type="checkbox" id="exercicio6" name="exercicio7">
+    <label for="exercicio6">peito peck deck</label><br>
 
-  <input type="checkbox" id="exercicio6" name="exercicio6">
-  <label for="exercicio6">Posterior agachamento smith</label><br>
+    <input type="checkbox" id="exercicio6" name="exercicio8">
+    <label for="exercicio6">Peito supino</label><br>
 
-  <input type="checkbox" id="exercicio6" name="exercicio6">
-  <label for="exercicio6">Posterior agachamento</label><br>
+    <input type="checkbox" id="exercicio6" name="exercicio6">
+    <label for="exercicio6">Peito supuino inclinado</label><br>
 
-  <input type="checkbox" id="exercicio6" name="exercicio6">
-  <label for="exercicio6">Posterior hack squat</label><br>
+    <input type="checkbox" id="exercicio6" name="exercicio6">
+    <label for="exercicio6">Posterior agachamento smith</label><br>
 
-  <input type="checkbox" id="exercicio6" name="exercicio6">
-  <label for="exercicio6">Posterior leg curl</label><br>
+    <input type="checkbox" id="exercicio6" name="exercicio6">
+    <label for="exercicio6">Posterior agachamento</label><br>
 
-  <input type="checkbox" id="exercicio6" name="exercicio6">
-  <label for="exercicio6">Quadriceps afundo</label><br>
+    <input type="checkbox" id="exercicio6" name="exercicio6">
+    <label for="exercicio6">Posterior hack squat</label><br>
 
-  <input type="checkbox" id="exercicio6" name="exercicio6">
-  <label for="exercicio6">Quadriceps cadeira extensora</label><br>
+    <input type="checkbox" id="exercicio6" name="exercicio6">
+    <label for="exercicio6">Posterior leg curl</label><br>
 
-  <input type="checkbox" id="exercicio6" name="exercicio6">
-  <label for="exercicio6">Quadriceps hack squat</label><br>
+    <input type="checkbox" id="exercicio6" name="exercicio6">
+    <label for="exercicio6">Quadriceps afundo</label><br>
 
-  <input type="checkbox" id="exercicio6" name="exercicio6">
-  <label for="exercicio6">Rosca apoiada</label><br>
+    <input type="checkbox" id="exercicio6" name="exercicio6">
+    <label for="exercicio6">Quadriceps cadeira extensora</label><br>
 
-  <input type="checkbox" id="exercicio6" name="exercicio6">
-  <label for="exercicio6">Triceps banco</label><br>
+    <input type="checkbox" id="exercicio6" name="exercicio6">
+    <label for="exercicio6">Quadriceps hack squat</label><br>
 
-  <input type="checkbox" id="exercicio6" name="exercicio6">
-  <label for="exercicio6">Triceps cross corda</label><br>
+    <input type="checkbox" id="exercicio6" name="exercicio6">
+    <label for="exercicio6">Rosca apoiada</label><br>
 
-  <input type="checkbox" id="exercicio6" name="exercicio6">
-  <label for="exercicio6">Triceps cros unilateral</label><br>
+    <input type="checkbox" id="exercicio6" name="exercicio6">
+    <label for="exercicio6">Triceps banco</label><br>
 
-  <input type="checkbox" id="exercicio6" name="exercicio6">
-  <label for="exercicio6">Triceps frances</label><br>
+    <input type="checkbox" id="exercicio6" name="exercicio6">
+    <label for="exercicio6">Triceps cross corda</label><br>
 
+    <input type="checkbox" id="exercicio6" name="exercicio6">
+    <label for="exercicio6">Triceps cros unilateral</label><br>
+
+    <input type="checkbox" id="exercicio6" name="exercicio6">
+    <label for="exercicio6">Triceps frances</label><br>
+    </div>
+</div>
+  <form action="{% url 'home' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="submit-button">Salvar!</button>
+  </form>
 </body>
 </html>
+{% endblock %}
