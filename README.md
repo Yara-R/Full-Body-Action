@@ -6,12 +6,15 @@ Para utilizar esse repertorio, é necessário criar um ambiente virtual (com DJa
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 *Site da aplicação:*
+
 http://fullbodyaction.us-east-2.elasticbeanstalk.com
 
 *Jira do projeto:*
+
 https://fullbodyaction.atlassian.net/jira/software/projects/FULLBA/boards/2
 
 *Protótipo Lofi:*
+
 https://www.figma.com/proto/9ho1qYNJdCXaTmFY9Cy4cm/prot%C3%B3tipo-lo-fi?type=design&node-id=135-1022&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=135%3A1022&show-proto-sidebar=1
 
 *Diagrama de atividades:*
