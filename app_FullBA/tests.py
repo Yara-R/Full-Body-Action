@@ -9,34 +9,40 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
-driver = webdriver.Chrome(options=chrome_options)
+# driver = webdriver.Chrome(options=chrome_options)
 
 class TestFullBA(LiveServerTestCase):
 
     def test_home(self):
-
+        driver = webdriver.Chrome(options=chrome_options)
         driver.get("http://127.0.0.1:8000/")
         time.sleep(5)
+        driver.quit()
 
-    # def test_gyms(self):
-    #     self.driver.get("http://127.0.0.1:8000/academias/")
-    #     time.sleep(5)
+    def test_gyms(self):
+        driver = webdriver.Chrome(options=chrome_options)
+        driver.get("http://127.0.0.1:8000/academias/")
+        time.sleep(5)
+        driver.quit()
 
 
     # def test_Biceps_Choice(self):
-    #     self.driver.get("http://127.0.0.1:8000/treino/")
+    #     driver = webdriver.Chrome(options=chrome_options)
+    #     driver.get("http://127.0.0.1:8000/treino/")
     #     time.sleep(2)
 
-    #     select = self.driver.find_element(By.CSS_SELECTOR, "select[name='musculo']")
+    #     select = driver.find_element(By.CSS_SELECTOR, "select[name='musculo']")
     #     select.send_keys("Bíceps")
     #     time.sleep(2)
 
-    #     enviar = self.driver.find_element(By.XPATH, '//button[@type="submit"]')
+    #     enviar = driver.find_element(By.XPATH, '//button[@type="submit"]')
     #     enviar.click()
     #     time.sleep(2)
+    #     driver.quit()
 
     # def test_B_Rosca_Barra(self):
-    #     self.driver.get("http://127.0.0.1:8000/biceps_rosca_com_barra/")
+    #     driver = webdriver.Chrome(options=chrome_options)
+    #     driver.get("http://127.0.0.1:8000/biceps_rosca_com_barra/")
     #     time.sleep(2)
 
     #     input_nome = self.driver.find_element(By.NAME, 'autor')
@@ -50,66 +56,62 @@ class TestFullBA(LiveServerTestCase):
     #     enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
     #     enviar.click()
     #     time.sleep(2)
-
-    #     # input_voto = self.driver.find_element(By.ID, "star5")
-    #     # input_voto.click()
-
+    #     driver.quit()
 
     # def test_B_Rosca_Apoiada(self):
-    #     self.driver.get("http://127.0.0.1:8000/biceps_rosca_apoiada/")
+    #     driver = webdriver.Chrome(options=chrome_options)
+    #     driver.get("http://127.0.0.1:8000/biceps_rosca_apoiada/")
     #     time.sleep(2)
 
-    #     input_nome = self.driver.find_element(By.NAME, 'autor')
+    #     input_nome = driver.find_element(By.NAME, 'autor')
     #     input_nome.send_keys('usuario')
     #     time.sleep(2)
 
-    #     input_comentario = self.driver.find_element(By.NAME, 'texto')
+    #     input_comentario = driver.find_element(By.NAME, 'texto')
     #     input_comentario.send_keys('abcd')
     #     time.sleep(2)
 
-    #     enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
+    #     enviar = driver.find_element(By.XPATH, '//input[@type="submit"]')
     #     enviar.click()
     #     time.sleep(2)
-    #     # input_voto = self.driver.find_element(By.ID, "star5")
-    #     # input_voto.click()
+    #     driver.quit()
 
 
     # def test_B_Rosca_Martelo(self):
-    #     self.driver.get("http://127.0.0.1:8000/biceps_rosca_martelo/")
+    #     driver = webdriver.Chrome(options=chrome_options)
+    #     driver.get("http://127.0.0.1:8000/biceps_rosca_martelo/")
     #     time.sleep(2)
 
-    #     input_nome = self.driver.find_element(By.NAME, 'autor')
+    #     input_nome = driver.find_element(By.NAME, 'autor')
     #     input_nome.send_keys('usuario')
     #     time.sleep(2)
 
-    #     input_comentario = self.driver.find_element(By.NAME, 'texto')
+    #     input_comentario = driver.find_element(By.NAME, 'texto')
     #     input_comentario.send_keys('abcd')
     #     time.sleep(2)
 
-    #     enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
+    #     enviar = driver.find_element(By.XPATH, '//input[@type="submit"]')
     #     enviar.click()
     #     time.sleep(2)
-    #     # input_voto = self.driver.find_element(By.ID, "star5")
-    #     # input_voto.click()
+    #     driver.quit()
 
 
     # def test_B_Rosca_Unilateral(self):
-    #     self.driver.get("http://127.0.0.1:8000/biceps_rosca_unilateral/")
+    #     driver = webdriver.Chrome(options=chrome_options)
+    #     driver.get("http://127.0.0.1:8000/biceps_rosca_unilateral/")
     #     time.sleep(2)
 
-    #     input_nome = self.driver.find_element(By.NAME, 'autor')
+    #     input_nome = driver.find_element(By.NAME, 'autor')
     #     input_nome.send_keys('usuario')
     #     time.sleep(2)
 
-    #     input_comentario = self.driver.find_element(By.NAME, 'texto')
+    #     input_comentario = driver.find_element(By.NAME, 'texto')
     #     input_comentario.send_keys('abcd')
     #     time.sleep(2)
 
-    #     enviar = self.driver.find_element(By.XPATH, '//input[@type="submit"]')
+    #     enviar = driver.find_element(By.XPATH, '//input[@type="submit"]')
     #     enviar.click()
-    #     # input_voto = self.driver.find_element(By.ID, "star5")
-    #     # input_voto.click()
-    #     # time.sleep(2)
+    #     driver.quit()
 
     # def test_Costas_Choice(self):
     #     self.driver.get("http://127.0.0.1:8000/treino/")
