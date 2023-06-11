@@ -104,6 +104,7 @@ urlpatterns = [
     path('gluteo_caneleira/', views.gluteo_caneleira, name = 'gluteo_caneleira'),
     path('gluteo_caneleira_extensao/', views.gluteo_caneleira_extensao, name = 'gluteo_caneleira_extensao'),
     path('gluteo_maquina/', views.gluteo_maquina, name = 'gluteo_maquina'),
+    
 
     
 ] 

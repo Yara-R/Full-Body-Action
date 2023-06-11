@@ -84,7 +84,7 @@ def cadastro(request):
         idade = request.POST.get("idade", 0)
 
         cadastro = Cadastro(nome=nome, email=email, senha=senha, peso=peso, altura=altura, idade=idade)
-        cadastro.save()
+        ##cadastro.save()
 
         return redirect('login')
      
@@ -568,3 +568,4 @@ def montar_treino(request):
     
     elif request.method == "POST":    
         return redirect('home')
+    

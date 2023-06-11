@@ -59,7 +59,8 @@
     </div>
 
         
-    <form action="processar_formulario.php" method="post">
-      <button class="btn">Enviar</button>
-    </form>
+    <form action="{% url 'home' %}" method="post">
+      {% csrf_token %}
+      <button type="submit" class="submit-button">Enviar!</button>
+  </form>
 {% endblock %}
