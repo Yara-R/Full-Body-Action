@@ -58,6 +58,12 @@
           Treinos
         </span>
       </a>
+      <a class="menu-item" href="{% url 'montar_treino' %}">
+        <i class="fa-solid fa-dumbbell"></i>
+        <span>
+          Montar treino
+        </span>
+      </a>
 
     </div>
     <div class="menu">
@@ -74,8 +80,15 @@
             Sair
           </span>
         </a>
+              <a class="menu-item" href="{% url 'registro_treinos' %}">
+        <i class="fa-solid fa-dumbbell"></i>
+        <span>
+          Treinos
+        </span>
+      </a>
     </div>
-  </nav>   
+  </nav> 
+
 
 
     {% block conteudo %}

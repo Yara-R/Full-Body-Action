@@ -554,3 +554,17 @@ def registro_treinos(request):
         return render(request, 'usuarios/registro_treinos.html')
     else:
         return HttpResponse('Deu zica')
+    
+     #------------------------------------------------------------------------------------------------------------- 
+
+# Resgistro de água (História 2)
+
+# @login_required 
+@csrf_protect
+
+def montar_treino(request):
+    if request.method == "GET":
+        return render(request, 'Usuarios/MontarTreino.html')
+    
+    elif request.method == "POST":    
+        return redirect('home')

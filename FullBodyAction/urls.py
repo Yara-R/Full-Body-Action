@@ -31,6 +31,7 @@ urlpatterns = [
 
     path('registro_treinos/', views.registro_treinos, name='registro_treinos'),
 
+    path('montar_treino/', views.montar_treino, name='montar_treino'),
 
 
     path('rosca_com_barra/', views.biceps_rosca_com_barra, name='rosca_com_barra'),
