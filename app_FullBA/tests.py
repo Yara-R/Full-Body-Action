@@ -5,29 +5,17 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--no-sandbox")
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-gpu")
+driver = webdriver.Chrome(options=chrome_options)
 
 class TestFullBA(LiveServerTestCase):
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
-        chrome_options = Options()
-        chrome_options.add_argument("--no-sandbox")
-        # chrome_options.add_argument("--headless")
-        chrome_options.add_argument("--disable-gpu")
-        cls.driver = webdriver.Chrome(options=chrome_options)
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.driver.quit()
-        super().tearDownClass()
-
-    def tearDown(self):
-        self.driver.quit()
-        super().tearDown()
 
     def test_home(self):
 
-        self.driver.get("http://127.0.0.1:8000/")
+        driver.get("http://127.0.0.1:8000/")
         time.sleep(5)
 
     # def test_gyms(self):
