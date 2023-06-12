@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'usuarios/base.html' %}
 {% block conteudo %}
   <!--<form action="{% url 'login' %}" method ="post"> -->
@@ -6,4 +7,14 @@
       <h1>Exercícios</h1>
     </div> 
 </form>
+=======
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+  <!--<form action="{% url 'login' %}" method ="post"> -->
+    {% csrf_token %}
+    <div style="text-align: center"class="container">
+      <h1>Exercícios</h1>
+    </div> 
+</form>
+>>>>>>> e2ae30caca440ba39f9ae5577f2d1ca60e07b384
 {% endblock %}

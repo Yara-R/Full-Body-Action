@@ -1,0 +1,101 @@
+{% extends 'usuarios/base.html' %} 
+{% block conteudo %}
+
+<div class="exercise">
+    <h1>Gluteos Maquina</h1>
+        <img
+        src="http://www.ferrosports.com.br/img_external/gluteo/image1.gif"
+        class="container."
+        alt="Gluteos Maquina"
+        height="50%" width="50%"
+    />
+</div>
+
+<div class="description">
+    <h3>
+        Movimento:
+    <h3>
+    <h4>
+        O exercício de glúteos na máquina é uma forma eficaz de fortalecer e tonificar os músculos glúteos. Esse exercício é feito em uma máquina específica que geralmente é encontrada em academias.
+    </h4>
+    <h4>
+        Para realizar o exercício, é necessário ajustar a altura da almofada da máquina para que ela fique alinhada com a altura dos seus ombros. Em seguida, sente-se na máquina com as costas retas e os pés apoiados no chão.
+    </h4>
+    <h4>
+        Coloque as pernas sob as almofadas acolchoadas da máquina e segure as alças laterais. Pressione as almofadas com os pés para empurrar as pernas para trás, contraindo os músculos glúteos. 
+    <h4>
+        Mantenha a contração por alguns segundos e depois retorne lentamente à posição inicial.
+    </h4>
+
+    <h3>
+        Músculos trabalhados:
+    <h3>
+    <h4>
+        Gluteos
+    </h4>
+</div>
+
+<div class="rating">
+
+    <input class="rating__input" type="radio" name="rating" id="star1" value="1">
+    <label class="rating__label" for="star1"></label>
+
+    <input class="rating__input" type="radio" name="rating" id="star2" value="2">
+    <label class="rating__label" for="star2"></label>
+
+    <input class="rating__input" type="radio" name="rating" id="star3" value="3">
+    <label class="rating__label" for="star3"></label>
+
+    <input class="rating__input" type="radio" name="rating" id="star4" value="4">
+    <label class="rating__label" for="star4"></label>
+
+    <input class="rating__input" type="radio" name="rating" id="star5" value="5">
+    <label class="rating__label" for="star5"></label>
+  </div>
+
+  <p>{{ media_avaliacoes.estrelas__avg }}</p>
+  {% for avaliacao in avaliacoes %}
+      <p>{{ avaliacao.estrelas }}</p>
+  {% endfor %}
+
+  <div class="description" >
+    <h3>
+        Deixe um comentário:
+    <h3>
+</div> 
+
+<form method="POST">
+    {% csrf_token %}
+        <span class="form-input">
+            <input placeholder="Nome de usuário" type="text" name="autor">
+        </span>
+        <span class="form-input">
+            <textarea placeholder="Comentário" name="texto"></textarea>
+        </span>
+        <input type='submit' class="form-control-sm submit-button" value="Comentar"></input>
+    </div>
+</form>
+
+<div class="description" >
+    <h3>
+        Comentários:
+    <h3>
+
+
+<ul>
+
+{% for comentario in comentarios %}
+
+    <li>
+        <p>{{ comentario.autor }} em {{ comentario.data }}</p>
+        <p>{{ comentario.texto }}</p>
+    </li>
+
+{% empty %}
+
+    <h4>Nenhum comentário ainda.</h4>
+{% endfor %}
+</ul>
+
+
+{% endblock %}
