@@ -17,6 +17,7 @@ class TestFullBA(LiveServerTestCase):
         time.sleep(5)
         driver.quit()
 
+
     # def test_gyms(self):
     #     driver = webdriver.Chrome(options=chrome_options)
     #     driver.get("http://127.0.0.1:8000/academias/")
