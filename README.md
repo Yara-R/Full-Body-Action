@@ -4,12 +4,24 @@ Esse projeto foi criado por Geymison Erick dos Santos, João Pedro Araujo, Kaiqu
 
 Full Body Action é uma aplicação web para saúde e fitness onde o usuário escolhe o músculo para ver fatos e exercícios sobre ele, registrar o consumo de água e registrar as medidas corporais, tudo de forma gameficada.
 
-Para utilizar esse repertorio, é necessário criar um ambiente virtual com DJango, selenium, fontawesomefree instalado.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Contribua com o projeto
+
+Para utilizar esse repertorio, é necessário criar um ambiente virtual e instalar nele DJango, selenium, fontawesomefree.
+
+### Passo a passo para criar o ambiente virtual python:
+No terminal execute:
+1. python -m venv nome_da_venv
+2. Se em windows:  nome_da_venv\Scripts\activate.bat
+3.  nome_da_venv/scripts/activate
+4.  pip install DJango
+5.  pip install selenium
+6.  pip install fontawesomefree
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Site da aplicação:
 
-http://fullbodyaction.us-east-2.elasticbeanstalk.com
+http://fullbodyaction.us-east-1.elasticbeanstalk.com
 
 ### Jira do projeto:
 
