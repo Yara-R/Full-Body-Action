@@ -564,7 +564,7 @@ def registro_treinos(request):
 
 def montar_treino(request):
     if request.method == "GET":
-        return render(request, 'Usuarios/MontarTreino.html')
+        return render(request, 'usuarios/MontarTreino.html')
     
     elif request.method == "POST":    
         return redirect('home')

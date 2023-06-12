@@ -9,7 +9,7 @@ chrome_options.add_argument("--no-sandbox")
 # chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
 
-class TestFullBA(LiveServerTestCase):
+# class TestFullBA(LiveServerTestCase):
 
     def test_home(self):
         driver = webdriver.Chrome(options=chrome_options)
@@ -17,6 +17,7 @@ class TestFullBA(LiveServerTestCase):
         time.sleep(5)
         driver.quit()
 
+<<<<<<< HEAD
     def test_gyms(self):
         driver = webdriver.Chrome(options=chrome_options)
         driver.get("http://127.0.0.1:8000/academias/")
@@ -923,6 +924,10 @@ class TestFullBA(LiveServerTestCase):
         enviar.click()
 
     # def test_login(self):
+=======
+
+    # def test_gyms(self):
+>>>>>>> 016aa62d6123d26d0bebdd9cd83dd8ee610c98ab
     #     driver = webdriver.Chrome(options=chrome_options)
     #     input_email_login = driver.find_element(By.NAME, 'email')
     #     input_email_login.send_keys('usuario@teste.com')
