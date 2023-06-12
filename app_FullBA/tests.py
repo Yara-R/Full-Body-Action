@@ -12,7 +12,7 @@ chrome_options.add_argument("--disable-gpu")
 
 class TestFullBA(LiveServerTestCase):
 
-    # def test_home(self):
+    def test_home(self):
     #     driver = webdriver.Chrome(options=chrome_options)
     #     driver.get("http://127.0.0.1:8000/")
     #     time.sleep(5)
