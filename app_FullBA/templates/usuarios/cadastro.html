@@ -1,0 +1,38 @@
+{% extends 'usuarios/basee.html' %}
+{% block conteudo %}
+
+  <form action="{% url 'cadastro' %}" method="post">
+    {% csrf_token %}
+    
+    <h1>Cadastro</h1>
+  
+    <span class="form-input">
+      <input placeholder="NOME" name="name" class="form-control-sm" type="text">
+    </span>
+  
+    <span class="form-input">
+      <input placeholder="EMAIL" name="email" class="form-control-sm" type="email">
+    </span>
+  
+    <span class="form-input">
+      <input placeholder="SENHA" name="senha" class="form-control-sm" type="password">
+    </span>
+
+    <span class="form-input">
+      <input placeholder="PESO" name="peso" class="form-control-sm" type="text">
+    </span>
+    
+    <span class="form-input">
+      <input placeholder="ALTURA" name="altura" class="form-control-sm" type="text">
+    </span>
+
+    <span class="form-input">
+      <input placeholder="IDADE" name="idade" class="form-control-sm" type="text">
+    </span>
+  
+    <input type="submit" value="CADASTRAR" class="form-control-sm submit-button"> 
+  
+  </form>
+ 
+
+{% endblock %}
