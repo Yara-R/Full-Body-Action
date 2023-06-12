@@ -1,0 +1,35 @@
+{% extends 'usuarios/base.html' %} 
+{% block conteudo %}
+{% csrf_token %}
+
+<h1>Escolha o Grupo Muscular</h1>
+<center>
+  <img
+    src="https://i.pinimg.com/564x/4b/17/10/4b1710399a9c7791ef0468817ab42b10.jpg"
+    class="container."
+    alt="..."
+    height="60%" width="60%"
+  />
+</center>
+
+<div class="choice">
+  <form method="get" action="{% url 'smash' %}">
+
+    <select style="width: 500px; height: 40px; border-radius: 4px;" aria-label="Default select example" name="musculo">
+      <option selected>Escolha o músculo</option>
+      <option value="biceps">Bíceps</option>
+      <option value="costas">Costas</option>
+      <option value="peito">Peito</option>
+      <option value="quadriceps">Quadriceps</option>
+      <option value="triceps">Tríceps</option>
+      <option value="panturrilhas">Panturrilhas</option>
+      <option value="gluteos">Glúteos</option>
+      <option value="posterior">Posterior</option>
+      <option value="antebraco">Antebraço</option>
+    </select>
+
+      <button style="width: 70px; height: 40px; border-radius: 4px;" type="submit">Ir</button>
+
+  </form>
+</div>
+{% endblock %}
