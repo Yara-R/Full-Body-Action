@@ -1,0 +1,59 @@
+{% extends 'usuarios/base.html' %} {% block conteudo %}
+{% csrf_token %}
+
+<h1>Exercícios para os glúteos</h1>
+
+
+  <center>
+    <table>
+      <tr>
+        <td>
+          <a class="exercicio" href="{% url 'gluteo_crew' %}">
+          <img
+            src="http://www.ferrosports.com.br/img_external/gluteo/image14.gif"
+            class="container."
+            alt="Rosca Punho"
+            height="50%" width="50%"
+          />
+          <h2>Crew</h2>
+        </a>
+        </td>
+        <td>
+          <a class="exercicio" href="{% url 'gluteo_caneleira' %}">
+          <img
+            src="http://www.ferrosports.com.br/img_external/gluteo/image12.gif"
+            class="container."
+            alt="Imagem 2"
+            height="50%" width="50%"
+          />
+          <h2>Gluteo Caneleira</h2>
+        </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a class="exercicio" href="{% url 'gluteo_caneleira_extensao' %}">
+          <img
+            src="http://www.ferrosports.com.br/img_external/gluteo/image13.gif"
+            class="container."
+            alt="Imagem 3"
+            height="50%" width="50%"
+          />
+          <h2>Gluteo Caneleira Extensão</h2>
+        </a>
+        </td>
+        <td>
+          <a class="exercicio" href="{% url 'gluteo_maquina' %}">
+          <img
+            src="http://www.ferrosports.com.br/img_external/gluteo/image1.gif"
+            class="container."
+            alt="Imagem 4"
+            height="30%" width="30%"
+          />
+          <h2>Gluteo Maquina</h2>
+        </a>
+        </td>
+      </tr>
+    </table>
+  </center>
+{% endblock %}

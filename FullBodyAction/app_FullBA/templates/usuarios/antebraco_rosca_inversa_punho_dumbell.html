@@ -1,0 +1,108 @@
+{% extends 'usuarios/base.html' %} 
+{% block conteudo %}
+
+<div class="exercise">
+    <h1>Rosca Inversa Punho Dumbell</h1>
+        <img
+        src="http://www.ferrosports.com.br/img_external/antebraco/image407.gif"
+        class="container."
+        alt="Rosca Inversa Punho Dumbell"
+        height="50%" width="50%"
+    />
+</div>
+
+<div class="description">
+    <h3>
+        Movimento:
+    </h3>
+    <h4>
+        Comece em pé, com os pés afastados na largura dos ombros e as costas retas; 
+    </h4>
+    <h4>
+        Segure um par de halteres com as palmas das mãos voltadas para o corpo e os braços estendidos ao longo do corpo;
+    </h4>
+    <h4>
+        Mantenha os cotovelos próximos ao corpo e, em seguida, dobre os cotovelos e levante os halteres em direção ao peito;
+    </h4>
+    <h4>
+        Mantenha os pulsos rígidos durante todo o movimento e mantenha o peso próximo ao corpo;
+    </h4>
+    <h4>
+        Continue levantando os halteres até que estejam quase em frente aos ombros.
+    </h4>
+    <h4>
+        Pause brevemente na posição mais alta do movimento, e depois abaixe lentamente os halteres de volta à posição inicial.
+    </h4>
+
+    <h3>
+        Músculos trabalhados:
+    </h3>
+    <h4>
+        Antebraço
+    </h4>
+</div>
+
+<div class="rating">
+
+    <input class="rating__input" type="radio" name="rating" id="star1" value="1">
+    <label class="rating__label" for="star1"></label>
+
+    <input class="rating__input" type="radio" name="rating" id="star2" value="2">
+    <label class="rating__label" for="star2"></label>
+
+    <input class="rating__input" type="radio" name="rating" id="star3" value="3">
+    <label class="rating__label" for="star3"></label>
+
+    <input class="rating__input" type="radio" name="rating" id="star4" value="4">
+    <label class="rating__label" for="star4"></label>
+
+    <input class="rating__input" type="radio" name="rating" id="star5" value="5">
+    <label class="rating__label" for="star5"></label>
+  </div>
+
+  <p>{{ media_avaliacoes.estrelas__avg }}</p>
+  {% for avaliacao in avaliacoes %}
+      <p>{{ avaliacao.estrelas }}</p>
+  {% endfor %}
+
+  <div class="description" >
+    <h3>
+        Deixe um comentário:
+    <h3>
+</div> 
+
+<form method="POST">
+    {% csrf_token %}
+        <span class="form-input">
+            <input placeholder="Nome de usuário" type="text" name="autor">
+        </span>
+        <span class="form-input">
+            <textarea placeholder="Comentário" name="texto"></textarea>
+        </span>
+        <input type='submit' class="form-control-sm submit-button" value="Comentar"></input>
+    </div>
+</form>
+
+<div class="description" >
+    <h3>
+        Comentários:
+    <h3>
+
+
+<ul>
+
+{% for comentario in comentarios %}
+
+    <li>
+        <p>{{ comentario.autor }} em {{ comentario.data }}</p>
+        <p>{{ comentario.texto }}</p>
+    </li>
+
+{% empty %}
+
+    <h4>Nenhum comentário ainda.</h4>
+{% endfor %}
+</ul>
+
+
+{% endblock %}

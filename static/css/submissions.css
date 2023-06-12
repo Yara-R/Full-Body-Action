@@ -1,0 +1,78 @@
+<<<<<<< HEAD
+.submissions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    padding: 0.5rem;
+    color: #dba021;
+    width: 25%;
+}
+
+.form-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 0.5rem 0.5rem;
+}
+
+h5{
+    font-size: medium;
+    padding: 0.5rem;
+}
+
+.submit-button{
+    padding: 0.5rem 0.5rem;
+    background: transparent;
+    border: 1px solid #dba021;
+    color:#dba021;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.submit-button:hover{
+    background: #dba021;
+    color: black;
+    transition: background 0.2s color 0.2s;
+=======
+.submissions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    padding: 0.5rem;
+    color: #dba021;
+    width: 25%;
+}
+
+.form-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 0.5rem 0.5rem;
+}
+
+h5{
+    font-size: medium;
+    padding: 0.5rem;
+}
+
+.submit-button{
+    padding: 0.5rem 0.5rem;
+    background: transparent;
+    border: 1px solid #dba021;
+    color:#dba021;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.submit-button:hover{
+    background: #dba021;
+    color: black;
+    transition: background 0.2s color 0.2s;
+>>>>>>> e2ae30caca440ba39f9ae5577f2d1ca60e07b384
+}

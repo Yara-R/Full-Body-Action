@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,7 +14,7 @@ SECRET_KEY = 'django-insecure-=$%nm&rz+(tmm7lq)!)yjwc-t=g0@1fs2vf*nurs_&1u_y5sg+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["fullbodyaction.us-east-2.elasticbeanstalk.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["fullbodyaction.us-east-2.elasticbeanstalk.com","fullbodyaction.us-east-1.elasticbeanstalk.com", "127.0.0.1"]
 
 
 # Application definition
@@ -44,7 +45,7 @@ ROOT_URLCONF = 'FullBodyAction.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,7 +106,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
-STATIC_URL = 'static/'
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = [
+#      'app_FullBA\static'
+# ]
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
